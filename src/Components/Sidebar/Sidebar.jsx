@@ -45,10 +45,6 @@ const Sidebar = () => {
               <MenuItem /*active={true}*/>
                 Sessions
               </MenuItem>
-              <MenuItem>Category</MenuItem>
-              <MenuItem>Favourite</MenuItem>
-              <MenuItem>Author</MenuItem>
-              <MenuItem>Settings</MenuItem>
             </Menu>
           </SidebarContent>
           <SidebarFooter>
