@@ -1,2 +1,2 @@
-# Kanban-Project
- Kanban Board with React 
+# KanbanBoard-Trello
+ kanban board with trello design
