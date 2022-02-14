@@ -3,7 +3,7 @@ import React from 'react'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-const NaviBar = ({logo}) => {
+const Navibar = ({logo}) => {
     return (
         <div className='Navbar'>
             <Navbar expand="lg" bg="dark" variant="dark">
@@ -32,8 +32,8 @@ const NaviBar = ({logo}) => {
     )
 }
 
-NaviBar.defaultProps = {
+Navibar.defaultProps = {
     logo: logo
 }
 
-export default NaviBar
+export default Navibar
