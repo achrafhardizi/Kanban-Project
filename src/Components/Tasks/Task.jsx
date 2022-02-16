@@ -1,6 +1,7 @@
 import React from 'react';
 import {Badge, Card} from "react-bootstrap";
-import {BsChatRight} from "react-icons/bs";
+import {BsChatRight, BsPersonCircle, BsPlusCircle} from "react-icons/bs";
+import {BiLinkAlt} from "react-icons/bi";
 
 const Task = () => {
     return (
@@ -12,10 +13,17 @@ const Task = () => {
                 <Badge>Low priority</Badge>
             </Card.Title>
             <Card.Body>
-                <span>
-                    Company website redesign <br/>
-                </span>
-                 <BsChatRight /> 1 
+                <div className='taskTitle mb-2'>
+                    Company website redesign
+                </div>
+                <div className='taskFooter d-flex justify-content-between'>
+                    <div className="notifis">
+                        <BsChatRight /> 1 <BiLinkAlt/> 2
+                    </div>
+                    <div className="avatars">
+                        <BsPlusCircle size={20}/> <BsPersonCircle size={20}/>
+                    </div>
+                </div>
             </Card.Body>
 
         </Card>
