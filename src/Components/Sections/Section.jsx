@@ -1,9 +1,9 @@
 import React from 'react';
 import {Card} from "react-bootstrap";
-import {BsThreeDotsVertical} from "react-icons/bs";
+import {BsPlusCircle, BsThreeDotsVertical} from "react-icons/bs";
 import Task from "../Tasks/Task";
 
-const Section = () => {
+const Section = ({title}) => {
     return (
         <Card style={{
             width: '18rem',
@@ -18,12 +18,21 @@ const Section = () => {
                     alignItems: "center",
                     justifyContent: "space-between"
                 }}>
-                    Backlog
+                    {title}
                     <BsThreeDotsVertical/>
                 </Card.Title>
-                <Task></Task>
+                <Task />
             </Card.Body>
-
+            <Card.Footer style={{
+                backgroundColor:"#f7f8fc",
+                display:"flex",
+                justifyContent:"center",
+                alignItems:"center",
+                borderTop:"hidden"
+            }}>
+                <span style={{color:"rgba(0,0,0,0.3)",margin:"3px"}}>Add task</span>
+                <BsPlusCircle style={{color:"rgba(0,0,0,0.3)"}} size={20}/>
+            </Card.Footer>
         </Card>
     );
 };
