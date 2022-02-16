@@ -1,3 +1,8 @@
 export { default as LoginPanel } from './Login/LoginPanel'
 export { default as Navibar } from './Navibar/Navibar'
 export { default as Sidebar } from './Sidebar/Sidebar'
+export { default as Task } from './Task/Task'
+export {default as New} from './Sections/new/New'
+export {default as Ongoing} from './Sections/ongoing/Ongoing'
+export {default as Finished} from './Sections/finished/Finished'
+export {default as Cancelled} from './Sections/cancelled/Cancelled'
