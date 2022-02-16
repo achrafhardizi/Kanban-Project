@@ -3,7 +3,7 @@ import {Card} from "react-bootstrap";
 import {BsPlusCircle, BsThreeDotsVertical} from "react-icons/bs";
 import Task from "../Tasks/Task";
 
-const Section = ({title}) => {
+const Section = ({title="Block log"}) => {
     return (
         <Card style={{
             width: '18rem',

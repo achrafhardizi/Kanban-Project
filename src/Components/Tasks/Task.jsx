@@ -10,20 +10,18 @@ const Task = ({
     }) => {
     return (
         <Card>
-            <Card.Title style={{
-                paddingLeft:"10px",
-                paddingTop:"10px"
-            }}>
-                {/*this block is dynamic cuz we will take the badges from database then display them */}
-                <Badge>Low priority</Badge>
-            </Card.Title>
             <Card.Body>
+                <Badge style={{
+                    marginBottom:"10px"
+                }}>
+                    Low priority
+                </Badge>
                 <div className='taskTitle mb-2'>
                     {context}
                 </div>
                 <div className='taskFooter d-flex justify-content-between'>
                     <div className="notifis">
-                        <BsChatRight /> {chatNum} <BiLinkAlt/> {linksNum}
+                        <BsChatRight onClick={event => {console.log('clikced the plus')}}/> {chatNum} <BiLinkAlt/> {linksNum}
                     </div>
                     <div className="avatars">
                         <BsPlusCircle size={20}/> <BsPersonCircle size={20}/>
