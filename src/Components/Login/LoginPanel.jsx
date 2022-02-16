@@ -21,12 +21,12 @@ const LoginPanel = () => {
                     <Form>
                         <Form.Group className="mb-3" controlId="Email">
                             <Form.Label>Email Address</Form.Label>
-                            <Form.Control type="email" placeholder="name@example.com"/>
+                            <Form.Control type="email" placeholder="name@example.com" spellCheck />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="Email">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" aria-describedby="passwordBlock"/>
-                            <Form.Text id="passwordBlock" muted aria-required="true">
+                            <Form.Control type="password" aria-describedby="passwordBlock" spellCheck/>
+                            <Form.Text id="passwordBlock" muted>
                                 Your password must be 8-20 characters long, contain letters and numbers, and
                                 must not contain spaces, special characters, or emoji.
                             </Form.Text>

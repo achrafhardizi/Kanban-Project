@@ -5,8 +5,7 @@ import {Container} from "react-bootstrap";
 function App() {
     return (
         <div className="App">
-            <Navibar />
-            <Sidebar />
+            <LoginPanel></LoginPanel>
         </div>
     );
 }
