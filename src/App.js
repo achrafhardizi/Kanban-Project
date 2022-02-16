@@ -1,11 +1,19 @@
 import './App.css';
-import {LoginPanel, Navibar, Sidebar} from './Components'
+import {LoginPanel, Navibar, Sections, Sidebar} from './Components'
+import 'bootstrap/dist/css/bootstrap.css';
 import {Container} from "react-bootstrap";
 
 function App() {
     return (
-        <div className="App">
-            <LoginPanel></LoginPanel>
+        <div className="App ">
+            <Navibar />
+            <Sidebar />
+            <section style={{
+                marginTop:"12px",
+                marginLeft:"180px"
+            }}>
+                <Sections  />
+            </section>
         </div>
     );
 }
