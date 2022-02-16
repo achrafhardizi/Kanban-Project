@@ -5,7 +5,6 @@ import { Container, Col, Row } from "react-bootstrap";
 function App() {
     return (
         <div className="App">
-            <Container fluid style={{width:'100%'}}>
                 <Navibar />
 
                 <Row >
@@ -19,7 +18,6 @@ function App() {
                         </Row>
                     </Container></Col>
                 </Row>
-            </Container>
 
         </div>
     );
