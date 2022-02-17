@@ -50,7 +50,7 @@ const Sessions = () => {
     return (
         <Card style={{padding: 0}}>
             <Card.Body >
-                <Tabs defaultActiveKey="home" id="uncontrolled-tab-example" className="mb-3">
+                <Tabs defaultActiveKey="sessions" id="uncontrolled-tab-example" className="mb-3">
                     <Tab eventKey="sessions" title="Sessions courants">
                         <Row xs={4} style={{width: "99.999%"}} gutter={40}>
                             {sessions.map(ses => {
