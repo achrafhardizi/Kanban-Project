@@ -1,8 +1,8 @@
 import React from 'react';
 import {Button, Card, Col, Row, Tab, Tabs} from "react-bootstrap";
-import {BiExit} from "react-icons/bi";
 import {CgEnter} from "react-icons/cg";
 import {TiTickOutline, TiTimesOutline} from "react-icons/ti";
+import {IoExitOutline} from "react-icons/io5";
 
 
 const Sessions = () => {
@@ -50,8 +50,8 @@ const Sessions = () => {
     return (
         <Card style={{padding: 0}}>
             <Card.Body >
-                <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
-                    <Tab eventKey="home" title="Sessions courants">
+                <Tabs defaultActiveKey="home" id="uncontrolled-tab-example" className="mb-3">
+                    <Tab eventKey="sessions" title="Sessions courants">
                         <Row xs={4} style={{width: "99.999%"}} gutter={40}>
                             {sessions.map(ses => {
                                 return (
@@ -69,7 +69,7 @@ const Sessions = () => {
                                                     width: "16rem"
                                                 }}>
                                                     <Button variant="success"><CgEnter/></Button>
-                                                    <Button variant="danger"><BiExit/></Button>
+                                                    <Button variant="danger"><IoExitOutline/></Button>
                                                 </div>
                                             </Card.Body>
                                         </Card>
@@ -78,7 +78,7 @@ const Sessions = () => {
                             })}
                         </Row>
                     </Tab>
-                    <Tab eventKey="profile" title="Invitation">
+                    <Tab eventKey="invitations" title="Invitation">
                         {invsessions.map(ses => {
                             return (
                                 <Card>
