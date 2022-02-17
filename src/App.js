@@ -1,5 +1,5 @@
 import './App.css';
-import {LoginPanel, Navibar, Sidebar} from './Components'
+import {LoginPanel, Sessions, Navibar, Sidebar} from './Components'
 import {Container} from "react-bootstrap";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
         <div className="App">
             <Navibar />
             <Sidebar />
+            <div className="content"><Sessions/></div>
         </div>
     );
 }
