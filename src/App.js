@@ -1,26 +1,31 @@
 import './App.css';
-import { LoginPanel, Task, Navibar, Sidebar, New, Ongoing, Finished, Cancelled } from './Components'
-import { Container, Col, Row } from "react-bootstrap";
+import {Form, Button} from 'react-bootstrap';
+import { LoginPanel, Task, Navibar, Sidebar, Section, taskoptions, Taskoptions, Usersettings } from './Components'
 
 function App() {
     return (
         <div className="App">
-                <Navibar />
-
-                <Row >
-                    <Col xs={2}><Sidebar /></Col>
-                    <Col><Container fluid>
-                        <Row className='mt-3'>
-                            <Col sm={3}><New tasks={<Task />} /></Col>
-                            <Col sm={3}><Ongoing /></Col>
-                            <Col sm={3}><Finished /></Col>
-                            <Col sm={3}><Cancelled /></Col>
-                        </Row>
-                    </Container></Col>
-                </Row>
+            <Navibar />
+            <Usersettings />
 
         </div>
     );
 }
 
 export default App;
+
+/*<Form className='d-flex'>
+                <Section name='To do' tasks={<Task />} />
+                <Section name='Finished' tasks={<Task />} />
+                <Section name='Ongoing' tasks={<Task />} />
+                <Button onClick={() => console.log("Add task pressed!")} style={{
+                        height:'100px',
+                        width: '100px',
+                        backgroundColor: 'grey',
+                        border: 'solid grey',
+                        margin: '10px',
+                        
+                    }}>
+                    Add Section
+                </Button>
+            </Form> */

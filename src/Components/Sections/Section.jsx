@@ -1,10 +1,11 @@
 import React from 'react'
+import './section.css'
 import { Card, Button, Form } from 'react-bootstrap'
 
-const Finished = ({ tasks }) => {
+const Section = ({ id, name, tasks }) => {
     return (
-        <Card>
-            <Card.Header>New tasks</Card.Header>
+        <Card className='section' id={id}>
+            <Card.Header>{name}</Card.Header>
             {tasks}
             <Card.Footer>
                 <Form className='d-flex justify-content-center'>
@@ -15,4 +16,4 @@ const Finished = ({ tasks }) => {
     )
 }
 
-export default Finished;
+export default Section;
