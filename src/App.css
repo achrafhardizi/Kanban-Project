@@ -1,0 +1,12 @@
+.layout{
+    background-color: black;
+    border: red solid 2px;
+    width: 100vw;
+    height: 89.8vh;
+    padding: 24px;
+    
+    display:flex;
+    gap:16px;
+    align-items: flex-start;
+    overflow-x: scroll !important;
+}

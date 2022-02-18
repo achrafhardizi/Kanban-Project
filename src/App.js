@@ -1,14 +1,20 @@
 import './App.css';
-import {LoginPanel, Navibar, Sections, Sidebar} from './Components'
+import { Navibar, Section} from './Components'
 import 'bootstrap/dist/css/bootstrap.css';
-import {Col, Container, Row} from "react-bootstrap";
 
 function App() {
     return (
-        <div className="App ">
+        <section className="App">
             <Navibar/>
-            <Sidebar />
-        </div>
+            <div className="layout">
+                <Section/>
+                <Section/>
+                <Section/>
+                <Section/>
+                <Section/>
+                <Section    />
+            </div>
+        </section>
     );
 }
 

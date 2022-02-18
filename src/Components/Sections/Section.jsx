@@ -6,11 +6,13 @@ import Task from "../Tasks/Task";
 const Section = ({title="Block log"}) => {
     return (
         <Card style={{
+            padding:"12px",
             width: '18rem',
-            display: 'flex',
-            flexWrap: "wrap",
+            height: '17em',
             borderTop:"3px solid lightgreen",
-            backgroundColor:'#f7f8fc'
+            backgroundColor:'#f7f8fc',
+            flex:"0 0 auto",
+            minWidth: "110px"
         }}>
             <Card.Body>
                 <Card.Title style={{
