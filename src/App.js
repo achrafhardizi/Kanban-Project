@@ -12,7 +12,7 @@ function App() {
                 <Section/>
                 <Section/>
                 <Section/>
-                <Section    />
+                <Section/>
             </div>
         </section>
     );

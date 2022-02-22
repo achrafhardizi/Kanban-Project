@@ -9,7 +9,9 @@ const Task = ({
                   linksNum=2
     }) => {
     return (
-        <Card>
+        <Card style={{
+            marginBottom:"6px"
+        }}>
             <Card.Body>
                 <Badge style={{
                     marginBottom:"10px"

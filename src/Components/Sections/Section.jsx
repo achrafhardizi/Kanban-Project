@@ -7,22 +7,27 @@ const Section = ({title="Block log"}) => {
     return (
         <Card style={{
             padding:"12px",
-            width: '18rem',
-            height: '17em',
+            maxWidth: '18rem',
+            maxHeight: '36em',
             borderTop:"3px solid lightgreen",
             backgroundColor:'#f7f8fc',
             flex:"0 0 auto",
             minWidth: "110px"
         }}>
-            <Card.Body>
-                <Card.Title style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between"
-                }}>
-                    {title}
-                    <BsThreeDotsVertical/>
-                </Card.Title>
+            <Card.Title style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between"
+            }}>
+                {title}
+                <BsThreeDotsVertical/>
+            </Card.Title>
+            <Card.Body style={{
+                overflowY:"auto"
+            }}>
+                <Task />
+                <Task />
+                <Task />
                 <Task />
             </Card.Body>
             <Card.Footer style={{
