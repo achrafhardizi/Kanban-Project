@@ -8,7 +8,7 @@ const Section = ({title="Block log"}) => {
         <Card style={{
             padding:"12px",
             maxWidth: '18rem',
-            maxHeight: '36em',
+            maxHeight: '29em',
             borderTop:"3px solid lightgreen",
             backgroundColor:'#f7f8fc',
             flex:"0 0 auto",

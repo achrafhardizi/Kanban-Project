@@ -1,8 +1,7 @@
 .layout{
-    background-color: black;
-    border: red solid 2px;
+    background-color: aliceblue;
     max-width: 100vw;
-    min-height: 88.8vh;
+    min-height: auto;
     padding: 24px;
     display:flex;
     gap:16px;
