@@ -53,7 +53,8 @@ const Sessions = () => {
             <Card style={{padding: "0",
                 display: "flex",
                 flexDirection: "row",
-                height: "80vh"}}>
+                height: "80vh",
+                minWidth: "565.60px"}}>
                 <Card.Body>
                     <Tabs defaultActiveKey="sessions" id="uncontrolled-tab-example" className="mb-3">
                         <Tab eventKey="sessions" title="Sessions courants" style={{flex: "1",
@@ -83,7 +84,7 @@ const Sessions = () => {
             <Addsession
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-                setSession={sess => console.log(sess)}
+                setsession={sess => console.log(sess)}
             />
         </React.Fragment>
     );

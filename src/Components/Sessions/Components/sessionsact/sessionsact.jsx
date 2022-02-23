@@ -5,12 +5,12 @@ import {IoExitOutline} from "react-icons/io5";
 
 const Sessionact = ({sessions}) => {
     return (
-        <React.Fragment>
-            <Row xs={4} style={{width: "99.999%"}} gutter={40}>
+        <>
+            <Row xs="auto" style={{width: "100%"}}>
                 {sessions.map(ses => {
                     return (
-                        <Col>
-                            <Card style={{width: '18rem', margin: "5px"}}>
+                        <Col style={{float: "center"}}>
+                            <Card style={{margin: "2px", minWidth: "292px"}}>
                                 <Card.Body>
                                     <Card.Title>{ses.name}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">{ses.role}</Card.Subtitle>
@@ -31,7 +31,7 @@ const Sessionact = ({sessions}) => {
                     );
                 })}
             </Row>
-        </React.Fragment>
+        </>
     );
 };
 
