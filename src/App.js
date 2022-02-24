@@ -6,8 +6,7 @@ function App() {
     return (
         <div className="App">
             <Navibar />
-            <Usersettings />
-
+            <Sidebar />
         </div>
     );
 }

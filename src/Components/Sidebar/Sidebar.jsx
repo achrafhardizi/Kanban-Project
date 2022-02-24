@@ -42,16 +42,17 @@ const Sidebar = () => {
         <ProSidebar collapsed={menuCollapse}>
           <SidebarContent>
             <Menu iconShape="square">
-              <MenuItem /*active={true}*/>
+              <MenuItem>
                 Sessions
+              </MenuItem>
+              <MenuItem>
+                Settings
+              </MenuItem>
+              <MenuItem>
+                
               </MenuItem>
             </Menu>
           </SidebarContent>
-          <SidebarFooter> 
-            <Menu iconShape="square">
-              <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
-            </Menu>
-          </SidebarFooter>
         </ProSidebar>
       </div>
     </>

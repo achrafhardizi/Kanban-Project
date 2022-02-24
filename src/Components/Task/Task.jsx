@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, Form } from 'react-bootstrap';
-import { BiXCircle, BiCommentAdd, BiMessageSquareAdd } from 'react-icons/bi';
+import { BiDotsHorizontalRounded } from 'react-icons/bi';
 
 const Task = ({ tags, name }) => {
 
@@ -13,9 +13,7 @@ const Task = ({ tags, name }) => {
                     Testing task {/*Name of the task, can be used as a description too (following the examples sent on whatsapp)*/}
                 </Form>
                 <Form className='d-flex justify-content-end mt-3'>
-                    <Card.Link href="#" style={{ color: 'grey' }}><BiCommentAdd /></Card.Link>
-                    <Card.Link href="#" style={{ color: 'grey' }}><BiMessageSquareAdd /></Card.Link>
-                    <Card.Link href="#" style={{ color: 'grey' }}><BiXCircle /></Card.Link>
+                    <Card.Link href="#" style={{ color: 'grey' }}><BiDotsHorizontalRounded /></Card.Link>
                 </Form>
             </Card.Body>
         </Card>

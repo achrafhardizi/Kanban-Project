@@ -1,11 +1,54 @@
 .toptions {
-    background-color: grey;
-    width: 150px;
     margin: 10px;
-    padding: 10px;
+    gap: 10px;
 }
 
-.toptions > * {
-    width: 150px;
-    margin: 10px;
+.toptions>.btnname {
+    background-color: rgba(95, 95, 95, 0.459);
+    border-radius: 0px;
+}
+
+.toptions>.btnname:hover {
+    background-color: rgba(95, 95, 95, 0.897);
+    border-radius: 0px;
+}
+
+.toptions>.btntags {
+    background-color: rgba(95, 95, 95, 0.459);
+    border-radius: 0px;
+}
+
+.toptions>.btntags:hover {
+    background-color: rgba(95, 95, 95, 0.897);
+    border-radius: 0px;
+}
+
+.toptions>.btndates {
+    background-color: rgba(95, 95, 95, 0.459);
+    border-radius: 0px;
+}
+
+.toptions>.btndates:hover {
+    background-color: rgba(95, 95, 95, 0.897);
+    border-radius: 0px;
+}
+
+.toptions>.btncolor {
+    background-color: rgba(95, 95, 95, 0.459);
+    border-radius: 0px;
+}
+
+.toptions>.btncolor:hover {
+    background-color: rgba(95, 95, 95, 0.897);
+    border-radius: 0px;
+}
+
+.toptions>.btnremove {
+    background-color: rgba(95, 95, 95, 0.459);
+    border-radius: 0px;
+}
+
+.toptions>.btnremove:hover {
+    background-color: rgba(95, 95, 95, 0.897);
+    border-radius: 0px;
 }
