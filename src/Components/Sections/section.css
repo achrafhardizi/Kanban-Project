@@ -4,6 +4,7 @@
     border-top: 3px solid lightgreen;
     background-color: #f7f8fc;
     flex: 0 0 auto;
+    height: max-content;
 }
 
 [class^='section-card'] > .section-footer {
