@@ -1,0 +1,8 @@
+#notif-dropdown::after {
+    margin-top: 7px;
+    content: none;
+}
+
+#profile-dropdown::before {
+    content: none;
+}
