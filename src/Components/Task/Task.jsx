@@ -1,6 +1,8 @@
 import React from 'react';
+import './task.css';
 import PropTypes from 'prop-types';
-import { Button, Card, Form } from 'react-bootstrap';
+import { Taskoptions } from '..'
+import { Dropdown, Button, Card, Form } from 'react-bootstrap';
 import { BiDotsHorizontalRounded } from 'react-icons/bi';
 
 const Task = ({ tags, name }) => {
@@ -13,7 +15,12 @@ const Task = ({ tags, name }) => {
                     Testing task {/*Name of the task, can be used as a description too (following the examples sent on whatsapp)*/}
                 </Form>
                 <Form className='d-flex justify-content-end mt-3'>
-                    <Card.Link href="#" style={{ color: 'grey' }}><BiDotsHorizontalRounded /></Card.Link>
+                    <Dropdown drop={'end'}>
+                        <Dropdown.Toggle id="dropdown-basic"><BiDotsHorizontalRounded /></Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Taskoptions />
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </Form>
             </Card.Body>
         </Card>

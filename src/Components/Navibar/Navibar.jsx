@@ -1,9 +1,10 @@
 import logo from './logo.jpg'
-import React from 'react' 
+import React from 'react'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import { BsFillBellFill } from 'react-icons/bs'
 import PropTypes from 'prop-types'
 
-const Navibar = ({logo}) => {
+const Navibar = ({ logo, notifications }) => {
     return (
         <div className='Navbar'>
             <Navbar expand="lg" bg="dark" variant="dark">
@@ -21,8 +22,13 @@ const Navibar = ({logo}) => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
+                            <Nav.Link>
+                                <NavDropdown title={<BsFillBellFill />} id="nav-dropdown">
+                                    {notifications}
+                                </NavDropdown>
+                            </Nav.Link>
                             <Nav.Link href="">
-                                <img className='rounded-circle' src={logo} alt="" style={{width:'40px'}} />
+                                <img className='rounded-circle' src={logo} alt="" style={{ width: '40px' }} />
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

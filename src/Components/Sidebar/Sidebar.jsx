@@ -49,7 +49,6 @@ const Sidebar = () => {
                 Settings
               </MenuItem>
               <MenuItem>
-                
               </MenuItem>
             </Menu>
           </SidebarContent>

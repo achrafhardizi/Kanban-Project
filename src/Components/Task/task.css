@@ -1,0 +1,4 @@
+#dropdown-basic::after {
+    content: none;
+    background-color: transparent;
+}
