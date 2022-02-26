@@ -1,4 +1,15 @@
-.section {
-    width: 100em;
-    margin: 10px;
+[class^='section-card'] {
+    width: 300px;
+    margin: 20px;
+    border-top: 3px solid lightgreen;
+    background-color: #f7f8fc;
+    flex: 0 0 auto;
+}
+
+[class^='section-card'] > .section-footer {
+    background-color: #f7f8fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: hidden;
 }

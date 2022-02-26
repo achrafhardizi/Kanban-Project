@@ -4,9 +4,12 @@ import { LoginPanel, Task, Navibar, Sidebar, Body, Section, taskoptions, Taskopt
 
 function App() {
 
+    const tasks = [<Task tags={'test tag'} name={'test name'} />, <Task tags={'test tag'} name={'test name'} />, <Task tags={'test tag'} name={'test name'} />]
+
     const sections = [
-        <Section name={'first sec'} tasks={<Task tags={'test tag'} name={'test name'} />} />,
-        <Section name={'second sec'} tasks={<Task tags={'test tag'} name={'test name'} />} />
+        <Section id={'first'} name={'Insanely long name wow, lets make it even longer ;) alright good shit'} tasks={tasks} />,
+        <Section id={'second'} name={'second sec'} tasks={<Task tags={'test tag'} name={'test name'} />} />,
+        <Section id={'third'} name={'third sec'} tasks={<Task tags={'rsdfsd'} name={'tsfqsdfq'} />} />
     ]
 
     return (
