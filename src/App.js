@@ -1,6 +1,6 @@
 import './App.css';
-import { Form, Button } from 'react-bootstrap';
-import { LoginPanel, Task, Navibar, Sidebar, Body, Section, taskoptions, Taskoptions } from './Components'
+import { Form, Button, Row, Col } from 'react-bootstrap';
+import { LoginPanel, Task, Navibar, Sidebar, Body, Section, taskoptions, Taskoptions, Sessions, Home } from './Components'
 
 function App() {
 
@@ -15,7 +15,8 @@ function App() {
     return (
         <div className="App">
             <Navibar />
-            <Body sections={sections}/>
+            {/* <Body sections={sections}/>*/}
+            <Home />
         </div>
     );
 }
