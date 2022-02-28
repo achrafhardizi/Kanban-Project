@@ -10,7 +10,7 @@ const Task = ({
     }) => {
     return (
         <Card style={{
-            marginBottom:"6px"
+            marginBottom:"6 px"
         }}>
             <Card.Body>
                 <Badge style={{
@@ -25,9 +25,9 @@ const Task = ({
                     <div className="notifis">
                         <BsChatRight onClick={event => {console.log('clikced the plus')}}/> {chatNum} <BiLinkAlt/> {linksNum}
                     </div>
-                    <div className="avatars">
+                    <div  className="avatars" >
                         <BsPlusCircle size={20}/> <BsPersonCircle size={20}/>
-                    </div>
+                    </div >
                 </div>
             </Card.Body>
         </Card>

@@ -1,18 +1,17 @@
 import React from 'react';
-import {Card} from "react-bootstrap";
+import {Button, Card} from "react-bootstrap";
 import {BsPlusCircle, BsThreeDotsVertical} from "react-icons/bs";
 import Task from "../Tasks/Task";
 
-const Section = ({title="Block log"}) => {
+const Section = ({title="Block log", tasks}) => {
     return (
         <Card style={{
             padding:"12px",
-            maxWidth: '18rem',
+            minWidth: '18rem',
             maxHeight: '29em',
             borderTop:"3px solid lightgreen",
             backgroundColor:'#f7f8fc',
-            flex:"0 0 auto",
-            minWidth: "110px"
+            flex:"0 0 auto"
         }}>
             <Card.Title style={{
                 display: "flex",
@@ -25,10 +24,7 @@ const Section = ({title="Block log"}) => {
             <Card.Body style={{
                 overflowY:"auto"
             }}>
-                <Task />
-                <Task />
-                <Task />
-                <Task />
+                {tasks}
             </Card.Body>
             <Card.Footer style={{
                 backgroundColor:"#f7f8fc",
@@ -37,8 +33,10 @@ const Section = ({title="Block log"}) => {
                 alignItems:"center",
                 borderTop:"hidden"
             }}>
-                <span style={{color:"rgba(0,0,0,0.3)",margin:"3px"}}>Add task</span>
-                <BsPlusCircle style={{color:"rgba(0,0,0,0.3)"}} size={20}/>
+                <Button variant={"secondary"} style={{backgroundColor:"transparent",border:"transparent"}}>
+                    <span style={{color:"rgba(0,0,0,0.3)",margin:"3px"}}>Add task</span>
+                    <BsPlusCircle style={{color:"rgba(0,0,0,0.3)"}} size={20}/>
+                </Button>
             </Card.Footer>
         </Card>
     );
