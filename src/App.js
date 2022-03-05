@@ -1,6 +1,5 @@
 import './App.css';
-import {LoginPanel, Sessions, Navibar, Sidebar} from './Components'
-import {Container} from "react-bootstrap";
+import {LoginPanel, Sessions, Navibar, Sidebar, Settings, Notification} from './Components';
 
 function App() {
     return (
