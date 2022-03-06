@@ -1,9 +1,13 @@
-import React, {useState} from 'react';
-import {Button, Card, Col, Container, Form, InputGroup, Row} from "react-bootstrap";
+import React, {useEffect, useState} from 'react';
+import {Button, Card, Container, Form} from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
+import App from "../../App";
 
 const LoginPanel = () => {
 
     const [validated, setValidated] = useState(false);
+    let navigate =  useNavigate();
+
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
@@ -11,8 +15,8 @@ const LoginPanel = () => {
             event.preventDefault();
             event.stopPropagation();
         }
-
         setValidated(true);
+        navigate();
     };
 
     return (
@@ -23,6 +27,7 @@ const LoginPanel = () => {
             left: "50%",
             transform: "translate(-50%, -50%)"
         }}>
+
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Card style={{
                     position: "relative",
@@ -32,14 +37,16 @@ const LoginPanel = () => {
                         <Card.Header>LogIn</Card.Header>
                     </center>
                     <Card.Body>
-                        <Form.Group  controlId="validationCustom01">
+                        <Form.Group controlId="validationCustom01">
                             <Form.Label>Email Address</Form.Label>
-                            <Form.Control type="email" placeholder="name@example.com" isInvalid={true} spellCheck required/>
+                            <Form.Control type="email" placeholder="name@example.com" isInvalid={true} spellCheck
+                                          required/>
                             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group controlId="validationCustom02">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" aria-describedby="passwordBlock" isInvalid={true} spellCheck required />
+                            <Form.Control type="password" aria-describedby="passwordBlock" isInvalid={true} spellCheck
+                                          required/>
                             <Form.Text id="passwordBlock" muted>
                                 Your password must be 8-20 characters long, contain letters and numbers, and
                                 must not contain spaces, special characters, or emoji.
@@ -50,7 +57,11 @@ const LoginPanel = () => {
                             bottom: "2.5em",
                             left: "1.75em"
                         }}>
-                            <Button type="submit" variant={"secondary"} style={{backgroundColor: "#5aac44", width: "20em"}}>
+                            <Button
+                                type="submit"
+                                variant={"secondary"}
+                                style={{backgroundColor: "#5aac44", width: "20em"}}
+                            >
                                 Log in
                             </Button>
                         </center>

@@ -12,3 +12,5 @@ export { default as Section } from './Sections/Section'
  */
 
 export {default as Home} from './Pages/Home'
+export {default as Workspace} from './Pages/Workspace/Workspace'
+
