@@ -1,35 +1,10 @@
 import React, {useState} from 'react';
-import {Card, Form, ListGroup} from "react-bootstrap";
+import './Appearance.css';
+import {Button, Card, Col, Form, Row} from "react-bootstrap";
 
-const theme = {
-    themee:{
-        marginBottom: "5px",
-        border: "1px solid lightgrey",
-        borderRadius: "2px"
-    },
-    selected:{
-        backgroundColor: "lightblue"
-    }
-}
-
-const select = () => {
-
-}
-
-const Appearance = () => {
-    const [dark, setDark] = useState(false);
-    /*const [dark, setDark] = useState(false);
-    const [light, setLight] = useState(false);*/
-
-    /*const handleClick = (type) => {
-        if(type==="dark"){
-            setDark(true);
-            setLight(false);
-        }else{
-            setLight(true);
-            setDark(false);
-        }
-    }*/
+const Appearance = (props) => {
+    const [color, setColor] = useState('');
+    const colors = ["#AC4C7A#0079BF", "#DDAF6F", "#89609E", "#C57B6E", "#AA8DB9", "#CD5A91", "#4BBF6B", "#4AC3D9", "#838C91"]
 
     return (
         <>
@@ -39,19 +14,31 @@ const Appearance = () => {
                 overflow: "auto"
             }}>
                 <Card>
-                <Card.Header>Theme</Card.Header>
+                <Card.Header>Background Color</Card.Header>
                    <Form>
-                    <Card.Body><ListGroup id={"grp"}>
-                        <ListGroup.Item style={theme.themee} onClick={() => setDark(!dark)}>
-                            <Form.Check checked={dark} type={"checkbox"} label={"Dark"} />
-                        </ListGroup.Item>
-                        <ListGroup.Item style={theme.themee} onClick={() => setDark(!dark)}>
-                            <Form.Check checked={!dark} type={"checkbox"} label={"Light"} />
-                        </ListGroup.Item>
-                    </ListGroup></Card.Body>
+                    <Card.Body>
+                        <Row xs={"auto"}>
+                            {colors.map((cols, i) =>(
+                                <Col>
+                                    <Card className={"ccard"} style={{backgroundColor: cols, padding: "60px", border: "3px solid lightgrey"}} onClick={() => {setColor(colors[i]);}}/>
+                                </Col>
+                            ))}
+                            <Col style={{
+                                margin: "45px"
+                            }}>
+                            <Form.Control
+                                type="color"
+                                id="exampleColorInput"
+                                title="Choose your color"
+                                onChange={(e) => {setColor(e.target.value);}}
+                            />
+                            </Col>
+
+                        </Row>
+                        <Button variant={"success"}  onClick={() => props.bg(color)}>Save</Button>
+                    </Card.Body>
                    </Form>
                 </Card>
-
             </Card>
         </>
     );
