@@ -1,25 +1,46 @@
 import React from 'react';
-import './section.css';
-import { Card, Form, Row, Col } from "react-bootstrap";
+import { Button, Card, Form } from "react-bootstrap";
 import { BsPlusCircle, BsThreeDotsVertical } from "react-icons/bs";
 import Task from "../Task/Task";
 
-const Section = ({ id, name, tasks }) => {
+const Section = ({ name, tasks, addTask }) => {
     return (
-        <Card className={`section-card${id}`} >
-            <Card.Header id='section-title' >
-                <Row>
-                    <Col lg={10}>{name}</Col>
-                    <Col><Card.Link href="#" style={{ color: 'grey', marginLeft: '0 0 auto' }}><BsThreeDotsVertical /></Card.Link></Col>
-                </Row>
-            </Card.Header>
-            <Card.Body>
+        <Card style={{
+            padding: "12px",
+            width: '300px',
+            margin: '20px',
+            minWidth: '18rem',
+            maxHeight: '29em',
+            borderTop: "3px solid lightgreen",
+            backgroundColor: '#f7f8fc',
+            flex: "0 0 auto"
+        }}>
+            <Form className='d-flex'>
+                <Card.Title contentEditable="true" style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between"
+                }}>
+                    {name}
+                </Card.Title>
+                <div style={{cursor:'pointer', margin:'auto'}} onClick={() => console.log('clicked') /*need to route it to kanban settings or create its own modal like tasks  */} ><BsThreeDotsVertical/></div>
+            </Form>
+            <Card.Body style={{
+                overflowY: "auto"
+            }}>
                 {tasks}
             </Card.Body>
-            <Card.Footer className='section-footer'>
-                <Form className='d-flex justify-content-center'>
-                    <Card.Link href="#" style={{ color: 'grey' }}><BsPlusCircle style={{ color: "rgba(0,0,0,0.3)" }} size={20} /> Add task</Card.Link>
-                </Form>
+            <Card.Footer style={{
+                backgroundColor: "#f7f8fc",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderTop: "hidden"
+            }}>
+                <Button variant={"secondary"} style={{ backgroundColor: "transparent", border: "transparent" }} onClick={addTask}>
+                    <span style={{ color: "rgba(0,0,0,0.3)", margin: "3px" }}>Add task</span>
+                    <BsPlusCircle style={{ color: "rgba(0,0,0,0.3)" }} size={20} />
+                </Button>
             </Card.Footer>
         </Card>
     );

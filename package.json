@@ -19,6 +19,7 @@
     "react-icons": "^4.3.1",
     "react-pro-sidebar": "^0.7.1",
     "react-scripts": "5.0.0",
+    "redux": "^4.1.2",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "wait-on": "^6.0.1",

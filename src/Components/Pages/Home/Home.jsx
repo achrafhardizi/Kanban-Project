@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sessions, Sidebar } from '..'
+import { Sessions, Sidebar } from '../..'
 import { Row, Col } from 'react-bootstrap'
 
 const Home = () => {
