@@ -2,8 +2,23 @@ import React from 'react';
 import { Button, Card, Form } from "react-bootstrap";
 import { BsPlusCircle, BsThreeDotsVertical } from "react-icons/bs";
 import Task from "../Task/Task";
+import {useState} from 'react'
 
-const Section = ({ name, tasks, addTask }) => {
+let taskid = 3;
+let secid = 1000;
+
+const Section = ({ name }) => {
+
+    const [tasks, setTasks] = useState([<Task tags={'test tag'} name={'test name'} />,
+    <Task tags={'test tag'} name={'test name'} />,
+    <Task tags={'test tag'} name={'test name'} />
+    ])
+
+    let addTask = () => {
+        setTasks(tasks.concat(<Task key={`${taskid++}`} style={{width:'300px'}}/>));
+        console.log(`added task with id=${taskid++}`);
+    }
+
     return (
         <Card style={{
             padding: "12px",
