@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import './taskoptions.css'
-import { ListGroup, Button, Modal, Tabs, Tab } from 'react-bootstrap'
+import { Card, Button, Modal, Tabs, Tab, Form, FloatingLabel } from 'react-bootstrap'
 import { ChromePicker } from 'react-color'
+import { AiOutlineCreditCard, AiOutlineTags, AiOutlineFileText, AiOutlinePlus, AiOutlinePaperClip } from 'react-icons/ai'
 
-const Taskoptions = ({tags=['important', 'another tag', 'etccc'], Name='testing name'}) => {
+const Taskoptions = ({ tags = ['important', 'another tag', 'etccc'], Name = 'testing name' }) => {
 
     const [show, setShow] = useState(true);
 
@@ -12,32 +13,50 @@ const Taskoptions = ({tags=['important', 'another tag', 'etccc'], Name='testing 
     const handleShow = () => setShow(true);
 
     const [color, setColor] = useState('#fff');
+    const changecolor = (updatedColor) => {
+        setColor(updatedColor.rgb);
+        console.log(updatedColor.rgb);
+        document.getElementById('bgpreview').style.backgroundColor = `rgba(${updatedColor.rgb.r}, ${updatedColor.rgb.g}, ${updatedColor.rgb.b}, ${updatedColor.rgb.a})`;
+    }
 
     return (
         (show && <Modal size="lg" centered show={handleShow} onHide={handleClose}>
             <Modal.Body>
                 <Tabs defaultActiveKey="task-info" >
-                    <Tab eventKey="task-info" title="Information" style={{rowGap:'10px'}}>
-                        <label htmlFor="" contentEditable>{Name}</label>
-                        <ListGroup horizontal>
+                    <Tab eventKey="task-info" title="Information" >
+                        <label htmlFor=""><AiOutlineCreditCard size={30}/></label><label className="m-1" htmlFor="" contentEditable> {Name}</label>
+                        <Form className='d-flex' style={{marginTop:'10px'}}>
+                            <label htmlFor=""><AiOutlineTags size={30} /></label>
                             {tags.map(tag => {
-                                return <ListGroup.Item>{tag}</ListGroup.Item>
+                                return <Button className="me-1 btn-sm" variant="primary">{tag}</Button>
                             })}
-                        </ListGroup>
-                        <label htmlFor="desc">Description : </label><br /><textarea name="Add description here" placeholder='Enter a description here.' id="desc" cols="30" rows="10"></textarea> <br />
-                        Attachements
+                            <Button className='btn-sm'> <AiOutlinePlus/> </Button>
+                        </Form>
+
+                        <Form className='d-flex' style={{marginTop:'10px'}}>
+                            <label htmlFor=""><AiOutlineFileText size={30}/></label>
+                            <FloatingLabel controlId="floatingTextarea2" label="Description" >
+
+                                <Form.Control
+                                    as="textarea"
+                                    placeholder="Leave a description here"
+                                    style={{ height: '100px', width: '300px' }}
+                                />
+                            </FloatingLabel>
+                        </Form>
+
+                        <Form style={{marginTop:'10px'}}>
+                            <label htmlFor=""><AiOutlinePaperClip size={30}/>Attachement</label> <br />
+                            <Button className='btn-sm' style={{marginLeft:'30px'}}> <AiOutlinePlus /> </Button>
+                        </Form>
+
                     </Tab>
                     <Tab eventKey="task-appearance" title="Appearance">
-                        Color
-                        Background
-                        Border
-                        <ChromePicker color={color} onChange={updatedColor => setColor(updatedColor.rgb)} />
+                        <ChromePicker className='mt-2' color={color} onChange={changecolor} />
+                        <label className='mt-2' htmlFor="bgpreview">Preview : </label><Card id='bgpreview' style={{marginTop:'10px', width:'100px', height:'100px'}}></Card>
                     </Tab>
-                    <Tab eventKey="task-security" title="Security">
-                        Let's put here the visibility depending on the tag for example, there are tasks only the managers can see etc.. <br />
-                        <Button variant="danger" onClick={" "/*need to make a function to delete task */}>
-                            Remove task
-                        </Button>
+                    <Tab eventKey="task-security" title="Visibility">
+                        We can limit the visibility of tasks depending on the members here
                     </Tab>
                 </Tabs >
             </Modal.Body>
