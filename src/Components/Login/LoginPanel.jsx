@@ -1,23 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {Button, Card, Container, Form} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
-import App from "../../App";
+
 
 const LoginPanel = () => {
 
     const [validated, setValidated] = useState(false);
-    let navigate =  useNavigate();
+    let navigate = useNavigate();
 
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
+        if (form.checkValidity() !== false) {
+            setValidated(true);
+            navigate('/home')
         }
-        setValidated(true);
-        navigate();
-    };
+        event.preventDefault();
+        event.stopPropagation();
+    }
 
     return (
         <Container style={{
@@ -28,7 +28,7 @@ const LoginPanel = () => {
             transform: "translate(-50%, -50%)"
         }}>
 
-            <Form noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form validated={true} onSubmit={handleSubmit}>
                 <Card style={{
                     position: "relative",
                     height: "25em"
@@ -37,15 +37,16 @@ const LoginPanel = () => {
                         <Card.Header>LogIn</Card.Header>
                     </center>
                     <Card.Body>
-                        <Form.Group controlId="validationCustom01">
+                        <Form.Group controlId="validation">
                             <Form.Label>Email Address</Form.Label>
-                            <Form.Control type="email" placeholder="name@example.com" isInvalid={true} spellCheck
+                            <Form.Control type="email" placeholder="name@example.com" spellCheck
                                           required/>
                             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group controlId="validationCustom02">
+                        <Form.Group controlId="validation02">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" aria-describedby="passwordBlock" isInvalid={true} spellCheck
+                            <Form.Control type="password" placeholder="Password"
+                                          spellCheck
                                           required/>
                             <Form.Text id="passwordBlock" muted>
                                 Your password must be 8-20 characters long, contain letters and numbers, and

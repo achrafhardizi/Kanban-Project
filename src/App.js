@@ -1,5 +1,5 @@
 import './App.css';
-    import {Navibar, Section, LoginPanel, Sidebar, Home, Workspace} from './Components'
+import {Navibar, LoginPanel, Home, Workspace} from './Components'
 import 'bootstrap/dist/css/bootstrap.css';
 import Task from "./Components/Tasks/Task";
 import React from "react";
@@ -10,13 +10,13 @@ const App = () => {
     return (
         <section className="App">
             <BrowserRouter>
-                <Navibar/>
                 <Routes>
                     <Route exact path='/' element={<LoginPanel/>}/>
                     <Route exact path='/home' element={<Home/>}/>
                     <Route exact path='/section' element={<Workspace/>}/>
                     <Route path="*" element={
                         <h1>
+                            {/*todo:this component just for testing*/}
                             404 Page Not Found
                         </h1>
                     }/>

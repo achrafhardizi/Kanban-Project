@@ -1,10 +1,12 @@
 import React from 'react';
+import {Navibar} from "../index";
 
 const Home = () => {
     return (
-        <div>
+        <>
+            <Navibar/>
             HOME PAGE
-        </div>
+        </>
     );
 };
 
