@@ -1,11 +1,14 @@
 import React from 'react';
-import {Navibar} from "../index";
+import {Navibar, Sessions, Sidebar} from "../index";
 
 const Home = () => {
     return (
         <>
             <Navibar/>
-            HOME PAGE
+            <Sidebar/>
+            <div style={{marginLeft:"165px",marginTop:"20px"}}>
+                <Sessions/>
+            </div>
         </>
     );
 };

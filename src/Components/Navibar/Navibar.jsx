@@ -1,6 +1,7 @@
 import logo from './logo.jpg'
 import React from 'react' 
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import {Link, NavLink} from "react-router-dom";
 
 const theme = {
     hr: {
@@ -18,13 +19,25 @@ const Navibar = ({logo}) => {
                 backgroundImage: 'linear-gradient(to right, #BFCFF4, #78B1F8)'
             }} variant="dark">
                 <Container fluid>
-                    <Navbar.Brand href="#home">Kanban Board</Navbar.Brand>
+                    <Navbar.Brand>
+                        <Link className='nav-link text-secondary' to='/home'>
+                            Kanban Board
+                        </Link>
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="">Home</Nav.Link>
-                            <Nav.Link href="">Tasks</Nav.Link>
-                            <NavDropdown title="Filters" id="collasible-nav-dropdown">
+                            <Nav.Link>
+                               <Link className='nav-link' to='/home'>
+                                   Home
+                               </Link>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <Link className='nav-link' to='/section'>
+                                    Tasks
+                                </Link>
+                            </Nav.Link>
+                            <NavDropdown className='nav-link' title="Filters" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#tags">Filter by tags</NavDropdown.Item>
                                 <NavDropdown.Item href="#names">Filter by name</NavDropdown.Item>
                                 <NavDropdown.Item href="#date">Filter by date</NavDropdown.Item>

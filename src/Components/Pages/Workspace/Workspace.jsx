@@ -1,5 +1,5 @@
 import React from 'react';
-import {Section} from "../../index";
+import {Navibar, Section} from "../../index";
 import Task from "../../Tasks/Task";
 import styles from './workspace.module.css';
 
@@ -12,14 +12,18 @@ const Workspace = () => {
     ]
 
     return (
-        <div className={styles.layout}>
-            <Section tasks={secs}/>
-            <Section tasks={<Task/>}/>
-            <Section/>
-            <Section/>
-            <Section/>
-            <Section/>
-        </div>
+        <>
+            <Navibar/>
+            <div className={styles.layout}>
+                <Section tasks={secs}/>
+                <Section tasks={<Task/>}/>
+                <Section/>
+                <Section/>
+                <Section/>
+                <Section/>
+            </div>
+        </>
+
     );
 };
 
