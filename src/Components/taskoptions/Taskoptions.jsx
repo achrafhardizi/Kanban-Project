@@ -5,12 +5,7 @@ import { Card, Button, Modal, Tabs, Tab, Form, FloatingLabel } from 'react-boots
 import { ChromePicker } from 'react-color'
 import { AiOutlineCreditCard, AiOutlineTags, AiOutlineFileText, AiOutlinePlus, AiOutlinePaperClip } from 'react-icons/ai'
 
-const Taskoptions = ({ tags = ['important', 'another tag', 'etccc'], Name = 'testing name' }) => {
-
-    const [show, setShow] = useState(true);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+const Taskoptions = ({ tags = ['important', 'another tag', 'etccc'], Name = 'testing name', handleShow, handleClose }) => {
 
     const [color, setColor] = useState('#fff');
     const changecolor = (updatedColor) => {
@@ -20,7 +15,7 @@ const Taskoptions = ({ tags = ['important', 'another tag', 'etccc'], Name = 'tes
     }
 
     return (
-        (show && <Modal size="lg" centered show={handleShow} onHide={handleClose}>
+        (<Modal size="lg" centered show={handleShow} onHide={handleClose}>
             <Modal.Body>
                 <Tabs defaultActiveKey="task-info" >
                     <Tab eventKey="task-info" title="Information" >
