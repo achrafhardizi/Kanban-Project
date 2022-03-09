@@ -19,19 +19,18 @@ const Taskoptions = ({ tags = ['important', 'another tag', 'etccc'], Name = 'tes
             <Modal.Body>
                 <Tabs defaultActiveKey="task-info" >
                     <Tab eventKey="task-info" title="Information" >
-                        <label htmlFor=""><AiOutlineCreditCard size={30}/></label><label className="m-1" htmlFor="" contentEditable> {Name}</label>
-                        <Form className='d-flex' style={{marginTop:'10px'}}>
+                        <label htmlFor=""><AiOutlineCreditCard size={30} /></label><label className="m-1" htmlFor="" contentEditable> {Name}</label>
+                        <Form className='d-flex' style={{ marginTop: '10px' }}>
                             <label htmlFor=""><AiOutlineTags size={30} /></label>
                             {tags.map(tag => {
                                 return <Button className="me-1 btn-sm" variant="primary">{tag}</Button>
                             })}
-                            <Button className='btn-sm'> <AiOutlinePlus/> </Button>
+                            <Button className='btn-sm'> <AiOutlinePlus /> </Button>
                         </Form>
 
-                        <Form className='d-flex' style={{marginTop:'10px'}}>
-                            <label htmlFor=""><AiOutlineFileText size={30}/></label>
+                        <Form className='d-flex' style={{ marginTop: '10px' }}>
+                            <label htmlFor=""><AiOutlineFileText size={30} /></label>
                             <FloatingLabel controlId="floatingTextarea2" label="Description" >
-
                                 <Form.Control
                                     as="textarea"
                                     placeholder="Leave a description here"
@@ -40,15 +39,16 @@ const Taskoptions = ({ tags = ['important', 'another tag', 'etccc'], Name = 'tes
                             </FloatingLabel>
                         </Form>
 
-                        <Form style={{marginTop:'10px'}}>
-                            <label htmlFor=""><AiOutlinePaperClip size={30}/>Attachement</label> <br />
-                            <Button className='btn-sm' style={{marginLeft:'30px'}}> <AiOutlinePlus /> </Button>
+                        <Form style={{ marginTop: '10px' }}>
+                            <label htmlFor=""><AiOutlinePaperClip size={30} />Attachement</label> <br />
+                            <input type="file" name='' style={{marginLeft:'25px'}}/>
+                            {/* {<Button className='btn-sm' style={{ marginLeft: '30px' }}> <AiOutlinePlus /> </Button>} */}
                         </Form>
 
                     </Tab>
                     <Tab eventKey="task-appearance" title="Appearance">
                         <ChromePicker className='mt-2' color={color} onChange={changecolor} />
-                        <label className='mt-2' htmlFor="bgpreview">Preview : </label><Card id='bgpreview' style={{marginTop:'10px', width:'100px', height:'100px'}}></Card>
+                        <label className='mt-2' htmlFor="bgpreview">Preview : </label><Card id='bgpreview' style={{ marginTop: '10px', width: '100px', height: '100px' }}></Card>
                     </Tab>
                     <Tab eventKey="task-security" title="Visibility">
                         We can limit the visibility of tasks depending on the members here
