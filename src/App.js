@@ -1,5 +1,5 @@
 import './App.css';
-import {LoginPanel, Sessions, Navibar, Sidebar, Settings, Notification} from './Components';
+import {LoginPanel, Sessions, Navibar, Sidebar, Settings, Notification, Photo} from './Components';
 import Appearance from "./Components/Settings/Appearance";
 import {useState} from "react";
 
@@ -55,7 +55,7 @@ function App() {
         }}>
             <Navibar />
             <Sidebar />
-            <div className="content"><Appearance bg={e => setBgcolor(e)}/></div>
+            <div className="content"><Appearance bg={bg => setBgcolor(bg)}/></div>
         </div>
     );
 }
