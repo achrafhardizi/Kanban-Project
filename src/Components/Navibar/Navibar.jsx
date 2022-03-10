@@ -12,11 +12,12 @@ const theme = {
     }
 };
 
-const Navibar = ({logo}) => {
+const Navibar = ({logo,color}) => {
     return (
-        <div className='Navbar'>
+        <div className='Navbar' style={{backgroundColor:'black'}}>
             <Navbar expand="lg" style={{
-                backgroundImage: 'linear-gradient(to right, #BFCFF4, #78B1F8)'
+                backgroundColor: color,
+                filter : 'brightness(85%)'
             }} variant="dark">
                 <Container fluid>
                     <Navbar.Brand>

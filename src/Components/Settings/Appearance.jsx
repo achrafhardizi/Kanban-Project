@@ -11,8 +11,9 @@ const Appearance = (props) => {
     return (
         <>
             <Card style={{
+
                 padding: "30px",
-                height: "86.5vh",
+                maxHeight: "86.5vh",
                 overflow: "auto"
             }}>
                 <Card>

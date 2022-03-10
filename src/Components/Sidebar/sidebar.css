@@ -1,7 +1,9 @@
 #sidebar {
+    /*background-color:red;*/
     position: absolute;
     width: 180px;
 }
+
 
 #sidebar .pro-sidebar {
     height: 89vh;

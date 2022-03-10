@@ -21,7 +21,7 @@ import "./sidebar.css";
 import {Link} from "react-router-dom";
 
 
-const Sidebar = () => {
+const Sidebar = (color) => {
 
     //create initial menuCollapse state using useState hook
     const [menuCollapse, setMenuCollapse] = useState(false)
@@ -33,7 +33,7 @@ const Sidebar = () => {
     };
 
     return (
-            <div id="sidebar">
+            <div id="sidebar" style={{backgroundColor:color}}>
                 {/* collapsed props to change menu size using menucollapse state */}
                 <ProSidebar collapsed={menuCollapse} className="d-flex">
                     <SidebarContent>

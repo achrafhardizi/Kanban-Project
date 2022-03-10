@@ -2,17 +2,20 @@ import './App.css';
 import {Navibar, LoginPanel, Home, Workspace} from './Components'
 import 'bootstrap/dist/css/bootstrap.css';
 import Task from "./Components/Tasks/Task";
-import React from "react";
+import React, {useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 const App = () => {
 
+    const [color, setColor] = useState('');
+
+
     return (
-        <section className="App">
+        <section className="App" style={{backgroundColor:color}}>
             <BrowserRouter>
                 <Routes>
                     <Route exact path='/' element={<LoginPanel/>}/>
-                    <Route exact path='/home' element={<Home/>}/>
+                    <Route exact path='/home' element={<Home setColor={setColor} color={color}/>}/>
                     <Route exact path='/section' element={<Workspace/>}/>
                     <Route path="*" element={
                         <h1>
