@@ -8,7 +8,7 @@ import {
     MenuItem,
     SidebarHeader,
     SidebarFooter,
-    SidebarContent,
+    SidebarContent, SubMenu,
 } from "react-pro-sidebar";
 
 //import icons from react icons
@@ -43,13 +43,24 @@ const Sidebar = () => {
                                     Sessions
                                 </Link>
                             </MenuItem>
-                            <MenuItem>
-                                <Link to='#'
-                                //todo:wut to do with this link
-                                >
-                                    Settings
-                                </Link>
-                            </MenuItem>
+                            <SubMenu title='Settings' >
+                                <MenuItem >
+                                    <Link className='nav-link' to='#'>
+                                        Appearance
+                                    </Link>
+                                </MenuItem>
+                                <MenuItem >
+                                    <Link className='nav-link' to='#'>
+                                        Notification
+
+                                    </Link>
+                                </MenuItem>
+                                <MenuItem >
+                                    <Link className='nav-link' to='#'>
+                                        Background
+                                    </Link>
+                                </MenuItem>
+                            </SubMenu>
                         </Menu>
                     </SidebarContent>
                     <SidebarFooter>
