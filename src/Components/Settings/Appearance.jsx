@@ -8,6 +8,7 @@ const Appearance = (props) => {
     const [colorsutilise, setColorsutilise] = useState([]);
     const [colors, setColors] = useState(["#0079BF", "#DDAF6F", "#89609E", "#C57B6E", "#AA8DB9", "#CD5A91", "#4BBF6B", "#4AC3D9", "#838C91"]);
 
+
     return (
         <>
             <Card style={{
@@ -28,7 +29,7 @@ const Appearance = (props) => {
                         <Row xs={"auto"}>
                         {colorsutilise.map((cu, i) => (
                                 <Col>
-                                    <Card className={"ccard"} style={{backgroundColor: cu, padding: "60px", border: "3px solid lightgrey"}} onClick={() => {setColor(colors[i]);}}/>
+                                    <Card className={"ccard"} style={{backgroundColor: cu, padding: "60px", border: "3px solid lightgrey"}} onClick={() => {setColor(cu);}}/>
                                 </Col>
                             ))}
                         </Row>
@@ -42,7 +43,7 @@ const Appearance = (props) => {
                             ))}
 
                         </Row>
-                        <Button variant={"success"}  onClick={() => {props.bg(color);setColorsutilise([...colorsutilise, color])}}>Save</Button>
+                        <Button variant={"success"}  onClick={() => {props.bg(color); if(!colorsutilise.includes(color)) setColorsutilise([...colorsutilise, color])}}>Save</Button>
                     </Card.Body>
                    </Form>
                 </Card>

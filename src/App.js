@@ -55,7 +55,7 @@ function App() {
         }}>
             <Navibar />
             <Sidebar />
-            <div className="content"><Appearance bg={bg => setBgcolor(bg)}/></div>
+            <div className="content"><Photo/></div>
         </div>
     );
 }

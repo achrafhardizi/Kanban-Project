@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Card} from "react-bootstrap";
 import UnsplashReact, { Base64Uploader, withDefaultProps } from "unsplash-react";
-
+import axios from "axios";
 
 const Photo = () => {
+
     return (
         <>
             <Card style={{
@@ -13,7 +14,8 @@ const Photo = () => {
             }}>
                 <Card>
                     <Card.Header>photos</Card.Header>
-                    <Card.Body><UnsplashReact accessKey={"UNSPLASH_KEY_FROM_UNSPLASH"} Uploader={withDefaultProps(Base64Uploader, { name: "event[logo]" })}/></Card.Body>
+                    <Card.Body><UnsplashReact accessKey={"WxYS4ZB8AICntbHlPdQ5EYSwJ8aNFF2sSdds-l3G1ZU"} defaultSearch={"nature"} applicationName={"unsplash_react"}/></Card.Body>
+
                 </Card>
             </Card>
         </>
