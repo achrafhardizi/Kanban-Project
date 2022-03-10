@@ -1,7 +1,7 @@
 import logo from './logo.jpg'
 import React from 'react' 
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const theme = {
     hr: {
