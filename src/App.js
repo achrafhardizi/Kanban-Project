@@ -15,11 +15,11 @@ const App = () => {
             <BrowserRouter>
                 <Routes>
                     <Route exact path='/' element={<LoginPanel/>}/>
-                    <Route exact path='home' element={<Home setColor={setColor} color={color}/>}>
-                        <Route exact path='sessions' element={<Sessions/>}/>
-                        <Route  path='appearance' element={<Appearance/>}/>
-                        <Route  path='notifications' element={<Notification/>}/>
-                        <Route  path='Background' element={<Photo/>}/>
+                    <Route path='home' element={<Home setColor={setColor} color={color}/>}>
+                        <Route path='sessions' element={<Sessions/>}/>
+                        <Route  path='settings/appearance' element={<Appearance/>}/>
+                        <Route  path='settings/notifications' element={<Notification/>}/>
+                        <Route  path='settings/Background' element={<Photo/>}/>
                     </Route>
                     <Route exact path='section' element={<Workspace/>}/>
                     <Route path="*" element={

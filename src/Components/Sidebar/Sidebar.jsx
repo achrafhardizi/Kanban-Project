@@ -45,18 +45,18 @@ const Sidebar = (color) => {
                         </MenuItem>
                         <SubMenu title='Settings'>
                             <MenuItem>
-                                <Link className='nav-link' to='/home/appearance'>
+                                <Link className='nav-link' to='/home/settings/appearance'>
                                     Appearance
                                 </Link>
                             </MenuItem>
                             <MenuItem>
-                                <Link className='nav-link' to='/home/notifications'>
+                                <Link className='nav-link' to='/home/settings/notifications'>
                                     Notification
 
                                 </Link>
                             </MenuItem>
                             <MenuItem>
-                                <Link className='nav-link' to='/home/background'>
+                                <Link className='nav-link' to='/home/settings/background'>
                                     Background
                                 </Link>
                             </MenuItem>
