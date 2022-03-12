@@ -33,47 +33,47 @@ const Sidebar = (color) => {
     };
 
     return (
-            <div id="sidebar" style={{backgroundColor:color}}>
-                {/* collapsed props to change menu size using menucollapse state */}
-                <ProSidebar collapsed={menuCollapse} className="d-flex">
-                    <SidebarContent>
-                        <Menu iconShape="square">
+        <div id="sidebar" style={{backgroundColor: color}}>
+            {/* collapsed props to change menu size using menucollapse state */}
+            <ProSidebar collapsed={menuCollapse} className="d-flex">
+                <SidebarContent>
+                    <Menu iconShape="square">
+                        <MenuItem>
+                            <Link to='/home/sessions'>
+                                Sessions
+                            </Link>
+                        </MenuItem>
+                        <SubMenu title='Settings'>
                             <MenuItem>
-                                <Link to='/home'>
-                                    Sessions
+                                <Link className='nav-link' to='/home/appearance'>
+                                    Appearance
                                 </Link>
                             </MenuItem>
-                            <SubMenu title='Settings' >
-                                <MenuItem >
-                                    <Link className='nav-link' to='#'>
-                                        Appearance
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem >
-                                    <Link className='nav-link' to='#'>
-                                        Notification
+                            <MenuItem>
+                                <Link className='nav-link' to='/home/notifications'>
+                                    Notification
 
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem >
-                                    <Link className='nav-link' to='#'>
-                                        Background
-                                    </Link>
-                                </MenuItem>
-                            </SubMenu>
-                        </Menu>
-                    </SidebarContent>
-                    <SidebarFooter>
-                        <Menu iconShape="square">
-                            <MenuItem icon={<FiLogOut/>}
-                            // todo:the logout option still have no idea wut to do it
-                            >
-                                Logout
+                                </Link>
                             </MenuItem>
-                        </Menu>
-                    </SidebarFooter>
-                </ProSidebar>
-            </div>
+                            <MenuItem>
+                                <Link className='nav-link' to='/home/background'>
+                                    Background
+                                </Link>
+                            </MenuItem>
+                        </SubMenu>
+                    </Menu>
+                </SidebarContent>
+                <SidebarFooter>
+                    <Menu iconShape="square">
+                        <MenuItem icon={<FiLogOut/>}
+                            // todo:the logout option still have no idea wut to do it
+                        >
+                            Logout
+                        </MenuItem>
+                    </Menu>
+                </SidebarFooter>
+            </ProSidebar>
+        </div>
     );
 };
 

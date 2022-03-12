@@ -12,11 +12,13 @@
     "electron": "^17.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.2",
+    "react-color": "^2.19.3",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-pro-sidebar": "^0.7.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "unsplash-react": "^0.2.1",
     "wait-on": "^6.0.1",
     "web-vitals": "^2.1.4"
   },
