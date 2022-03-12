@@ -52,7 +52,6 @@ const Sidebar = (color) => {
                             <MenuItem>
                                 <Link className='nav-link' to='/home/settings/notifications'>
                                     Notification
-
                                 </Link>
                             </MenuItem>
                             <MenuItem>

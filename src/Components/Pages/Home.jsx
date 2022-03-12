@@ -1,6 +1,6 @@
 import React from 'react';
 import {Navibar, Sidebar} from "../index";
-
+import {Outlet} from 'react-router-dom'
 
 const Home = ({setColor,color}) => {
 
@@ -10,6 +10,7 @@ const Home = ({setColor,color}) => {
         <>
             <Navibar bg={color}/>
             <Sidebar/>
+            <Outlet />
         </>
     );
 };

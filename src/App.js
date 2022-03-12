@@ -17,9 +17,9 @@ const App = () => {
                     <Route exact path='/' element={<LoginPanel/>}/>
                     <Route path='home' element={<Home setColor={setColor} color={color}/>}>
                         <Route path='sessions' element={<Sessions/>}/>
-                        <Route  path='settings/appearance' element={<Appearance/>}/>
-                        <Route  path='settings/notifications' element={<Notification/>}/>
-                        <Route  path='settings/Background' element={<Photo/>}/>
+                        <Route path='settings/appearance' element={<Appearance/>}/>
+                        <Route path='settings/notifications' element={<Notification/>}/>
+                        <Route path='settings/Background' element={<Photo/>}/>
                     </Route>
                     <Route exact path='section' element={<Workspace/>}/>
                     <Route path="*" element={
