@@ -6,64 +6,64 @@ const Notification = () => {
     return (
         <>
             <Card style={{
-                margin:'20px 20px 210px 210px'
+                margin: '20px 20px 210px 210px'
             }}>
                 <Card.Body>
                     <Form>
-                    <section className="content-area">
-                        <div className="table-area">
-                            <table className="responsive-table table">
-                                <thead>
-                                <tr>
-                                    <th>Notification settings</th>
-                                    <th>OFF/ON</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td> Shi7aja notification</td>
-                                    <td><Form.Check
-                                        style={{paddingTop: "5px"}}
-                                        type="switch"
-                                        id="custom-switch"
-                                    /></td>
-                                </tr>
-                                <tr>
-                                    <td> Shi7aja notification</td>
-                                    <td><Form.Check
-                                        style={{paddingTop: "5px"}}
-                                        type="switch"
-                                        id="custom-switch"
-                                    /></td>
-                                </tr>
-                                <tr>
-                                    <td> Shi7aja notification</td>
-                                    <td><Form.Check
-                                        style={{paddingTop: "5px"}}
-                                        type="switch"
-                                        id="custom-switch"
-                                    /></td>
-                                </tr>
-                                <tr>
-                                    <td> Shi7aja notification</td>
-                                    <td><Form.Check
-                                        style={{paddingTop: "5px"}}
-                                        type="switch"
-                                        id="custom-switch"
-                                    /></td>
-                                </tr>
-                                <tr>
-                                    <td> Shi7aja notification</td>
-                                    <td><Form.Check
-                                        style={{paddingTop: "5px"}}
-                                        type="switch"
-                                        id="custom-switch"
-                                    /></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
+                        <section className="content-area">
+                            <div className="table-area">
+                                <table className="responsive-table table">
+                                    <thead>
+                                    <tr>
+                                        <th>Notification settings</th>
+                                        <th>OFF/ON</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>notification 1</td>
+                                        <td><Form.Check
+                                            style={{paddingTop: "5px"}}
+                                            type="switch"
+                                            id="custom-switch"
+                                        /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>notification 2</td>
+                                        <td><Form.Check
+                                            style={{paddingTop: "5px"}}
+                                            type="switch"
+                                            id="custom-switch"
+                                        /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>notification 3</td>
+                                        <td><Form.Check
+                                            style={{paddingTop: "5px"}}
+                                            type="switch"
+                                            id="custom-switch"
+                                        /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>notification 4</td>
+                                        <td><Form.Check
+                                            style={{paddingTop: "5px"}}
+                                            type="switch"
+                                            id="custom-switch"
+                                        /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>notification 5</td>
+                                        <td><Form.Check
+                                            style={{paddingTop: "5px"}}
+                                            type="switch"
+                                            id="custom-switch"
+                                        /></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
                     </Form>
                     {/*<Container style={{
                         border: "2px solid black",
