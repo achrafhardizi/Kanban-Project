@@ -1,7 +1,9 @@
 #sidebar {
+    /*background-color:red;*/
     position: absolute;
     width: 180px;
 }
+
 
 #sidebar .pro-sidebar {
     height: 89vh;
@@ -32,6 +34,7 @@
 
 #sidebar .pro-sidebar-inner {
     background-color: rgb(255, 255, 255);
+
     box-shadow: 0.5px 0.866px 2px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -47,10 +50,12 @@
 }
 
 #sidebar .pro-sidebar-inner .pro-sidebar-layout ul {
+    background-color: white;
     padding: 0 5px;
 }
 
 #sidebar .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
+
     color: #000;
     margin: 10px 0px;
     font-weight: bold;

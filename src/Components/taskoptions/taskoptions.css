@@ -1,0 +1,54 @@
+.toptions {
+    margin: 10px;
+    gap: 10px;
+}
+
+.toptions>.btnname {
+    background-color: rgba(95, 95, 95, 0.459);
+    border-radius: 5px !important;
+}
+
+.toptions>.btnname:hover {
+    background-color: rgba(95, 95, 95, 0.897);
+    border-radius: 5px !important;
+}
+
+.toptions>.btntags {
+    background-color: rgba(95, 95, 95, 0.459);
+    border-radius: 5px !important;
+}
+
+.toptions>.btntags:hover {
+    background-color: rgba(95, 95, 95, 0.897);
+    border-radius: 5px !important;
+}
+
+.toptions>.btndates {
+    background-color: rgba(95, 95, 95, 0.459);
+    border-radius: 5px !important;
+}
+
+.toptions>.btndates:hover {
+    background-color: rgba(95, 95, 95, 0.897);
+    border-radius: 5px !important;
+}
+
+.toptions>.btncolor {
+    background-color: rgba(95, 95, 95, 0.459);
+    border-radius:  5px !important;
+}
+
+.toptions>.btncolor:hover {
+    background-color: rgba(95, 95, 95, 0.897);
+    border-radius: 5px !important;
+}
+
+.toptions>.btnremove {
+    background-color: rgba(95, 95, 95, 0.459);
+    border-radius: 5px !important;
+}
+
+.toptions>.btnremove:hover {
+    background-color: rgba(95, 95, 95, 0.897);
+    border-radius: 5px !important;
+}

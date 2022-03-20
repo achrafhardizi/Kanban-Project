@@ -1,20 +1,44 @@
 import logo from './logo.jpg'
 import React from 'react' 
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
-import PropTypes from 'prop-types'
+import {Link} from "react-router-dom";
 
-const Navibar = ({logo}) => {
+const theme = {
+    hr: {
+        backgroundColor: 'grey',
+        height: 1,
+        width: '85%',
+        margin: '0 0 0 12px'
+    }
+};
+
+const Navibar = ({logo,color}) => {
     return (
-        <div className='Navbar'>
-            <Navbar expand="lg" bg="dark" variant="dark">
+        <div className='Navbar' style={{backgroundColor:'black'}}>
+            <Navbar expand="lg" style={{
+                backgroundColor: color,
+                filter : 'brightness(85%)'
+            }} variant="dark">
                 <Container fluid>
-                    <Navbar.Brand href="#home">Kanban Board</Navbar.Brand>
+                    <Navbar.Brand>
+                        <Link className='nav-link text-secondary' to='/home'>
+                            Kanban Board
+                        </Link>
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="">Home</Nav.Link>
-                            <Nav.Link href="">Tasks</Nav.Link>
-                            <NavDropdown title="Filters" id="collasible-nav-dropdown">
+                            <Nav.Link>
+                               <Link className='nav-link' to='/home'>
+                                   Home
+                               </Link>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <Link className='nav-link' to='/section'>
+                                    Tasks
+                                </Link>
+                            </Nav.Link>
+                            <NavDropdown className='nav-link' title="Filters" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#tags">Filter by tags</NavDropdown.Item>
                                 <NavDropdown.Item href="#names">Filter by name</NavDropdown.Item>
                                 <NavDropdown.Item href="#date">Filter by date</NavDropdown.Item>
@@ -22,7 +46,23 @@ const Navibar = ({logo}) => {
                         </Nav>
                         <Nav>
                             <Nav.Link href="">
-                                <img className='rounded-circle' src={logo} alt="" style={{width:'40px'}} />
+                                <NavDropdown title={
+                                    <img className='rounded-circle' src={logo} alt="" style={{width:'40px'}} />
+                                } id="collasible-nav-dropdown" drop="start">
+                                    <NavDropdown.Item disabled style={{color:"grey"}}>Username</NavDropdown.Item>
+                                    <NavDropdown.Item disabled style={{fontSize:"13px",marginTop:"-5px"}}>Email</NavDropdown.Item>
+                                    <hr
+                                        style={theme.hr}
+                                    />
+                                    <NavDropdown.Item href="#profile">Profile</NavDropdown.Item>
+                                    <NavDropdown.Item href="#activity">Activity</NavDropdown.Item>
+                                    <NavDropdown.Item href="#settings">Settings</NavDropdown.Item>
+
+                                    <hr
+                                        style={theme.hr}
+                                    />
+                                    <NavDropdown.Item href="#LogOut">Log out</NavDropdown.Item>
+                                </NavDropdown>
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

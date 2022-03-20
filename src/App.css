@@ -1,0 +1,21 @@
+::-webkit-scrollbar {
+    color: red;
+    height: 18px;
+    width: 15px;
+    /*todo:choose some colors*/
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(213, 194, 161, 0.3);
+    margin-inline: 1em;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 2px solid rgba(213, 194, 161, 0.3);
+}
+
+.App {
+    height: 100vh;
+}
