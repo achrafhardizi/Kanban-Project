@@ -36,13 +36,16 @@ const Workspace = () => {
             className={styles.page}
         >
             <Sidebar/>
-            <div className={styles.layout}>
-                <Section tasks={secs}/>
-                <Section tasks={<Task/>}/>
-                <Section/>
-                <Section/>
-                <Section/>
-                <Section/>
+            <div className={styles.body}>
+
+                {/*<div className={styles.layout}>*/}
+                {/*    <Section tasks={secs}/>*/}
+                {/*    <Section tasks={<Task/>}/>*/}
+                {/*    <Section/>*/}
+                {/*    <Section/>*/}
+                {/*    <Section/>*/}
+                {/*    <Section/>*/}
+                {/*</div>*/}
             </div>
         </div>
 

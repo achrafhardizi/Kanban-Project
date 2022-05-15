@@ -2,7 +2,6 @@
     display: flex;
 }
 
-
 .layout{
     padding: 24px;
     display:flex;
@@ -13,7 +12,7 @@
 
 .layout::-webkit-scrollbar {
     color: red;
-    height: 18px;
+    height: 10px;
     width: 15px;
     /*todo:choose some colors*/
 }
@@ -27,4 +26,8 @@
 .layout::-webkit-scrollbar-thumb {
     border-radius: 20px;
     border: 2px solid rgba(213, 194, 161, 0.3);
+}
+
+.body{
+    display: flex;
 }
