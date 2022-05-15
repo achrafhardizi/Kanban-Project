@@ -1,16 +1,21 @@
 import React from 'react';
-import {Navibar, Sidebar} from "../index";
+import {Sidebar} from "../../index";
 import {Outlet} from 'react-router-dom'
+import styles from "./Home.module.css"
 
-const Home = ({setColor,color}) => {
+
+const Home = () => {
 
 
 
     return (
         <>
-            <Navibar bg={color}/>
-            <Sidebar/>
-            <Outlet />
+            <div
+                className={styles.page}
+            >
+                <Sidebar/>
+                <Outlet/>
+            </div>
         </>
     );
 };

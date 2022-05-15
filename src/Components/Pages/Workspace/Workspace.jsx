@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Navibar, Section} from "../../index";
+import {Section, Sidebar} from "../../index";
 import Task from "../../Tasks/Task";
 import styles from './workspace.module.css';
 
@@ -32,8 +32,10 @@ const Workspace = () => {
     ]
 
     return (
-        <>
-            <Navibar/>
+        <div
+            className={styles.page}
+        >
+            <Sidebar/>
             <div className={styles.layout}>
                 <Section tasks={secs}/>
                 <Section tasks={<Task/>}/>
@@ -42,7 +44,7 @@ const Workspace = () => {
                 <Section/>
                 <Section/>
             </div>
-        </>
+        </div>
 
     );
 };

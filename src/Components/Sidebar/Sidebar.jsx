@@ -1,78 +1,76 @@
 //import useState hook to create menu collapse state
 import React, {useState} from "react";
 
-//import react pro sidebar components
-import {
-    ProSidebar,
-    Menu,
-    MenuItem,
-    SidebarHeader,
-    SidebarFooter,
-    SidebarContent, SubMenu,
-} from "react-pro-sidebar";
+import homeIcon from "../../Assets/home.png"
+import settingsIcon from "../../Assets/settings.png"
+import appearanceIcon from "../../Assets/appearance.png"
+import sessionIcon from "../../Assets/session.png"
+import workspaceIcon from "../../Assets/workspace.png"
+import notificationIcon from "../../Assets/notification.png"
+import backgroundIcon from "../../Assets/background.png"
 
-//import icons from react icons
-import {FiLogOut} from "react-icons/fi";
-
-
-//import sidebar css from react-pro-sidebar module and our custom css 
-import "react-pro-sidebar/dist/css/styles.css";
-import "./sidebar.css";
+import styles from "./Sidebar.module.css";
 import {Link} from "react-router-dom";
+import classNames from "classnames";
 
 
 const Sidebar = (color) => {
+    const [dropped, setDropped] = useState(false);
 
-    //create initial menuCollapse state using useState hook
-    const [menuCollapse, setMenuCollapse] = useState(false)
-
-    //create a custom function that will change menucollapse state from false to true and true to false
-    const menuIconClick = () => {
-        //condition checking to change state from true to false and vice versa
-        setMenuCollapse(!menuCollapse);
-    };
+    const submenuClickHandler = () =>{
+        setDropped(!dropped);
+    }
 
     return (
-        <div id="sidebar" style={{backgroundColor: color}}>
-            {/* collapsed props to change menu size using menucollapse state */}
-            <ProSidebar collapsed={menuCollapse} className="d-flex">
-                <SidebarContent>
-                    <Menu iconShape="square">
-                        <MenuItem>
-                            <Link to='/home/sessions'>
-                                Sessions
-                            </Link>
-                        </MenuItem>
-                        <SubMenu title='Settings'>
-                            <MenuItem>
-                                <Link className='nav-link' to='/home/settings/appearance'>
-                                    Appearance
-                                </Link>
-                            </MenuItem>
-                            <MenuItem>
-                                <Link className='nav-link' to='/home/settings/notifications'>
-                                    Notification
-                                </Link>
-                            </MenuItem>
-                            <MenuItem>
-                                <Link className='nav-link' to='/home/settings/background'>
-                                    Background
-                                </Link>
-                            </MenuItem>
-                        </SubMenu>
-                    </Menu>
-                </SidebarContent>
-                <SidebarFooter>
-                    <Menu iconShape="square">
-                        <MenuItem icon={<FiLogOut/>}
-                            // todo:the logout option still have no idea wut to do it
-                        >
-                            Logout
-                        </MenuItem>
-                    </Menu>
-                </SidebarFooter>
-            </ProSidebar>
-        </div>
+        <nav className={styles.sidebar}>
+            <div className={styles.row}>
+                <Link to='/home'>
+                    <img src={homeIcon} className={classNames(styles["row__icon"])}/>
+                    <span>Home</span>
+                </Link>
+            </div>
+            <div className={styles.row}>
+                <Link to='/workspace'>
+                    <img src={workspaceIcon} className={classNames(styles["row__icon"])}/>
+                    <span>Workspace</span>
+                </Link>
+            </div>
+            <div className={styles.row}>
+                <Link to='/home/sessions'>
+                    <img src={sessionIcon} className={classNames(styles["row__icon"])}/>
+                    <span>Sessions</span>
+                </Link>
+            </div>
+            <div className={styles.row} onClick={submenuClickHandler}>
+                <Link to='#'>
+                    <img src={settingsIcon} className={classNames(styles["row__icon"], styles["settings"])}/>
+                    <span>Settings</span>
+                </Link>
+                <ul className={classNames(styles["submenu"],{[styles["show"]]:dropped})}>
+                    <li className={styles.row}>
+                        <Link to='/home/settings/appearance'>
+                            <img src={appearanceIcon}
+                                 className={classNames(styles["row__icon"], styles["appearance"])}/>
+                            <span>Appearance</span>
+                        </Link>
+                    </li>
+                    <li className={styles.row}>
+                        <Link to='/home/settings/notifications'>
+                            <img src={notificationIcon}
+                                 className={classNames(styles["row__icon"], styles["appearance"])}/>
+                            <span>Notifications</span>
+                        </Link>
+                    </li>
+                    <li className={styles.row}>
+                        <Link to='/home/settings/background'>
+                            <img src={backgroundIcon}
+                                 className={classNames(styles["row__icon"], styles["background"])}/>
+                            <span>Background</span>
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     );
 };
 
