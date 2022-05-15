@@ -1,13 +1,20 @@
-.content{
-    margin-right: 10px;
-    margin-left: 210px;
-    margin-top: 20px;
-    /*box-shadow: 0 0 5px 1px lightblue;*/
-    border-radius: 4px;
-    /*box-shadow: 1px 1px 2px 2px lightgrey;*/
-/*    border: 1px solid black;*/
+::-webkit-scrollbar{
+    color:red;
+    height: 18px;
+    width: 15px;
+    /*todo:choose some colors*/
 }
-/*
-body{
-    background-color: aquamarine !important;
-}*/
+::-webkit-scrollbar-track{
+    background-color: rgba(213,194,161,0.3);
+    margin-inline: 1em;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    border: 2px solid rgba(213,194,161,0.3);
+}
+
+.App{
+
+}

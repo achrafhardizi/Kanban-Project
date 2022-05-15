@@ -50,7 +50,9 @@ const Sessions = () => {
 
     return (
         <React.Fragment>
-            <Card style={{padding: "0",
+            <Card style={{
+                margin:'20px 20px 210px 210px',
+                padding: "0",
                 display: "flex",
                 flexDirection: "row",
                 height: "80vh",

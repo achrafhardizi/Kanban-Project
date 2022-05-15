@@ -5,7 +5,9 @@ import './Notification.css';
 const Notification = () => {
     return (
         <>
-            <Card>
+            <Card style={{
+                margin:'20px 20px 210px 210px'
+            }}>
                 <Card.Body>
                     <Form>
                     <section className="content-area">

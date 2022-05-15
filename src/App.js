@@ -1,62 +1,36 @@
 import './App.css';
-import {LoginPanel, Sessions, Navibar, Sidebar, Settings, Notification, Photo} from './Components';
-import Appearance from "./Components/Settings/Appearance";
-import {useState} from "react";
+import {Navibar, LoginPanel, Home, Workspace, Sessions, Appearance, Notification, Photo} from './Components'
+import 'bootstrap/dist/css/bootstrap.css';
+import Task from "./Components/Tasks/Task";
+import React, {useState} from "react";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
-function App() {
-    const [bgcolor, setBgcolor] = useState();
+const App = () => {
 
-    const Lightdark = (color) => {
+    const [color, setColor] = useState('');
 
-        // Variables for red, green, blue values
-        let r, g, b, hsp;
 
-        // Check the format of the color, HEX or RGB?
-        if (color.match(/^rgb/)) {
-
-            // If RGB --> store the red, green, blue values in separate variables
-            color = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/);
-
-            r = color[1];
-            g = color[2];
-            b = color[3];
-        }
-        else {
-
-            // If hex --> Convert it to RGB: http://gist.github.com/983661
-            color = +("0x" + color.slice(1).replace(
-                color.length < 5 && /./g, '$&$&'));
-
-            r = color >> 16;
-            g = color >> 8 & 255;
-            b = color & 255;
-        }
-
-        // HSP (Highly Sensitive Poo) equation from http://alienryderflex.com/hsp.html
-        hsp = Math.sqrt(
-            0.299 * (r * r) +
-            0.587 * (g * g) +
-            0.114 * (b * b)
-        );
-
-        // Using the HSP value, determine whether the color is light or dark
-        if (hsp>127.5) {
-            return 'light';
-        }
-        else {
-
-            return 'dark';
-        }
-    }
     return (
-        <div className="App" style={{
-            backgroundColor: bgcolor,
-            opacity: "100%"
-        }}>
-            <Navibar />
-            <Sidebar />
-            <div className="content"><Photo/></div>
-        </div>
+        <section className="App" style={{backgroundColor: color}}>
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path='/' element={<LoginPanel/>}/>
+                    <Route path='home' element={<div style={{backgroundColor: color, padding: "100%"}}><Home setColor={setColor} color={color}/></div>}>
+                        <Route path='sessions' element={<Sessions/>}/>
+                        <Route path='settings/appearance' element={<Appearance bg={(bg)=>setColor(bg)}/>}/>
+                        <Route path='settings/notifications' element={<Notification/>}/>
+                        <Route path='settings/Background' element={<Photo/>}/>
+                    </Route>
+                    <Route exact path='section' element={<Workspace/>}/>
+                    <Route path="*" element={
+                        <h1>
+                            {/*todo:this component just for testing*/}
+                            404 Page Not Found
+                        </h1>
+                    }/>
+                </Routes>
+            </BrowserRouter>
+        </section>
     );
 }
 
