@@ -45,7 +45,7 @@
 }
 
 .tags__group > *{
-    flex: 1 1 min-content;
+    flex: 0 0 fit-content;
 }
 
 .addTask {
