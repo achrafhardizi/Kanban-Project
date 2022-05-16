@@ -2,21 +2,24 @@ import styles from "./Section.module.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEllipsisV} from "@fortawesome/free-solid-svg-icons"
 import {faCirclePlus} from "@fortawesome/free-solid-svg-icons"
-import {useRef, useState} from "react";
-import {AddTaskModal} from "../index";
+import {useState} from "react";
+import {AddTaskModal, EditSectionModal} from "../index";
 
 
 const Section = (props) => {
     const [sectionName, setSectionName] = useState(props.Name);
-    const [showModal, setShowModal] = useState(false);
+    const [showAddTaskModal, setShowAddTaskModal] = useState(false);
+    const [showEditSectionModal, setShowEditSectionModal] = useState(false);
+
 
     const addTaskClickHandler = () => {
-        setShowModal(!showModal);
+        setShowAddTaskModal(!showAddTaskModal);
     }
 
-    // const addTaskHandler = () => {
-    //     modal.current.showModal();
-    // }
+    const editSectionClickHandler = () => {
+        setShowEditSectionModal(!showEditSectionModal);
+    }
+
     const classes = styles.card + " " + props.className;
 
     return (
@@ -25,7 +28,8 @@ const Section = (props) => {
                 <span>
                     {sectionName}
                 </span>
-                <FontAwesomeIcon icon={faEllipsisV} style={{color: "#fdfeff"}}/>
+                <FontAwesomeIcon icon={faEllipsisV} style={{color: "#fdfeff",cursor:"pointer"}} onClick={editSectionClickHandler}/>
+                <EditSectionModal show={showEditSectionModal} showModalHandler={editSectionClickHandler} />
             </div>
             <div className={styles["card__content"]}>
                 {props.children}
@@ -33,7 +37,7 @@ const Section = (props) => {
             <div className={styles["card__footer"]}>
                 <span onClick={addTaskClickHandler}>Add task</span>
                 <FontAwesomeIcon onClick={addTaskClickHandler} icon={faCirclePlus} style={{cursor:"pointer"}}/>
-                <AddTaskModal show={showModal} showModalHandler={addTaskClickHandler}/>
+                <AddTaskModal show={showAddTaskModal} showModalHandler={addTaskClickHandler}/>
             </div>
         </div>
     );

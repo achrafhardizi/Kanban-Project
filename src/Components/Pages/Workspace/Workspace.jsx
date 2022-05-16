@@ -30,7 +30,7 @@ const Workspace = () => {
                     {sections.map((e,i) => (
                         <Section Name={e.sectionName} key={e.id}>
                             {
-                                [...Array(3)].map((e,i) =>(
+                                [...Array(6)].map((e,i) =>(
                                     <Task key={i}/>
                                 ))
                             }

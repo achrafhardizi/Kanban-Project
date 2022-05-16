@@ -1,14 +1,16 @@
 .card{
     background-color: var(--bg-black-dark);
     border-top: 3px solid var(--bg-white-light);
-    width: fit-content;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card__title{
+    flex-basis: fit-content;
     padding: 1em 0.75em;
     display: flex;
-    gap: 10em; /*it decides the width of the card*/
+    gap: 5em; /*it decides the width of the card*/
     align-items: center;
     justify-content: space-between;
 }
@@ -21,10 +23,33 @@
 }
 
 .card__content{
+    flex-basis: 100%;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    overflow-y: scroll;
+    margin-bottom: 1em;
+}
+
+.card__content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card__content::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-inline: 1em;
+    border-radius: 20px;
+}
+
+.card__content::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .card__footer{
+    flex-basis: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;

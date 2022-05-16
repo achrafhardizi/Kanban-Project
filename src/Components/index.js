@@ -33,6 +33,8 @@ export {default as Tag} from "./UI/Tag/Tag"
 
 export {default as AddTaskModal} from "./Modals/AddTaskModal/AddTaskModal"
 export {default as AddTagModal} from "./Modals/AddTagModal/AddTagModal"
+export {default as EditSectionModal} from "./Modals/EditSectionModal/EditSectionModal"
+
 
 
 

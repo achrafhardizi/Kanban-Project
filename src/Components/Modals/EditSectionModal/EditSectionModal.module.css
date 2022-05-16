@@ -1,4 +1,4 @@
-.form {
+.form{
     padding: 1em;
 }
 
@@ -16,23 +16,23 @@
     border-bottom: 1px solid var(--secondary-color);
 }
 
-.tag__name{
+.section__name{
     color: var(--bg-black-dark);
     display: flex;
     flex-direction: column;
     margin-bottom: 1em;
 }
-.tag__name label{
+.section__name label{
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: .5em;
 }
 
-.tag__name input{
+.section__name input{
     padding: .5em 1em;
 }
 
-.addTag {
+.editSection {
     width: 100%;
     border-radius: 5px;
     padding: .25em .5em;
