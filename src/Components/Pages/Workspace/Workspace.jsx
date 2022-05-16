@@ -1,35 +1,23 @@
 import React, {useState} from 'react';
-import {Section, Sidebar} from "../../index";
+import {Navbar, Section, Sidebar} from "../../index";
 import Task from "../../Tasks/Task";
 import styles from './workspace.module.css';
-
-let secid = 20;
+import _sections from "../../../FakeData/DummySection.js"
+import {faCirclePlus} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Workspace = () => {
 
-    const [sections, setSections] = useState([
-        <Section
-            key={secid}
-            name={
-                "Insanely long name wow, lets make it even longer ;) alright good shit"
-            }
-        />,
-        <Section key={secid++} name={"second sec"}/>,
-        <Section key={secid++} name={"third sec"}/>,
-        <Section key={secid++} name={"fourth sec"}/>,
-    ]);
+    const [sections, setSections] = useState(_sections);
 
-    const addSec = () => {
-        setSections(
-            sections.concat(<Section key={secid++} name="enter task name here"/>)
-        );
-    };
+    const newSection = {
+        id:6,
+        sectionName:"New Section"
+    }
 
-    const secs = [<Task/>,
-        <Task/>,
-        <Task/>,
-        <Task/>
-    ]
+    const addSection = (newSection) => {
+        setSections((prevSections => [...prevSections,newSection]));
+    }
 
     return (
         <div
@@ -37,15 +25,22 @@ const Workspace = () => {
         >
             <Sidebar/>
             <div className={styles.body}>
-
-                {/*<div className={styles.layout}>*/}
-                {/*    <Section tasks={secs}/>*/}
-                {/*    <Section tasks={<Task/>}/>*/}
-                {/*    <Section/>*/}
-                {/*    <Section/>*/}
-                {/*    <Section/>*/}
-                {/*    <Section/>*/}
-                {/*</div>*/}
+                <Navbar/>
+                <div className={styles.layout}>
+                    {sections.map((e,i) => (
+                        <Section Name={e.sectionName} key={e.id}>
+                            {
+                                [...Array(3)].map((e,i) =>(
+                                    <Task key={i}/>
+                                ))
+                            }
+                        </Section>))
+                    }
+                    <div className={styles.addSection} onClick={()=>addSection(newSection)}>
+                        <span>add Section</span>
+                        <FontAwesomeIcon icon={faCirclePlus}/>
+                    </div>
+                </div>
             </div>
         </div>
 

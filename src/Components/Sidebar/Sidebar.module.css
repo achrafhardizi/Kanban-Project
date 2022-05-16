@@ -1,10 +1,10 @@
 .sidebar {
     flex-basis: fit-content;
     background-color: var(--bg-black-dark);
-    height: 100vh;
+    height: 100%;
     padding-top: 1em;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
+    display: flex;
+    flex-direction: column;
 }
 
 .row {
@@ -25,7 +25,7 @@
 }
 
 .row a > span{
-    z-index: 999;
+    z-index: 5;
     position: absolute;
     left: 5.5rem;
     padding: .2rem .5rem;
@@ -41,9 +41,14 @@
     opacity: 1;
 }
 
-.row:last-child > a{
+.row:nth-child(4) > a{
     margin-bottom: 1em;
     padding-left: 1em;
+}
+
+.sidebar > .row:last-child{
+    margin-top: auto;
+    margin-bottom: 1em;
 }
 
 .row__icon {
@@ -63,4 +68,15 @@
 .show{
     opacity: 1;
     pointer-events: auto;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .row__icon{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .row{
+        padding: 0.75em 0;
+    }
 }

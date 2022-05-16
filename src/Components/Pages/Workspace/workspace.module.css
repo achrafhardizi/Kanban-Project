@@ -1,33 +1,55 @@
 .page{
     display: flex;
+    height: 100vh;
+}
+
+.body{
+    flex : 1 1 auto;
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    background-color: #616161;
 }
 
 .layout{
-    padding: 24px;
+    padding: 1.5em;
     display:flex;
-    gap:16px;
-    align-items: flex-start;
-    overflow-x: auto;
+
+    gap:1rem;
+    overflow-x: scroll;
+}
+
+.layout > *{
+    flex: 1 1 50vw;
+}
+
+.addSection{
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: 2em;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+}
+.addSection span{
+    width: max-content;
 }
 
 .layout::-webkit-scrollbar {
-    color: red;
     height: 10px;
     width: 15px;
     /*todo:choose some colors*/
 }
 
 .layout::-webkit-scrollbar-track {
-    background-color: rgba(213, 194, 161, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
     margin-inline: 1em;
     border-radius: 20px;
 }
 
 .layout::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    border: 2px solid rgba(213, 194, 161, 0.3);
-}
-
-.body{
-    display: flex;
+    border: 2px solid rgba(0, 0, 0, 0.2);
 }

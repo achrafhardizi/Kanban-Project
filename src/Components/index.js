@@ -4,6 +4,7 @@
 
 export {default as LoginPanel} from './Pages/Login/LoginPanel'
 export {default as Sidebar} from './Sidebar/Sidebar'
+export {default as Navbar} from './Navbar/Navbar'
 export {default as Section} from './Sections/Section'
 export {default as Sessions} from './Sessions/Sessions'
 export {default as Appearance} from './Settings/Appearance'
@@ -17,4 +18,22 @@ export {default as Taskoptions} from './taskoptions/Taskoptions'
 
 export {default as Home} from './Pages/Home/Home'
 export {default as Workspace} from './Pages/Workspace/Workspace'
+
+
+/*
+ * UI
+ */
+
+export {default as Modal} from "./UI/Modal/Modal"
+export {default as Tag} from "./UI/Tag/Tag"
+
+/*
+ * Modals
+ */
+
+export {default as AddTaskModal} from "./Modals/AddTaskModal/AddTaskModal"
+export {default as AddTagModal} from "./Modals/AddTagModal/AddTagModal"
+
+
+
 

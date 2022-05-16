@@ -2,6 +2,7 @@ import React from 'react';
 import {Sidebar} from "../../index";
 import {Outlet} from 'react-router-dom'
 import styles from "./Home.module.css"
+import AddTaskModal from "../../Modals/AddTaskModal/AddTaskModal";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
                 className={styles.page}
             >
                 <Sidebar/>
+                <AddTaskModal/>
                 <Outlet/>
             </div>
         </>

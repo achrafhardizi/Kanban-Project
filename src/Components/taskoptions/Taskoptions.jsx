@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import './taskoptions.css'
+import './taskoptions.module.css'
 import { Card, Button, Modal, Tabs, Tab, Form, FloatingLabel } from 'react-bootstrap'
 import { ChromePicker } from 'react-color'
 import { AiOutlineCreditCard, AiOutlineTags, AiOutlineFileText, AiOutlinePlus, AiOutlinePaperClip } from 'react-icons/ai'
@@ -48,7 +48,7 @@ const Taskoptions = ({ tags = ['important', 'another tag', 'etccc'], Name = 'tes
                     </Tab>
                     <Tab eventKey="task-appearance" title="Appearance">
                         <ChromePicker className='mt-2' color={color} onChange={changecolor} />
-                        <label className='mt-2' htmlFor="bgpreview">Preview : </label><Card id='bgpreview' style={{ marginTop: '10px', width: '100px', height: '100px' }}></Card>
+                        <label className='mt-2' htmlFor="bgpreview">Preview : </label>
                     </Tab>
                     <Tab eventKey="task-security" title="Visibility">
                         We can limit the visibility of tasks depending on the members here
@@ -77,17 +77,17 @@ Thinking about using modals directly to show the task settings instead of making
             <Button className='btnremove'>Remove</Button>
         </ButtonGroup>
 
-<Modal centered show={showModal} onHide={handleCloseModal}>
-            <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <p>Modal body text</p>
-            </Modal.Body>
-            <Modal.Footer>
+<AddTaskModal centered show={showModal} onHide={handleCloseModal}>
+            <AddTaskModal.Header closeButton>
+                <AddTaskModal.Title>AddTaskModal heading</AddTaskModal.Title>
+            </AddTaskModal.Header>
+            <AddTaskModal.Body>
+                <p>AddTaskModal body text</p>
+            </AddTaskModal.Body>
+            <AddTaskModal.Footer>
                 <Button variant="secondary" onClick={handleCloseModal}>
                     Close
                 </Button>
-            </Modal.Footer>
-        </Modal>
+            </AddTaskModal.Footer>
+        </AddTaskModal>
 */

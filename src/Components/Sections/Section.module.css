@@ -1,0 +1,47 @@
+.card{
+    background-color: var(--bg-black-dark);
+    border-top: 3px solid var(--bg-white-light);
+    width: fit-content;
+    border-radius: 8px;
+}
+
+.card__title{
+    padding: 1em 0.75em;
+    display: flex;
+    gap: 10em; /*it decides the width of the card*/
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__title span{
+    font-size: 1.25rem;
+    color: var(--bg-white-light);
+    font-weight: 700;
+    width: max-content;
+}
+
+.card__content{
+    padding: 1em;
+}
+
+.card__footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    font-weight: bold;
+    padding-bottom: 1em;
+    color: var(--test);
+}
+
+.card__footer span{
+    cursor: pointer;
+}
+
+.modal{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--bg-white-darker);
+}

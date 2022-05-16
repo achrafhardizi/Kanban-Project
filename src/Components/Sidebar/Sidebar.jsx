@@ -8,6 +8,7 @@ import sessionIcon from "../../Assets/session.png"
 import workspaceIcon from "../../Assets/workspace.png"
 import notificationIcon from "../../Assets/notification.png"
 import backgroundIcon from "../../Assets/background.png"
+import profilIcon from "../../Assets/profile.png"
 
 import styles from "./Sidebar.module.css";
 import {Link} from "react-router-dom";
@@ -17,7 +18,7 @@ import classNames from "classnames";
 const Sidebar = (color) => {
     const [dropped, setDropped] = useState(false);
 
-    const submenuClickHandler = () =>{
+    const submenuClickHandler = () => {
         setDropped(!dropped);
     }
 
@@ -43,32 +44,38 @@ const Sidebar = (color) => {
             </div>
             <div className={styles.row} onClick={submenuClickHandler}>
                 <Link to='#'>
-                    <img src={settingsIcon} className={classNames(styles["row__icon"], styles["settings"])}/>
+                    <img src={settingsIcon} className={classNames(styles["row__icon"])}/>
                     <span>Settings</span>
                 </Link>
-                <ul className={classNames(styles["submenu"],{[styles["show"]]:dropped})}>
+                <ul className={classNames(styles["submenu"], {[styles["show"]]: dropped})}>
                     <li className={styles.row}>
                         <Link to='/home/settings/appearance'>
                             <img src={appearanceIcon}
-                                 className={classNames(styles["row__icon"], styles["appearance"])}/>
+                                 className={classNames(styles["row__icon"])}/>
                             <span>Appearance</span>
                         </Link>
                     </li>
                     <li className={styles.row}>
                         <Link to='/home/settings/notifications'>
                             <img src={notificationIcon}
-                                 className={classNames(styles["row__icon"], styles["appearance"])}/>
+                                 className={classNames(styles["row__icon"])}/>
                             <span>Notifications</span>
                         </Link>
                     </li>
                     <li className={styles.row}>
                         <Link to='/home/settings/background'>
                             <img src={backgroundIcon}
-                                 className={classNames(styles["row__icon"], styles["background"])}/>
+                                 className={classNames(styles["row__icon"])}/>
                             <span>Background</span>
                         </Link>
                     </li>
                 </ul>
+            </div>
+            <div className={styles.row}>
+                <Link to='/home'>
+                    <img src={profilIcon} className={classNames(styles["row__icon"])}/>
+                    <span>profile</span>
+                </Link>
             </div>
         </nav>
     );
