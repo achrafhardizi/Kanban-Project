@@ -12,8 +12,8 @@
 }
 
 .nav__top h1 {
-    font-size: 2rem;
-    font-weight: 900;
+    font-size: 3rem;
+    font-weight: 700;
 }
 
 .nav__bot {
@@ -31,8 +31,8 @@
 
 .select-box .options-container {
     position: absolute;
-    inset: 130px 0 0 99px;
-    background: var(--bg-black-dark);
+    inset: 150px 0 0 99px;
+    background: var(--bg-black-lighter);
     color: var(--bg-white-dark);
     width: 150px;
     height: fit-content;
@@ -46,7 +46,7 @@
 
 @media screen and (min-width: 1200px) {
     .select-box .options-container {
-        inset: 130px 0 0 90px;
+        inset: 150px 0 0 90px;
     }
 }
 

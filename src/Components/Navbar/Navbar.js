@@ -62,7 +62,7 @@ const Navbar = ({projectName = "Project Name", usersNumber = 23}) => {
                     <div className={styles.addTag} onClick={addTagClickHandler}>
                         add Tag <FontAwesomeIcon icon={faCirclePlus}/>
                     </div>
-                    <AddTagModal show={showModal}/>
+                    <AddTagModal show={showModal} showModalHandler={addTagClickHandler}/>
                 </div>
             </div>
         </div>

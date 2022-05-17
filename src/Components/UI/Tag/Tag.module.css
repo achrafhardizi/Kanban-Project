@@ -1,6 +1,8 @@
 .tag{
     padding: .5em 1em;
-    font-size: .75rem;
+    font-size: .6rem;
+    letter-spacing: 1px;
+    font-weight: 700;
     border-radius: 8px;
     color: var(--bg-white-light);
 }

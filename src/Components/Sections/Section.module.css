@@ -4,6 +4,7 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, .4);
 }
 
 .card__title{
@@ -16,9 +17,9 @@
 }
 
 .card__title span{
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     color: var(--bg-white-light);
-    font-weight: 700;
+    font-weight: 600;
     width: max-content;
 }
 

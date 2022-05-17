@@ -11,7 +11,7 @@ const AddTaskModal = (props) => {
     }
 
     return (
-        <Modal show={props.show}>
+        <Modal show={props.show} showModalHandler={props.showModalHandler}>
             <form className={styles.form} onSubmit={addTaskSubmitHandler}>
                 <div className={styles["modal__title"]}> Add Task</div>
                 <div className={styles["task__name"]}>

@@ -8,7 +8,7 @@ const LoginPanel = () => {
 
     const [emailEntered, setEmailEntered] = useState("");
     const [passEntered, setPassEntered] = useState("");
-    const [validate, setValidate] = useState(false);
+    const [validate, setValidate] = useState(true);
     let navigate = useNavigate();
 
     const emailChangeHandler = (event) => {
@@ -50,7 +50,7 @@ const LoginPanel = () => {
                     <input type="password" value={passEntered}
                            className={classNames(styles.input, {[styles.invalid]: !validate})}
                            onChange={passChangeHandler} placeholder="Mot de passe" required="required"/>
-                    {!validate && <p className={styles.errorMessage}>Entrer le mot de passe</p>}
+                    {/*{!validate && <p className={styles.errorMessage}>Entrer le mot de passe</p>}*/}
                     <button type="submit" className={styles.button}>Se Connecter</button>
                 </form>
             </div>

@@ -1,0 +1,46 @@
+.card{
+    background-color: #616161;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, .4);
+}
+
+.task__tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+}
+
+.task__name{
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    align-items: center;
+    background-color: #151515;
+    padding: .5em 1em;
+    border-radius: 12px;
+}
+
+
+.task__name span{
+    color: var(--bg-white-light);
+    font-weight: 400;
+}
+
+.task__name img:hover{
+    transform: rotate(12deg);
+}
+
+.task__name img{
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+}
+
+.edit__icon{
+    width: 40px;
+    height: 40px;
+    padding: .2em;
+    border-radius: 4px;
+}

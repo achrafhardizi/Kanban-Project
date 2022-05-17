@@ -1,7 +1,6 @@
-.form{
+.form {
     padding: 1em;
 }
-
 
 .modal__title{
     text-align: center;
@@ -13,23 +12,58 @@
     border-bottom: 1px solid var(--secondary-color);
 }
 
-.section__name{
+.task__name{
     color: var(--bg-black-dark);
     display: flex;
     flex-direction: column;
     margin-bottom: 1em;
 }
-.section__name label{
+.task__name label{
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: .5em;
 }
 
-.section__name input{
+.task__name input{
     padding: .5em 1em;
 }
 
-.editSection,.deleteSection {
+.task__description{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.task__description label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.task__textInfo{
+    display: flex;
+    gap:1em;
+}
+
+.task__members label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.task__dates {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.task__dates label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.editTask,.deleteTask {
     width: 100%;
     border-radius: 5px;
     padding: .25em .5em;
@@ -49,6 +83,7 @@
 .btn-1:hover {
     background: linear-gradient(0deg, #3f3f3f 0%, #5e5e5e 100%);
 }
+
 .btn-2 {
     background: linear-gradient(0deg, #f12222 0%, lightcoral 100%);
     border: none;

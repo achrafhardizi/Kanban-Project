@@ -1,9 +1,9 @@
 import styles from './Modal.module.css';
 import classNames from "classnames";
+import {useState} from "react";
 
 const Modal = (props) => {
     const classes = styles.modal + " " + props.className;
-
 
     return (
         <div className={classNames(styles.backdrop,{[styles.show]:props.show})}>

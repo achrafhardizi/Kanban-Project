@@ -15,7 +15,6 @@ const Home = () => {
                 className={styles.page}
             >
                 <Sidebar/>
-                <AddTaskModal/>
                 <Outlet/>
             </div>
         </>
