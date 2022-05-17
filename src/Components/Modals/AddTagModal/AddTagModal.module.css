@@ -41,13 +41,6 @@
     outline: none;
 }
 
-.current__tags{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3em;
-    margin-bottom: 1em;
-}
-
 .btn-1 {
     background: linear-gradient(0deg, var(--bg-black-dark) 0%, #3f3f3f 100%);
     border: none;

@@ -24,11 +24,6 @@ const AddTagModal = (props) => {
                     <label htmlFor="tag__name">Tag Name</label>
                     <input type="text" placeholder="Tag Name" required={true}/>
                 </div>
-                <div className={styles["current__tags"]}>
-                    <Tag tagName={"important"} tagColor={"#e0465e"} onClick={tagSelectedHandler}/>
-                    <Tag tagName={"optional"} tagColor={"#fbaa49"} onClick={tagSelectedHandler}/>
-                    <Tag tagName={"pending"} onClick={tagSelectedHandler}/>
-                </div>
                 <SwatchesPicker className='mt-2' color={color} onChange={changeColor}/>
                 <button type="submit" className={classNames(styles.addTag, styles["btn-1"])}>Add Tag</button>
             </form>
