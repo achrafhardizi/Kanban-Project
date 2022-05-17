@@ -18,7 +18,6 @@ const App = () => {
                         <Route path='sessions' element={<Sessions/>}/>
                         <Route path='settings/appearance' element={<Appearance bg={(bg) => setColor(bg)}/>}/>
                         <Route path='settings/notifications' element={<Notification/>}/>
-                        <Route path='settings/Background' element={<Photo/>}/>
                     </Route>
                     <Route exact path='workspace' element={<Workspace/>}/>
                     <Route path="*" element={

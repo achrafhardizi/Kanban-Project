@@ -7,7 +7,6 @@ import appearanceIcon from "../../Assets/appearance.png"
 import sessionIcon from "../../Assets/session.png"
 import workspaceIcon from "../../Assets/workspace.png"
 import notificationIcon from "../../Assets/notification.png"
-import backgroundIcon from "../../Assets/background.png"
 import profilIcon from "../../Assets/profile.png"
 
 import styles from "./Sidebar.module.css";
@@ -60,13 +59,6 @@ const Sidebar = (color) => {
                             <img src={notificationIcon}
                                  className={classNames(styles["row__icon"])}/>
                             <span>Notifications</span>
-                        </Link>
-                    </li>
-                    <li className={styles.row}>
-                        <Link to='/home/settings/background'>
-                            <img src={backgroundIcon}
-                                 className={classNames(styles["row__icon"])}/>
-                            <span>Background</span>
                         </Link>
                     </li>
                 </ul>

@@ -6,12 +6,6 @@ import classNames from "classnames";
 
 const EditSectionModal = (props) => {
 
-    const [color, setColor] = useState('#fff');
-
-    const changeColor = (updatedColor) => {
-        setColor(updatedColor.hex);
-    }
-
     const editSectionSubmitHandler = () => {
         /*the logic */
     }
@@ -24,7 +18,7 @@ const EditSectionModal = (props) => {
                     <label htmlFor="section__name">Section Name</label>
                     <input type="text" placeholder="Task Name" required={true}/>
                 </div>
-                <SwatchesPicker className='mt-2' color={color} onChange={changeColor} />
+                <SwatchesPicker className='mt-2' color={props.color} onChange={props.changeColor} />
                 <div className={styles["button__group"]}>
                     <button type="submit" className={classNames(styles.editSection,styles["btn-1"])}>Edit Section</button>
                     <button type="submit" className={classNames(styles.deleteSection, styles["btn-2"])}>delete Section</button>

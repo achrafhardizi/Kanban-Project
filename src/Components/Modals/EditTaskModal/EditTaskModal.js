@@ -1,19 +1,23 @@
 import styles from "./EditTaskModal.module.css"
 import {Modal} from "../../index";
-import DatePicker from "react-datepicker"
 import React, {useState} from "react";
 import classNames from "classnames";
-import {SwatchesPicker} from "react-color";
+import moment from "moment";
 
 
 const EditTaskModal = (props) => {
 
-    const [startDate, setStartDate] = useState(new Date());
-    const [finishDate, setFinishDate] = useState(new Date());
-    const [color, setColor] = useState('#fff');
+    const [startDate, setStartDate] = useState(moment().format('YYYY-MM-DD'));
+    const [finishDate, setFinishDate] = useState(moment().format('YYYY-MM-DD'));
 
-    const changeColor = (updatedColor) => {
-        setColor(updatedColor.hex);
+    const startDayOnChangeHandler = (event) => {
+        const newDate = moment(new Date(event.target.value)).format('YYYY-MM-DD');
+        setStartDate(newDate);
+    }
+
+    const finishDayOnChangeHandler = (event) => {
+        const newDate = moment(new Date(event.target.value)).format('YYYY-MM-DD');
+        setFinishDate(newDate);
     }
 
     const editTaskSubmitHandler = () => {
@@ -43,18 +47,19 @@ const EditTaskModal = (props) => {
                 <div className={styles["task__dates"]}>
                     <div className={styles["task__startDay"]}>
                         <label>Start Date :</label>
-                        <DatePicker closeOnScroll={true} selected={startDate} onChange={(date) => setStartDate(date)}/>
+                        <input type="date" name="startDay" id="startDay" defaultValue={startDate}
+                               onChange={startDayOnChangeHandler}
+                        />
                     </div>
                     <div className={styles["task__finishDay"]}>
                         <label>Finish Date :</label>
-                        <DatePicker closeOnScroll={true} selected={finishDate} minDate={startDate}
-                                    onChange={(date) => setFinishDate(date)}/>
+                        <input type="date" name="finishDay" id="finishDay" min={startDate} onChange={finishDayOnChangeHandler}/>
                     </div>
                 </div>
-                <SwatchesPicker className='mt-2' styles={{height:"500px"}} color={color} onChange={changeColor}/>
                 <div className={styles["button__group"]}>
                     <button type="submit" className={classNames(styles.editTask, styles["btn-1"])}>Edit Task</button>
-                    <button type="submit" className={classNames(styles.deleteTask, styles["btn-2"])}>delete Task</button>
+                    <button type="submit" className={classNames(styles.deleteTask, styles["btn-2"])}>delete Task
+                    </button>
                 </div>
             </form>
         </Modal>

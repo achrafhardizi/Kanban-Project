@@ -7,9 +7,15 @@ import {AddTaskModal, EditSectionModal} from "../index";
 
 
 const Section = (props) => {
+
     const [sectionName, setSectionName] = useState(props.Name);
     const [showAddTaskModal, setShowAddTaskModal] = useState(false);
     const [showEditSectionModal, setShowEditSectionModal] = useState(false);
+    const [color, setColor] = useState('var(--bg-black-dark)');
+
+    const changeColor = (updatedColor) => {
+        setColor(updatedColor.hex);
+    }
 
 
     const addTaskClickHandler = () => {
@@ -23,13 +29,13 @@ const Section = (props) => {
     const classes = styles.card + " " + props.className;
 
     return (
-        <div className={classes}>
+        <div className={classes} style={{backgroundColor:color}}>
             <div className={styles["card__title"]}>
                 <span>
                     {sectionName}
                 </span>
                 <FontAwesomeIcon icon={faEllipsisV} style={{color: "#fdfeff",cursor:"pointer"}} onClick={editSectionClickHandler}/>
-                <EditSectionModal show={showEditSectionModal} showModalHandler={editSectionClickHandler} />
+                <EditSectionModal show={showEditSectionModal} showModalHandler={editSectionClickHandler} color={color} changeColor={changeColor}/>
             </div>
             <div className={styles["card__content"]}>
                 {props.children}

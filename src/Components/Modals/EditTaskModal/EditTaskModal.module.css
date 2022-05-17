@@ -1,5 +1,7 @@
 .form {
     padding: 1em;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal__title{
@@ -18,6 +20,7 @@
     flex-direction: column;
     margin-bottom: 1em;
 }
+
 .task__name label{
     font-size: 1rem;
     font-weight: bold;
@@ -53,14 +56,26 @@
 
 .task__dates {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 1em;
+    gap:1em;
 }
 
 .task__dates label{
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: .5em;
+}
+
+.task__startDay{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+}
+
+.task__finishDay{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
 }
 
 .editTask,.deleteTask {
@@ -80,6 +95,7 @@
     background: linear-gradient(0deg, var(--bg-black-dark) 0%, #3f3f3f 100%);
     border: none;
 }
+
 .btn-1:hover {
     background: linear-gradient(0deg, #3f3f3f 0%, #5e5e5e 100%);
 }
@@ -88,8 +104,9 @@
     background: linear-gradient(0deg, #f12222 0%, lightcoral 100%);
     border: none;
 }
+
 .btn-2:hover {
-    background: linear-gradient(0deg, #3f3f3f 0%, #5e5e5e 100%);
+    background: linear-gradient(0deg, #f33d3d 0%, lightcoral 100%);
 }
 
 .button__group{
