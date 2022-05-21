@@ -3,19 +3,20 @@
  */
 
 export {default as LoginPanel} from './Pages/Login/LoginPanel'
+export {default as SignUp} from './Pages/SignUp/SignUp'
 export {default as Sidebar} from './Sidebar/Sidebar'
 export {default as Navbar} from './Navbar/Navbar'
 export {default as Section} from './Sections/Section'
 export {default as Sessions} from './Sessions/Sessions'
 export {default as Appearance} from './Settings/Appearance'
 export {default as Notification} from './Settings/Notification'
+export {default as Session} from './Session/Session'
 /*
  * Pages
  */
 
 export {default as Home} from './Pages/Home/Home'
 export {default as Workspace} from './Pages/Workspace/Workspace'
-
 
 /*
  * UI

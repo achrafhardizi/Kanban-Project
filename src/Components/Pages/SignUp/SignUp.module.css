@@ -17,16 +17,16 @@
     }
 }
 
-.login {
+.signup {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 50%;
     margin: -150px 0 0 -150px;
     width: 300px;
     height: 300px;
 }
 
-.login h1 {
+.signup h1 {
     color: #fff;
     text-align: center;
     font-size: 4.5em;
@@ -36,10 +36,11 @@
     animation: animated-text 4s steps(29,end) 1s 1 normal both,animated-cursor 600ms steps(29,end) infinite;
 }
 
-.login > form > a{
+.signup > form > a{
     margin-top: 1em;
     display: flex;
     justify-content: center;
+    text-decoration: underline;
 }
 
 @keyframes animated-text{

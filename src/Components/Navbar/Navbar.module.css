@@ -31,7 +31,7 @@
 
 .select-box .options-container {
     position: absolute;
-    inset: 150px 0 0 99px;
+    inset: 160px 0 0 99px;
     background: var(--bg-black-lighter);
     color: var(--bg-white-dark);
     width: 150px;
@@ -46,7 +46,7 @@
 
 @media screen and (min-width: 1200px) {
     .select-box .options-container {
-        inset: 150px 0 0 90px;
+        inset: 160px 0 0 90px;
     }
 }
 

@@ -4,8 +4,6 @@ import React, {useState} from "react";
 import homeIcon from "../../Assets/home.png"
 import settingsIcon from "../../Assets/settings.png"
 import appearanceIcon from "../../Assets/appearance.png"
-import sessionIcon from "../../Assets/session.png"
-import workspaceIcon from "../../Assets/workspace.png"
 import notificationIcon from "../../Assets/notification.png"
 import profilIcon from "../../Assets/profile.png"
 
@@ -24,20 +22,8 @@ const Sidebar = (color) => {
     return (
         <nav className={styles.sidebar}>
             <div className={styles.row}>
-                <Link to='/home'>
+                <Link to='/sessions'>
                     <img src={homeIcon} className={classNames(styles["row__icon"])}/>
-                    <span>Home</span>
-                </Link>
-            </div>
-            <div className={styles.row}>
-                <Link to='/workspace'>
-                    <img src={workspaceIcon} className={classNames(styles["row__icon"])}/>
-                    <span>Workspace</span>
-                </Link>
-            </div>
-            <div className={styles.row}>
-                <Link to='/home/sessions'>
-                    <img src={sessionIcon} className={classNames(styles["row__icon"])}/>
                     <span>Sessions</span>
                 </Link>
             </div>
@@ -48,14 +34,14 @@ const Sidebar = (color) => {
                 </Link>
                 <ul className={classNames(styles["submenu"], {[styles["show"]]: dropped})}>
                     <li className={styles.row}>
-                        <Link to='/home/settings/appearance'>
+                        <Link to='/sessions/settings/appearance'>
                             <img src={appearanceIcon}
                                  className={classNames(styles["row__icon"])}/>
                             <span>Appearance</span>
                         </Link>
                     </li>
                     <li className={styles.row}>
-                        <Link to='/home/settings/notifications'>
+                        <Link to='/sessions/settings/notifications'>
                             <img src={notificationIcon}
                                  className={classNames(styles["row__icon"])}/>
                             <span>Notifications</span>
@@ -64,7 +50,7 @@ const Sidebar = (color) => {
                 </ul>
             </div>
             <div className={styles.row}>
-                <Link to='/home'>
+                <Link to='/profile'>
                     <img src={profilIcon} className={classNames(styles["row__icon"])}/>
                     <span>profile</span>
                 </Link>

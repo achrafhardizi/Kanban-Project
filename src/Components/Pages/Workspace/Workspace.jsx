@@ -5,10 +5,12 @@ import styles from './workspace.module.css';
 import _sections from "../../../FakeData/DummySection.js"
 import {faCirclePlus} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {useParams} from "react-router-dom";
 
-const Workspace = () => {
+const Workspace = (props) => {
 
-    const [sections, setSections] = useState(_sections);
+    let { sessionId } = useParams();
+    const [sections, setSections] = useState(props.sessions[sessionId].sections);
 
     const newSection = {
         id:6,
@@ -20,18 +22,18 @@ const Workspace = () => {
     }
 
     return (
-        <div
-            className={styles.page}
-        >
-            <Sidebar/>
+        // <div
+        //     className={styles.page}
+        // >
+        //     <Sidebar/>
             <div className={styles.body}>
-                <Navbar/>
+                <Navbar sessionInfo={props.sessions[sessionId]}/>
                 <div className={styles.layout}>
-                    {sections.map((e,i) => (
-                        <Section Name={e.sectionName} key={e.id}>
+                    {sections.map((e) => (
+                        <Section Name={e.sectionName} key={e.sectionId}>
                             {
-                                [...Array(6)].map((e,i) =>(
-                                    <Task key={i}/>
+                                e.tasks.map((task,i) =>(
+                                    <Task task={task} key={task.taskId}/>
                                 ))
                             }
                         </Section>))
@@ -42,7 +44,7 @@ const Workspace = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        // </div>
 
     );
 };

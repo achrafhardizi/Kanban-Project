@@ -7,7 +7,7 @@ import {faCirclePlus} from "@fortawesome/free-solid-svg-icons";
 import {AddTagModal} from "../index";
 
 
-const Navbar = ({projectName = "Project Name", usersNumber = 23}) => {
+const Navbar = (props) => {
     const [clicked, setClicked] = useState(false);
     const [selected, setSelected] = useState("Filter");
     const [showModal, setShowModal] = useState(false);
@@ -30,9 +30,9 @@ const Navbar = ({projectName = "Project Name", usersNumber = 23}) => {
     return (
         <div className={styles.navbar}>
             <div className={styles["nav__top"]}>
-                <h1 className={styles["nav__title"]}>{projectName}</h1>
+                <h1 className={styles["nav__title"]}>{props.sessionInfo.sessionName}</h1>
                 <div className={styles["usersNum"]}>
-                    <FontAwesomeIcon icon={faUserCircle}/> / {usersNumber}
+                    <FontAwesomeIcon icon={faUserCircle}/> / {props.sessionInfo.sessionMembersNum}
                 </div>
             </div>
             <div className={styles["nav__bot"]}>

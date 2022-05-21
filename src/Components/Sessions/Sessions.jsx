@@ -1,94 +1,21 @@
-import React from 'react';
-import {Button, Card, Tab, Tabs} from "react-bootstrap";
-import {Invitation, Sessionact, Addsession} from "./Components";
-import {AiOutlinePlus} from "react-icons/ai";
+import styles from "./Sessions.module.css"
+import {useState} from "react";
+import {Session} from "../index";
+import {BsPlusLg} from "react-icons/bs"
 
-
-const Sessions = () => {
-    const [modalShow, setModalShow] = React.useState(false);
-    const sessions = [
-        {
-            name: "Session",
-            description: "description"
-        },
-        {
-            name: "Session",
-            description: "description"
-        },
-        {
-            name: "Session",
-            description: "description"
-        },
-        {
-            name: "Session",
-            description: "description"
-        },
-        {
-            name: "Session",
-            description: "description"
-        },
-        {
-            name: "Session",
-            description: "description"
-        }];
-
-    const invsessions = [
-        {
-            name: "ses3",
-            description: "description",
-            members: [1, 2, 3]
-        }
-    ]
-
+const Sessions = (props) => {
 
     return (
-        <React.Fragment>
-            <Card style={{
-                margin: '20px 20px 210px 210px',
-                padding: "0",
-                display: "flex",
-                flexDirection: "row",
-                height: "80vh",
-                minWidth: "565.60px"
-            }}>
-                <Card.Body>
-                    <Tabs defaultActiveKey="sessions" id="uncontrolled-tab-example" className="mb-3">
-                        <Tab eventKey="sessions" title="Sessions courants" style={{
-                            flex: "1",
-                            height: "68vh",
-                            overflowY: "scroll",
-                            overflow: "auto"
-                        }}>
-                            <Sessionact sessions={sessions}/>
-                        </Tab>
-                        <Tab eventKey="invitations" title="Invitation" style={{
-                            flex: "1",
-                            height: "68vh",
-                            overflowY: "scroll",
-                            overflow: "auto"
-                        }}>
-                            <Invitation invsessions={invsessions}/>
-                        </Tab>
-                    </Tabs>
-                </Card.Body>
-            </Card>
-            <div className="btn-layout" style={{
-                position: "fixed",
-                bottom: "0",
-                right: "0",
-                margin: "10px"
-            }}>
-                <Button variant="primary" onClick={() => setModalShow(true)}>
-                    <AiOutlinePlus/>
-                </Button>
+        <div className={styles.page}>
+            <div className={styles.container}>
+                {
+                    props.sessions.map((e) => (
+                        <Session session={e} key={e.sessionId}/>
+                    ))
+                }
             </div>
-
-            <Addsession
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-                setsession={sess => console.log(sess)}
-            />
-        </React.Fragment>
+            <button className={styles["add__session"]}><BsPlusLg/></button>
+        </div>
     );
 };
 

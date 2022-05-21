@@ -1,0 +1,44 @@
+.page{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #616161;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    padding: 3em;
+    border-radius: 12px;
+    background-color: var(--bg-white-light);
+    box-shadow: 0 4px 6px rgba(0,0,0,.4);
+    overflow-y: auto;
+}
+
+.add__session{
+    position: absolute;
+    bottom: 5%;
+    right: 13%;
+    display: grid;
+    place-items: center;
+    padding: 1em;
+    font-size: 1.25rem;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--bg-black-dark);
+    color: var(--bg-white-light);
+}
+
+@media screen and (min-width: 900px){
+
+    .container{
+        padding: 2em;
+    }
+
+    .add__session{
+        right: 8%;
+    }
+}

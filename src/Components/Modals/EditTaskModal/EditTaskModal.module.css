@@ -54,6 +54,34 @@
     margin-bottom: 1em;
 }
 
+.task__tags label{
+    font-weight: bold;
+}
+
+.tags__group{
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+    margin-bottom: .5em;
+}
+
+.tagItem{
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    font-size: 1.5rem;
+    align-items: center;
+    background-color: var(--bg-black-dark);
+    color: var(--bg-white-light);
+}
+
+.tagItem div{
+    font-size: .75rem;
+    font-weight: bold;
+    padding-left: 1em;
+    border: 2px solid var(--bg-black-dark);
+    color:  var(--bg-black-dark);
+}
+
 .task__dates {
     display: flex;
     margin-bottom: 1em;
