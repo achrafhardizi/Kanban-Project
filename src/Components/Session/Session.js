@@ -32,7 +32,7 @@ const Session = (props) => {
                 <BsThreeDotsVertical style={{color:colorIsbright(props.session.sessionColor)}}/>
             </div>
             <div className={styles["session__join"]}>
-                <span>{"not joined yet"}</span>
+                <span>{"joined"}</span>
             </div>
             <Link className={styles["session__enter"]} to={`workspace${props.session.sessionId}`}><BsDoorOpen style={{color:props.session.sessionColor}}/></Link>
         </div>

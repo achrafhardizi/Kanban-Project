@@ -22,7 +22,7 @@ const LoginPanel = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        if ( (usernameEntered.trim().length === 0 || usernameEntered.trim().length < 5)
+        if ( (usernameEntered.trim().length === 0)
             || passEntered.trim().length === 0) {
             setValidate(false);
             return;
@@ -43,7 +43,6 @@ const LoginPanel = () => {
                     <input type="password" value={passEntered}
                            className={classNames(styles.input, {[styles.invalid]: !validate})}
                            onChange={passChangeHandler} placeholder="Mot de passe" required="required"/>
-                    {/*{!validate && <p className={styles.errorMessage}>Entrer le mot de passe</p>}*/}
                     <button type="submit" className={styles.button}>Se Connecter</button>
                     <Link to="signUp">Creer un Compte</Link>
                     <Link to="forgotPassword">mot de passe oublié?</Link>

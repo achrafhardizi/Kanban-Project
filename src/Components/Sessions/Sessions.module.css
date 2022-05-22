@@ -21,7 +21,7 @@
 .add__session{
     position: absolute;
     bottom: 5%;
-    right: 13%;
+    right: 15%;
     display: grid;
     place-items: center;
     padding: 1em;
@@ -32,13 +32,13 @@
     color: var(--bg-white-light);
 }
 
-@media screen and (min-width: 900px){
+@media screen and (max-width: 1200px){
 
     .container{
         padding: 2em;
     }
 
     .add__session{
-        right: 8%;
+        right: 10%;
     }
 }

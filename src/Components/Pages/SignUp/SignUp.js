@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import { useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import styles from "./SignUp.module.css"
 import classNames from "classnames";
@@ -6,20 +6,13 @@ import classNames from "classnames";
 
 const SignUp = () => {
 
-    // useEffect(() => {
-    //     if(confirmPassEntered !== passEntered){
-    //         setValidateConfirmPass(false);
-    //         return;
-    //     }
-    //     setValidateConfirmPass(true);
-    // }, [confirmPassEntered]);
-
     const [usernameEntered, setUsernameEntered] = useState("");
     const [passEntered, setPassEntered] = useState("");
     const [confirmPassEntered, setConfirmPassEntered] = useState("");
     const [validateUser, setValidateUser] = useState(true);
     const [validatePass, setValidatePass] = useState(true);
     const [validateConfirmPass, setValidateConfirmPass] = useState(true);
+
     const regex = new RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})");
     let navigate = useNavigate();
 
@@ -47,18 +40,16 @@ const SignUp = () => {
 
     const confirmPassChangeHandler = (event) => {
         setConfirmPassEntered(event.target.value)
-        if(confirmPassEntered !== passEntered){
-            setValidateConfirmPass(false);
-            return;
-        }
-        setValidateConfirmPass(true);
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        if(!(validateUser && validatePass && validateConfirmPass)) return;
-        navigate('/sessions')
+        if(!(validateUser && validatePass && (confirmPassEntered === passEntered))) {
+            setValidateConfirmPass(false);
+            return;
+        }
+        navigate('/sessions');
     }
 
     return (
