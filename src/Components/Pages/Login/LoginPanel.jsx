@@ -35,7 +35,7 @@ const LoginPanel = () => {
         <div className={styles.page}>
             <div className={styles.login}>
                 <h1>Login</h1>
-                <form method="post" onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <input type="text" value={usernameEntered}
                            className={classNames(styles.input, {[styles.invalid]: !validate})}
                            onChange={usernameChangeHandler} placeholder="username" required="required"/>

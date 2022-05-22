@@ -17,25 +17,33 @@
     }
 }
 
-.signup {
+.forgotPass {
     position: absolute;
-    top: 35%;
-    left: 50%;
+    top: 45%;
+    left: 40%;
     margin: -150px 0 0 -150px;
-    width: 300px;
+    width: 600px;
     height: 300px;
 }
 
-.signup h1 {
+.forgotPass h1 {
     color: #fff;
     text-align: center;
     font-size: 4.5em;
     font-weight: bold;
     border-right: solid 3px rgba(16, 16, 16, 0.75);
     margin-bottom: 0.5em;
+    /*-webkit-text-stroke-width: 2px;*/
+    /*-webkit-text-stroke-color: black;*/
     animation: animated-text 4s steps(29,end) 1s 1 normal both,animated-cursor 600ms steps(29,end) infinite;
 }
 
+.forgotPass form > p{
+    color: var(--bg-white-light);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
 
 @keyframes animated-text{
     from{
@@ -82,10 +90,6 @@
     box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.4), 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
-.errorMessage{
-    font-size: 0.85em;
-    color: red;
-}
 
 .button {
     border: none;
@@ -93,6 +97,7 @@
     width: 100%;
     padding-block: 0.5em;
     font-size: 1rem;
+    font-weight: bold;
     border-radius: 4px;
     background: linear-gradient(to right, #2E2D38, #1D1E22, #2D3238, #293033);
     background-size: 500%;

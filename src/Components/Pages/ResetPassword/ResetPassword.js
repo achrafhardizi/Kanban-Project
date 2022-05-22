@@ -1,34 +1,21 @@
-import { useState} from 'react';
-import {useNavigate} from "react-router-dom";
-import styles from "./SignUp.module.css"
+import styles from "./ResetPassword.module.css";
 import classNames from "classnames";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
-
-const SignUp = () => {
-
-    const [usernameEntered, setUsernameEntered] = useState("");
+const ResetPassword = () => {
     const [passEntered, setPassEntered] = useState("");
     const [confirmPassEntered, setConfirmPassEntered] = useState("");
-    const [validateUser, setValidateUser] = useState(true);
     const [validatePass, setValidatePass] = useState(true);
     const [validateConfirmPass, setValidateConfirmPass] = useState(true);
 
-    const regex = new RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})");
     let navigate = useNavigate();
-
-    const usernameChangeHandler = (event) => {
-        setUsernameEntered(event.target.value)
-        if(!usernameEntered.trim().length || usernameEntered.trim().length < 5){
-            setValidateUser(false);
-            return;
-        }
-        setValidateUser(true);
-    }
+    const regex = new RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})");
 
     const validatePassword = (password) => {
         return regex.test(password);
     }
-    
+
     const passChangeHandler = (event) => {
         setPassEntered(event.target.value)
         if(!validatePassword(passEntered)){
@@ -45,22 +32,15 @@ const SignUp = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        if(!(validateUser && validatePass && (confirmPassEntered === passEntered))) {
-            setValidateConfirmPass(false);
-            return;
-        }
-        navigate('/sessions');
+        // logic
+        navigate('/');
     }
 
     return (
         <div className={styles.page}>
-            <div className={styles.signup}>
-                <h1>SignUp</h1>
+            <div className={styles.resetPassword}>
+                <h1>Reset Password</h1>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" value={usernameEntered}
-                           className={classNames(styles.input, {[styles.invalid]: !validateUser})}
-                           onChange={usernameChangeHandler} placeholder="username" required="required"/>
-                    {!validateUser && <p className={styles.errorMessage}>username non valide au moins 5 caractères!</p>}
                     <input type="password"
                            className={classNames(styles.input, {[styles.invalid]: !validatePass})}
                            onChange={passChangeHandler} placeholder="Mot de passe" required="required"/>
@@ -69,11 +49,11 @@ const SignUp = () => {
                            className={classNames(styles.input, {[styles.invalid]: !validateConfirmPass})}
                            onChange={confirmPassChangeHandler} placeholder="Confirmer mot de passe" required="required"/>
                     {!validateConfirmPass && <p className={styles.errorMessage}>le mot de passe ne correspond pas à la confirmation du mot de passe</p>}
-                    <button type="submit" className={styles.button}>S'inscrire</button>
+                    <button type="submit" className={styles.button}>Reset Password</button>
                 </form>
             </div>
         </div>
     );
 };
 
-export default SignUp;
+export default ResetPassword;

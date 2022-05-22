@@ -1,8 +1,19 @@
-import './App.css';
-import {LoginPanel, Home, Workspace, Sessions, Appearance, Notification, SignUp} from './Components'
-import React, {useState} from "react";
+import {
+    LoginPanel,
+    Home,
+    Workspace,
+    Sessions,
+    Appearance,
+    Notification,
+    SignUp,
+    ForgotPass,
+    ResetPassword
+} from './Components'
+import {useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import data from "./FakeData/mockturtle.json"
+import './App.css';
+
 
 const App = () => {
 
@@ -15,6 +26,8 @@ const App = () => {
                 <Routes>
                     <Route exact path='/' element={<LoginPanel/>}/>
                     <Route exact path="signUp" element={<SignUp/>}/>
+                    <Route exact path="forgotPassword" element={<ForgotPass/>}/>
+                    <Route exact path="resetPassword" element={<ResetPassword/>}/>
                     <Route path='sessions' element={<Home setColor={setColor} color={color}/>}>
                         <Route index element={<Sessions sessions={sessions}/>}/>
                         <Route path='workspace:sessionId' element={<Workspace sessions={sessions}/>}/>

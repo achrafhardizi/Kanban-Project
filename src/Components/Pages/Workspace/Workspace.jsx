@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import {Navbar, Section, Sidebar} from "../../index";
+import {Navbar, Section} from "../../index";
 import Task from "../../Tasks/Task";
 import styles from './workspace.module.css';
-import _sections from "../../../FakeData/DummySection.js"
 import {faCirclePlus} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useParams} from "react-router-dom";
@@ -22,10 +21,6 @@ const Workspace = (props) => {
     }
 
     return (
-        // <div
-        //     className={styles.page}
-        // >
-        //     <Sidebar/>
             <div className={styles.body}>
                 <Navbar sessionInfo={props.sessions[sessionId]}/>
                 <div className={styles.layout}>
@@ -44,8 +39,6 @@ const Workspace = (props) => {
                     </div>
                 </div>
             </div>
-        // </div>
-
     );
 };
 

@@ -17,6 +17,8 @@ export {default as Session} from './Session/Session'
 
 export {default as Home} from './Pages/Home/Home'
 export {default as Workspace} from './Pages/Workspace/Workspace'
+export {default as ForgotPass} from './Pages/ForgotPass/ForgotPass'
+export {default as ResetPassword} from './Pages/ResetPassword/ResetPassword'
 
 /*
  * UI
