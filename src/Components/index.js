@@ -19,7 +19,7 @@ export {default as Home} from './Pages/Home/Home'
 export {default as Workspace} from './Pages/Workspace/Workspace'
 export {default as ForgotPass} from './Pages/ForgotPass/ForgotPass'
 export {default as ResetPassword} from './Pages/ResetPassword/ResetPassword'
-
+export {default as Profile} from './Pages/Profile/Profile'
 /*
  * UI
  */
@@ -31,6 +31,7 @@ export {default as Tag} from "./UI/Tag/Tag"
  * Modals
  */
 
+export {default as AddSessionModal } from "./Modals/AddSessionModal/AddSessionModal"
 export {default as AddTaskModal} from "./Modals/AddTaskModal/AddTaskModal"
 export {default as AddTagModal} from "./Modals/AddTagModal/AddTagModal"
 export {default as EditSectionModal} from "./Modals/EditSectionModal/EditSectionModal"

@@ -9,7 +9,7 @@ import {AddTagModal} from "../index";
 
 const Navbar = (props) => {
     const [clicked, setClicked] = useState(false);
-    const [selected, setSelected] = useState("Filter");
+    const [selected, setSelected] = useState("Filtre");
     const [showModal, setShowModal] = useState(false);
 
     const addTagClickHandler = () => {
@@ -45,12 +45,12 @@ const Navbar = (props) => {
 
                         <div className={styles["option"]} onClick={optionClickHandler}>
                             <input type="radio" className={styles["radio"]} id="tag" name="filter"/>
-                            <label htmlFor="tag">Tag</label>
+                            <label htmlFor="tag">Etiquette</label>
                         </div>
 
                         <div className={styles["option"]} onClick={optionClickHandler}>
                             <input type="radio" className={styles["radio"]} id="state" name="filter"/>
-                            <label htmlFor="state">State</label>
+                            <label htmlFor="state">État</label>
                         </div>
                     </div>
 
@@ -60,7 +60,7 @@ const Navbar = (props) => {
                 </div>
                 <div className={styles["nav__bot_right"]}>
                     <div className={styles.addTag} onClick={addTagClickHandler}>
-                        add Tag <FontAwesomeIcon icon={faCirclePlus}/>
+                        ajouter Etiquette <FontAwesomeIcon icon={faCirclePlus}/>
                     </div>
                     <AddTagModal show={showModal} showModalHandler={addTagClickHandler}/>
                 </div>

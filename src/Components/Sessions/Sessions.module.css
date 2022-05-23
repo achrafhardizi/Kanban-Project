@@ -30,6 +30,7 @@
     border: none;
     background-color: var(--bg-black-dark);
     color: var(--bg-white-light);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1200px){

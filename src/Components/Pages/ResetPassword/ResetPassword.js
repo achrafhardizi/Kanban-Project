@@ -49,7 +49,7 @@ const ResetPassword = () => {
                            className={classNames(styles.input, {[styles.invalid]: !validateConfirmPass})}
                            onChange={confirmPassChangeHandler} placeholder="Confirmer mot de passe" required="required"/>
                     {!validateConfirmPass && <p className={styles.errorMessage}>le mot de passe ne correspond pas à la confirmation du mot de passe</p>}
-                    <button type="submit" className={styles.button}>Reset Password</button>
+                    <button type="submit" className={styles.button}>Réinitialiser le mot de passe</button>
                 </form>
             </div>
         </div>

@@ -34,11 +34,11 @@ const LoginPanel = () => {
     return (
         <div className={styles.page}>
             <div className={styles.login}>
-                <h1>Login</h1>
+                <h1>SignIn</h1>
                 <form onSubmit={handleSubmit}>
                     <input type="text" value={usernameEntered}
                            className={classNames(styles.input, {[styles.invalid]: !validate})}
-                           onChange={usernameChangeHandler} placeholder="username" required="required"/>
+                           onChange={usernameChangeHandler} placeholder="Nom d'utilisateur" required="required"/>
                     {!validate && <p className={styles.errorMessage}>username non valide au moins 5 caractères!</p>}
                     <input type="password" value={passEntered}
                            className={classNames(styles.input, {[styles.invalid]: !validate})}

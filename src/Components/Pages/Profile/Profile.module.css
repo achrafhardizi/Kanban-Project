@@ -1,0 +1,110 @@
+.page{
+    display: flex;
+    height: 100%;
+}
+
+.body{
+    flex : 1 1 auto;
+    background-color: #616161;
+}
+
+.profile{
+    height: 100%;
+}
+
+.profile__picture{
+    margin-top: 2em;
+    object-fit: cover;
+    display: grid;
+    place-items: center;
+}
+
+.profile__picture img{
+    width: 10%;
+    border-radius: 50%;
+    z-index: 0;
+    position: relative;
+}
+
+.profile__picture input{
+    display: none;
+}
+.profile__changePic{
+    position: absolute;
+    z-index: 5;
+    font-size: 1.25rem;
+    padding: .35em;
+    top: 16%;
+    right: 42%;
+    border-radius: 50%;
+    color: var(--bg-white-light);
+    background-color: var(--bg-black-dark);
+    display: grid;
+    place-items: center;
+}
+
+.profile__name{
+    color:var(--bg-white-light);
+    text-align:center
+}
+
+.profileInfo__container{
+    height: 100%;
+    margin: 3em 10em;
+}
+
+.profileInfo__card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-white-light);
+    border-radius: 12px;
+    box-shadow: 0 6px 6px rgba(0,0,0,.4);
+}
+
+.profileInfo__card > *{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileInfo__card > * > *{
+    padding: 2em;
+}
+
+.profileInfo__card > * > p{
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.profileInfo__card > *:nth-child(even){
+    background-color: var(--bg-white-darker);
+}
+
+.edit__profileInfo {
+    margin-top: 1em;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding-block: 0.5em;
+    font-size: 1rem;
+    border-radius: 4px;
+    background: linear-gradient(to right, #2E2D38, #1D1E22, #2D3238, #293033);
+    background-size: 500%;
+    color: white;
+    cursor: pointer;
+}
+
+.edit__profileInfo:hover {
+    animation-name: gradientButton;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes gradientButton {
+    0% {
+        background-position: 0 50%
+    }
+    100% {
+        background-position: 100%
+    }
+}

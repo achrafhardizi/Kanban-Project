@@ -59,7 +59,7 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit}>
                     <input type="text" value={usernameEntered}
                            className={classNames(styles.input, {[styles.invalid]: !validateUser})}
-                           onChange={usernameChangeHandler} placeholder="username" required="required"/>
+                           onChange={usernameChangeHandler} placeholder="Nom d'utilisateur" required="required"/>
                     {!validateUser && <p className={styles.errorMessage}>username non valide au moins 5 caractères!</p>}
                     <input type="password"
                            className={classNames(styles.input, {[styles.invalid]: !validatePass})}

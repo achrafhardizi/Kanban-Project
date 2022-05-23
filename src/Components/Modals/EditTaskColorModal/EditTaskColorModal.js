@@ -13,9 +13,9 @@ const EditTaskColorModal = (props) => {
     return (
         <Modal show={props.show}>
             <form className={styles.form} onSubmit={editTaskColorSubmitHandler}>
-                <div className={styles["modal__title"]}>Edit Task Color</div>
+                <div className={styles["modal__title"]}>Modifier la couleur de la tâche</div>
                 <SwatchesPicker className='mt-2' color={props.color} onChange={props.changeColor}/>
-                <button type="submit" className={classNames(styles["editTask__color"], styles["btn-1"])}>Edit Task</button>
+                <button type="submit" className={classNames(styles["editTask__color"], styles["btn-1"])}>Modifier la couleur de la tâche</button>
             </form>
         </Modal>
     );

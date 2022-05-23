@@ -41,7 +41,7 @@ const Section = (props) => {
                 {props.children}
             </div>
             <div className={styles["card__footer"]}>
-                <span onClick={addTaskClickHandler}>Add task</span>
+                <span onClick={addTaskClickHandler}>Ajouter une tâche</span>
                 <FontAwesomeIcon onClick={addTaskClickHandler} icon={faCirclePlus} style={{cursor:"pointer"}}/>
                 <AddTaskModal show={showAddTaskModal} showModalHandler={addTaskClickHandler}/>
             </div>

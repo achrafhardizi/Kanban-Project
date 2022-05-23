@@ -34,7 +34,7 @@ const Workspace = (props) => {
                         </Section>))
                     }
                     <div className={styles.addSection} onClick={()=>addSection(newSection)}>
-                        <span>add Section</span>
+                        <span>Ajouter une Section</span>
                         <FontAwesomeIcon icon={faCirclePlus}/>
                     </div>
                 </div>

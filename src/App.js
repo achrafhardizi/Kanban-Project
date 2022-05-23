@@ -7,7 +7,7 @@ import {
     Notification,
     SignUp,
     ForgotPass,
-    ResetPassword
+    ResetPassword, Profile
 } from './Components'
 import {useState} from "react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
@@ -34,7 +34,7 @@ const App = () => {
                         <Route path='settings/appearance' element={<Appearance bg={(bg) => setColor(bg)}/>}/>
                         <Route path='settings/notifications' element={<Notification/>}/>
                     </Route>
-                    <Route path="profile"/>
+                    <Route path="profile" element={<Profile/>}/>
                     <Route path="*" element={
                         <h1>
                             {/*todo:this component just for testing*/}

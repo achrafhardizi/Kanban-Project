@@ -1,0 +1,23 @@
+.body{
+    flex : 1 1 auto;
+    display: grid;
+    place-items: center;
+    background-color: #616161;
+}
+
+
+.card{
+    background-color: var(--bg-white-light);
+    max-height: 80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: fit-content;
+    margin-inline: 5em;
+    padding: 1em;
+    border-radius: 12px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -39,13 +39,13 @@ const ForgotPass = () => {
                 <h1>Forgot Password</h1>
                 <form onSubmit={handleSubmit}>
                     <p>
-                        Lost your password? please enter your email address.You will receive a link to create a new password via email
+                        Mot de passe perdu? veuillez entrer votre adresse e-mail. Vous recevrez un lien pour créer un nouveau mot de passe par e-mail
                     </p>
                     <input type="text" value={emailEntered}
                            className={classNames(styles.input, {[styles.invalid]: !validEmail})}
                            onChange={emailChangeHandler} placeholder="e.g. email@gmail.com" required="required"/>
                     {!validEmail && <p className={styles.errorMessage}>email non valide</p>}
-                    <button type="submit" className={styles.button}>Forgot Password</button>
+                    <button type="submit" className={styles.button}>Mot de passe oublié</button>
                 </form>
             </div>
         </div>
