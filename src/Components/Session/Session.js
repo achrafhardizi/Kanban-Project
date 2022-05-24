@@ -1,8 +1,16 @@
 import styles from './Session.module.css';
 import {BsDoorOpen,BsThreeDotsVertical} from "react-icons/bs"
 import {Link} from "react-router-dom";
+import {useState} from "react";
+import {EditSessionModal} from "../index";
 
 const Session = (props) => {
+
+    const [showEditSessionModal, setShowEditSessionModal] = useState(false);
+
+    const editSessionClickHandler = () => {
+        setShowEditSessionModal(!showEditSessionModal);
+    }
 
     const  colorIsbright = (color) => {
 
@@ -29,7 +37,8 @@ const Session = (props) => {
                 >
                     {props.session.sessionName}
                 </span>
-                <BsThreeDotsVertical style={{color:colorIsbright(props.session.sessionColor)}}/>
+                <BsThreeDotsVertical style={{color:colorIsbright(props.session.sessionColor)}} onClick={editSessionClickHandler}/>
+                <EditSessionModal show={showEditSessionModal}/>
             </div>
             <div className={styles["session__join"]}>
                 <span>{"rejoint"}</span>

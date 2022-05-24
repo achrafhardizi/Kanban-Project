@@ -11,6 +11,7 @@ export {default as Sessions} from './Sessions/Sessions'
 export {default as Appearance} from './Settings/Appearance'
 export {default as Notification} from './Settings/Notification'
 export {default as Session} from './Session/Session'
+
 /*
  * Pages
  */
@@ -32,6 +33,7 @@ export {default as Tag} from "./UI/Tag/Tag"
  */
 
 export {default as AddSessionModal } from "./Modals/AddSessionModal/AddSessionModal"
+export {default as EditSessionModal } from "./Modals/EditSessionModal/EditSessionModal"
 export {default as AddTaskModal} from "./Modals/AddTaskModal/AddTaskModal"
 export {default as AddTagModal} from "./Modals/AddTagModal/AddTagModal"
 export {default as EditSectionModal} from "./Modals/EditSectionModal/EditSectionModal"

@@ -48,6 +48,12 @@
     gap: 1em;
 }
 
+.task__members label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
 .editSession,.deleteSession {
     width: 100%;
     border-radius: 5px;
@@ -68,18 +74,4 @@
 
 .btn-1:hover {
     background: linear-gradient(0deg, #3f3f3f 0%, #5e5e5e 100%);
-}
-
-.btn-2 {
-    background: linear-gradient(0deg, #f12222 0%, lightcoral 100%);
-    border: none;
-}
-
-.btn-2:hover {
-    background: linear-gradient(0deg, #f33d3d 0%, lightcoral 100%);
-}
-
-.button__group{
-    display: flex;
-    gap: .5em;
 }

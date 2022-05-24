@@ -12,12 +12,11 @@ const Appearance = (props) => {
     return (
         <div className={styles.body}>
             <div className={styles.card}>
-                <h4>App Background Color</h4>
+                <h4 className={styles.header}>App Background Color</h4>
                 <SliderPicker color={color} onChange={e => setColor(e.hex)}/>
                 <span style={{margin: "5px"}}/>
-                <TwitterPicker color={color} onChange={e => setColor(e.hex)}/>
-                <hr size="5px"/>
-                <h4>Couleurs recents</h4>
+                <center><TwitterPicker color={color} onChange={e => setColor(e.hex)}/></center>
+                <h4 className={styles.header}>Couleurs recents</h4>
                 <div className={styles.row}>
                     {colorsutilise.map((cu, i) => (
                         <Col>
@@ -29,8 +28,7 @@ const Appearance = (props) => {
                         </Col>
                     ))}
                 </div>
-                <hr size="5px"/>
-                <h4>Couleurs Kanban</h4>
+                <h4 className={styles.header}>Couleurs Kanban</h4>
                 <div className={styles.row}>
                     {colors.map((cols, i) => (
                         <Col>
@@ -43,10 +41,13 @@ const Appearance = (props) => {
                     ))}
 
                 </div>
-                <Button variant={"success"} onClick={() => {
-                    props.bg(color);
-                    setColorsutilise([...colorsutilise, color])
-                }}>Save</Button>
+                <button className={styles.button}
+                        onClick={() => {
+                            props.bg(color);
+                            setColorsutilise([...colorsutilise, color])}
+                }>
+                    Save
+                </button>
             </div>
         </div>
     );

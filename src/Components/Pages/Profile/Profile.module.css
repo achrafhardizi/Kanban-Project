@@ -13,15 +13,17 @@
 }
 
 .profile__picture{
-    margin-top: 2em;
+    margin-top: 1em;
     object-fit: cover;
     display: grid;
     place-items: center;
 }
 
 .profile__picture img{
-    width: 10%;
+    width: 11%;
+    height: 100%;
     border-radius: 50%;
+    object-fit: cover;
     z-index: 0;
     position: relative;
 }
@@ -34,8 +36,8 @@
     z-index: 5;
     font-size: 1.25rem;
     padding: .35em;
-    top: 16%;
-    right: 42%;
+    top: 18%;
+    right: 41%;
     border-radius: 50%;
     color: var(--bg-white-light);
     background-color: var(--bg-black-dark);
@@ -50,7 +52,7 @@
 
 .profileInfo__container{
     height: 100%;
-    margin: 3em 10em;
+    margin: 1.5em 10em;
 }
 
 .profileInfo__card{

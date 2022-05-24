@@ -1,15 +1,15 @@
 import styles from "./Profile.module.css";
 import avatar from "../../../Assets/UserProfilePicutres/default-avatar-profile.jpg"
 import {Sidebar} from "../../index";
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import {BsCamera} from "react-icons/bs"
 
 const Profile = () => {
-    const image = useRef(avatar)
+    let [profilePicture , setProfilePicture] = useState(avatar)
 
     const loadProfilePicture = (event) => {
+        setProfilePicture(URL.createObjectURL(event.target.files[0]));
         console.log(event.target.files[0]);
-        image.current.src = event.target.files[0];
     }
 
 
@@ -21,7 +21,7 @@ const Profile = () => {
                     <div className={styles["profile__picture"]}>
                         <label className={styles["profile__changePic"]} htmlFor="profilePic"><BsCamera/></label>
                         <input id="profilePic" type="file" onChange={loadProfilePicture}/>
-                        <img ref={image} src={avatar} alt="user profile"/>
+                        <img src={profilePicture} alt="user profile"/>
                     </div>
                     <div className={styles["profile__name"]}>
                         <h1>Nom d'utilisateur</h1>

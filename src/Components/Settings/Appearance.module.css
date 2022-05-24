@@ -14,10 +14,67 @@
     width: fit-content;
     margin-inline: 5em;
     padding: 1em;
-    border-radius: 12px;
+    border-radius: 8px;
+}
+
+.card::-webkit-scrollbar {
+    width: 10px;
+}
+
+.card::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-inline: 1em;
+    border-radius: 20px;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .row{
     display: flex;
     flex-wrap: wrap;
+}
+
+.header{
+    padding: .25em;
+    font-size: 1.25rem;
+    text-align: center;
+    margin-block: .5em;
+    color: var(--bg-white-light);
+    background-color: #b1b1b1;
+    margin-inline: 14em;
+    border-radius: 8px;
+}
+
+.button {
+    margin-top: 1em;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding-block: 0.5em;
+    font-size: 1rem;
+    border-radius: 4px;
+    background: linear-gradient(to right, #2E2D38, #1D1E22, #2D3238, #293033);
+    background-size: 500%;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    animation-name: gradientButton;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes gradientButton {
+    0% {
+        background-position: 0 50%
+    }
+    100% {
+        background-position: 100%
+    }
 }

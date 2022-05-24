@@ -4,6 +4,7 @@ import {SwatchesPicker} from "react-color";
 import classNames from "classnames";
 import {Modal} from "../../index";
 import {useState} from "react";
+import {BsFillPatchPlusFill} from "react-icons/bs";
 
 const AddSessionModal = (props) => {
 
@@ -31,12 +32,15 @@ const AddSessionModal = (props) => {
                         <textarea cols="30" rows="5" placeholder="Description de la session"/>
                     </div>
                 </div>
-                <SwatchesPicker className='mt-2' color={color} onChange={changeColor}/>
-                <div className={styles["button__group"]}>
-                    <button type="submit" className={classNames(styles.editSession, styles["btn-1"])}>Modifier la session</button>
-                    <button type="submit" className={classNames(styles.deleteSession, styles["btn-2"])}>Supprimer la session
-                    </button>
+                <div className={styles["task__members"]}>
+                    <label htmlFor="task__members">Membres</label>
+                    <div className={styles["members__group"]}>
+                        {/*  Todo:add Members picture  */}
+                        <BsFillPatchPlusFill style={{color:"hsl(216,13.51%,72.75%)"}} size={30}/>
+                    </div>
                 </div>
+                <SwatchesPicker className='mt-2' color={color} onChange={changeColor}/>
+                <button type="submit" className={classNames(styles.editSession, styles["btn-1"])}>Ajouter session</button>
             </form>
         </Modal>
     );
