@@ -25,7 +25,7 @@ const Workspace = (props) => {
                 <Navbar sessionInfo={props.sessions[sessionId]}/>
                 <div className={styles.layout}>
                     {sections.map((e) => (
-                        <Section Name={e.sectionName} key={e.sectionId}>
+                        <Section section={e} key={e.sectionId}>
                             {
                                 e.tasks.map((task,i) =>(
                                     <Task task={task} key={task.taskId}/>

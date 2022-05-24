@@ -28,15 +28,15 @@ const Task = (props) => {
     return (
         <>
             <div className={styles.card} onClick={editTaskClickHandler}
-                 onContextMenu={editTaskColorClickHandler}
-                 style={{backgroundColor:task.taskColor}}
+                onContextMenu={editTaskColorClickHandler}
+                style={{backgroundColor:task.taskColor}}
             >
                 <div className={styles["task__tags"]}>
                     {/*<Tag tagName={"important"} tagColor={"#e0465e"}/>*/}
                     {/*<Tag tagName={"optional"} tagColor={"#fbaa49"}/>*/}
                     {/*<Tag tagName={"pending"}/>*/}
                     {task.tags.map(tag => (
-                        <Tag tagName={tag.tagName} tagColor={tag.tagColor}/>
+                        <Tag key={tag.tagId} tagName={tag.tagName} tagColor={tag.tagColor}/>
                     ))}
                 </div>
                 <div className={styles["task__name"]}>

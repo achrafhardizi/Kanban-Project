@@ -11,7 +11,7 @@ export {default as Sessions} from './Sessions/Sessions'
 export {default as Appearance} from './Settings/Appearance'
 export {default as Notification} from './Settings/Notification'
 export {default as Session} from './Session/Session'
-export {default as DropWrapper} from './DropWrapper/DropWrapper'
+// export {default as DropWrapper} from './DropWrapper/DropWrapper'
 
 
 /*
