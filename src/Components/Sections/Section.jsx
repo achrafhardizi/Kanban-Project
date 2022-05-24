@@ -28,8 +28,13 @@ const Section = (props) => {
 
     const classes = styles.card + " " + props.className;
 
+    const dragOver = (e) => {
+        e.preventDefault()
+        console.log("dragover");
+    }
+
     return (
-        <div className={classes} style={{backgroundColor:color}}>
+        <div className={classes} style={{backgroundColor:color}} >
             <div className={styles["card__title"]}>
                 <span>
                     {section.sectionName}
@@ -37,7 +42,7 @@ const Section = (props) => {
                 <FontAwesomeIcon icon={faEllipsisV} style={{color: "#fdfeff",cursor:"pointer"}} onClick={editSectionClickHandler}/>
                 <EditSectionModal show={showEditSectionModal} showModalHandler={editSectionClickHandler} color={color} changeColor={changeColor}/>
             </div>
-            <div className={styles["card__content"]}>
+            <div className={styles["card__content"]} onDragOver={dragOver}>
                 {props.children}
             </div>
             <div className={styles["card__footer"]}>

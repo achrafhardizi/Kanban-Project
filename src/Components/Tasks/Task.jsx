@@ -2,10 +2,12 @@ import {useState} from 'react';
 import styles from "./Task.module.css"
 import taskEdit from "../../Assets/taskEdit.png"
 import {EditTaskColorModal, EditTaskModal, Tag} from "../index";
+import classNames from "classnames";
 
 const Task = (props) => {
 
-    const [task,setTask] = useState(props.task)
+    const [draggin, setDraggin] = useState(false);
+    const [task, setTask] = useState(props.task)
 
     const [showEditTaskModal, setShowEditTaskModal] = useState(false);
     const [showEditTaskColorModal, setShowEditTaskColorModal] = useState(false);
@@ -25,11 +27,24 @@ const Task = (props) => {
         setShowEditTaskColorModal(prevState => !prevState);
     }
 
+    const dragStart = (e) => {
+        e.stopPropagation()
+        setDraggin(true);
+    }
+
+    const dragOver = e => {
+        setDraggin(false);
+    }
+
+
     return (
         <>
-            <div className={styles.card} onClick={editTaskClickHandler}
-                onContextMenu={editTaskColorClickHandler}
-                style={{backgroundColor:task.taskColor}}
+            <div className={classNames(styles.card,{[styles.draggin]:draggin})} onClick={editTaskClickHandler}
+                 onContextMenu={editTaskColorClickHandler}
+                 style={{backgroundColor: task.taskColor}}
+                 draggable={true}
+                 onDragStart={dragStart}
+                 onDragOver={dragOver}
             >
                 <div className={styles["task__tags"]}>
                     {/*<Tag tagName={"important"} tagColor={"#e0465e"}/>*/}

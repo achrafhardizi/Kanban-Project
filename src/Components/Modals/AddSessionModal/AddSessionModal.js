@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./AddSessionModal.module.css";
-import {SwatchesPicker} from "react-color";
+import {SliderPicker} from "react-color";
 import classNames from "classnames";
 import {Modal} from "../../index";
 import {useState} from "react";
@@ -32,15 +32,19 @@ const AddSessionModal = (props) => {
                         <textarea cols="30" rows="5" placeholder="Description de la session"/>
                     </div>
                 </div>
-                <div className={styles["task__members"]}>
-                    <label htmlFor="task__members">Membres</label>
+                <div className={styles["session__members"]}>
+                    <label htmlFor="session__members">Membres</label>
                     <div className={styles["members__group"]}>
                         {/*  Todo:add Members picture  */}
-                        <BsFillPatchPlusFill style={{color:"hsl(216,13.51%,72.75%)"}} size={30}/>
+                        <BsFillPatchPlusFill style={{color: "hsl(216,13.51%,72.75%)"}} size={30}/>
                     </div>
                 </div>
-                <SwatchesPicker className='mt-2' color={color} onChange={changeColor}/>
-                <button type="submit" className={classNames(styles.editSession, styles["btn-1"])}>Ajouter session</button>
+                <div className={styles["session__color"]}>
+                    <label >Couleur de session</label>
+                    <SliderPicker styles={{width: "100%",marginTop:"1em"}} className='mt-2' color={color} onChange={changeColor}/>
+                </div>
+                <button type="submit" className={classNames(styles.editSession, styles["btn-1"])}>Ajouter session
+                </button>
             </form>
         </Modal>
     );

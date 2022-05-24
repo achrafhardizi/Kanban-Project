@@ -48,10 +48,19 @@
     gap: 1em;
 }
 
-.task__members label{
+.session__members label{
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 1em;
+}
+
+.session__color label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+.session__color{
+    margin-block: 1em;
 }
 
 .editSession,.deleteSession {

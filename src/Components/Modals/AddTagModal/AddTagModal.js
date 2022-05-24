@@ -29,15 +29,15 @@ const AddTagModal = (props) => {
                     <label htmlFor="task__members">Étiquettes :</label>
                     <div className={styles["tags__group"]} style={{gridTemplateRows: 3}}>
                         <div className={styles["tagItem"]}>
-                            <div style={{backgroundColor: "#e0465e"}}>important</div>
+                            <div style={{backgroundColor: "#f44336"}}>important</div>
                             <FaTimes/>
                         </div>
                         <div className={styles["tagItem"]}>
-                            <div style={{backgroundColor: "#fbaa49"}}>optionnel</div>
+                            <div style={{backgroundColor: "#ffeb3b"}}>optionnel</div>
                             <FaTimes/>
                         </div>
                         <div className={styles["tagItem"]}>
-                            <div style={{backgroundColor: "#1fc778"}}>en attendant</div>
+                            <div style={{backgroundColor: "#81c784"}}>en attendant</div>
                             <FaTimes/>
                         </div>
                     </div>

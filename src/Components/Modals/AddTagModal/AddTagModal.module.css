@@ -42,6 +42,8 @@
     align-items: center;
     background-color: var(--bg-black-dark);
     color: var(--bg-white-light);
+    border-radius: 7px;
+
 }
 
 .tagItem div{
@@ -50,6 +52,7 @@
     padding-left: 1em;
     border: 2px solid var(--bg-black-dark);
     color:  var(--bg-black-dark);
+    border-radius: 8px;
 }
 
 .addTag{

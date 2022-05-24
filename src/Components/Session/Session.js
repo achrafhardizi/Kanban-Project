@@ -38,7 +38,7 @@ const Session = (props) => {
                     {props.session.sessionName}
                 </span>
                 <BsThreeDotsVertical style={{color:colorIsbright(props.session.sessionColor)}} onClick={editSessionClickHandler}/>
-                <EditSessionModal show={showEditSessionModal}/>
+                <EditSessionModal show={showEditSessionModal} session={props.session}/>
             </div>
             <div className={styles["session__join"]}>
                 <span>{"rejoint"}</span>
