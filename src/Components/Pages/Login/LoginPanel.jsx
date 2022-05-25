@@ -1,10 +1,28 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import styles from "./Loginpanel.module.css"
 import classNames from "classnames";
+import axios from "axios"
 
 
 const LoginPanel = () => {
+
+    const url = "http://localhost:5000/"
+    const user = {
+        username: 'Youneesz',
+        password: 'aaaaaa'
+    }
+
+
+    const getUser = () => {
+        axios.post(`${url}login/`, {user})
+            .then(function (response) {
+                console.log(JSON.parse(response));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
 
     const [usernameEntered, setUsernameEntered] = useState("");
     const [passEntered, setPassEntered] = useState("");
@@ -22,13 +40,14 @@ const LoginPanel = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        if ( (usernameEntered.trim().length === 0)
+        if ((usernameEntered.trim().length === 0)
             || passEntered.trim().length === 0) {
             setValidate(false);
             return;
         }
         setValidate(true)
-        navigate('/sessions')
+        getUser();
+        // navigate('/sessions')
     }
 
     return (
