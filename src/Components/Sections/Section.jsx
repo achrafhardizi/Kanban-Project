@@ -11,7 +11,7 @@ const Section = (props) => {
     const [section, setSection] = useState(props.section);
     const [showAddTaskModal, setShowAddTaskModal] = useState(false);
     const [showEditSectionModal, setShowEditSectionModal] = useState(false);
-    const [color, setColor] = useState('var(--bg-black-dark)');
+    const [color, setColor] = useState(props.section.bgColor);
 
     const changeColor = (updatedColor) => {
         setColor(updatedColor.hex);
@@ -28,21 +28,21 @@ const Section = (props) => {
 
     const classes = styles.card + " " + props.className;
 
-    const dragOver = (e) => {
-        e.preventDefault()
-        console.log("dragover");
-    }
-
     return (
         <div className={classes} style={{backgroundColor:color}} >
             <div className={styles["card__title"]}>
                 <span>
-                    {section.sectionName}
+                    {section.nameSection}
                 </span>
                 <FontAwesomeIcon icon={faEllipsisV} style={{color: "#fdfeff",cursor:"pointer"}} onClick={editSectionClickHandler}/>
-                <EditSectionModal show={showEditSectionModal} showModalHandler={editSectionClickHandler} color={color} changeColor={changeColor}/>
+                <EditSectionModal show={showEditSectionModal}
+                                  showModalHandler={editSectionClickHandler}
+                                  section={props.section}
+                                  session={props.session}
+                                  color={color}
+                                  changeColor={changeColor}/>
             </div>
-            <div className={styles["card__content"]} onDragOver={dragOver}>
+            <div className={styles["card__content"]}>
                 {props.children}
             </div>
             <div className={styles["card__footer"]}>

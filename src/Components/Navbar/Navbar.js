@@ -30,9 +30,9 @@ const Navbar = (props) => {
     return (
         <div className={styles.navbar}>
             <div className={styles["nav__top"]}>
-                <h1 className={styles["nav__title"]}>{props.sessionInfo.sessionName}</h1>
+                <h1 className={styles["nav__title"]}>{props.sessionInfo.nameSession}</h1>
                 <div className={styles["usersNum"]}>
-                    <FontAwesomeIcon icon={faUserCircle}/> / {props.sessionInfo.sessionMembersNum}
+                    <FontAwesomeIcon icon={faUserCircle}/> / {19}
                 </div>
             </div>
             <div className={styles["nav__bot"]}>

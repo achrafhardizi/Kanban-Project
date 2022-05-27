@@ -22,7 +22,7 @@
 }
 
 .session__join span{
-    color: limegreen;
+    color: var(--bg-black-dark);
 }
 
 .session__enter {

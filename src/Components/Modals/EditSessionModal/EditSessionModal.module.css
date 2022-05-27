@@ -48,8 +48,11 @@
     gap:1em;
 }
 
-.session__owner{
-
+.owner span{
+    font-size: .85rem;
+    padding: 0.1em 0.5em;
+    background-color: gold;
+    border-radius: 8px;
 }
 
 .session__members label,.session__owner label,.session__color label{

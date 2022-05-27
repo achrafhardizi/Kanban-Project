@@ -1,10 +1,10 @@
 import styles from './Session.module.css';
 import {BsDoorOpen,BsThreeDotsVertical} from "react-icons/bs"
 import {Link} from "react-router-dom";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {EditSessionModal} from "../index";
 
-const Session = (props) => {
+const Session = (props,{owned}) => {
 
     const [showEditSessionModal, setShowEditSessionModal] = useState(false);
 
@@ -29,21 +29,21 @@ const Session = (props) => {
     }
 
     return (
-        <div className={styles.card} style={{backgroundColor:props.session.sessionColor}}>
+        <div className={styles.card} style={{backgroundColor:props.session.bgColor}}>
             <div className={styles["session__header"]}>
                 <span
                     className={styles["session_name"]}
-                    style={{color:colorIsbright(props.session.sessionColor)}}
+                    style={{color:colorIsbright(props.session.bgColor)}}
                 >
-                    {props.session.sessionName}
+                    {props.session.nameSession}
                 </span>
-                <BsThreeDotsVertical style={{color:colorIsbright(props.session.sessionColor)}} onClick={editSessionClickHandler}/>
-                <EditSessionModal show={showEditSessionModal} session={props.session}/>
+                <BsThreeDotsVertical style={{color:colorIsbright(props.session.bgColor)}} onClick={editSessionClickHandler}/>
+                <EditSessionModal show={showEditSessionModal} user={props.user} session={props.session}/>
             </div>
             <div className={styles["session__join"]}>
-                <span>{"rejoint"}</span>
+                {owned ? <span>{"propriétaire"}</span> :<span>{"membre"}</span>}
             </div>
-            <Link className={styles["session__enter"]} to={`workspace${props.session.sessionId}`}><BsDoorOpen style={{color:props.session.sessionColor}}/></Link>
+            <Link className={styles["session__enter"]} to={`workspace${props.session.idSession}`}><BsDoorOpen style={{color:props.session.bgColor}}/></Link>
         </div>
     );
 };

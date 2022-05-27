@@ -6,7 +6,6 @@ import classNames from "classnames";
 
 const Task = (props) => {
 
-    const [draggin, setDraggin] = useState(false);
     const [task, setTask] = useState(props.task)
 
     const [showEditTaskModal, setShowEditTaskModal] = useState(false);
@@ -27,35 +26,20 @@ const Task = (props) => {
         setShowEditTaskColorModal(prevState => !prevState);
     }
 
-    const dragStart = (e) => {
-        e.stopPropagation()
-        setDraggin(true);
-    }
-
-    const dragOver = e => {
-        setDraggin(false);
-    }
-
-
     return (
         <>
-            <div className={classNames(styles.card,{[styles.draggin]:draggin})} onClick={editTaskClickHandler}
+            <div className={classNames(styles.card)} onClick={editTaskClickHandler}
                  onContextMenu={editTaskColorClickHandler}
-                 style={{backgroundColor: task.taskColor}}
-                 draggable={true}
-                 onDragStart={dragStart}
-                 onDragOver={dragOver}
+                 style={{backgroundColor: task.colorTask}}
             >
                 <div className={styles["task__tags"]}>
-                    {/*<Tag tagName={"important"} tagColor={"#e0465e"}/>*/}
-                    {/*<Tag tagName={"optional"} tagColor={"#fbaa49"}/>*/}
-                    {/*<Tag tagName={"pending"}/>*/}
-                    {task.tags.map(tag => (
-                        <Tag key={tag.tagId} tagName={tag.tagName} tagColor={tag.tagColor}/>
-                    ))}
+                    {/*{task.tags.map(tag => (*/}
+                    {/*    <Tag key={tag.tagId} tagName={tag.tagName} tagColor={tag.tagColor}/>*/}
+                    {/*))}*/}
+                    tags
                 </div>
                 <div className={styles["task__name"]}>
-                    <span>{task.taskName}</span>
+                    <span>{task.nameTask}</span>
                     <img src={taskEdit}
                          alt="task edit Icon"
                          className={styles["edit__icon"]}

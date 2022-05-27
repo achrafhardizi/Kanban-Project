@@ -1,23 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import styles from "./Loginpanel.module.css"
 import classNames from "classnames";
 import axios from "axios"
 
 
-const LoginPanel = () => {
-
-    const url = "http://localhost:5000/"
-    const user = {
-        username: 'Youneesz',
-        password: 'aaaaaa'
-    }
+const LoginPanel = (props) => {
 
 
     const getUser = () => {
-        axios.post(`${url}login/`, {user})
+        const user = {
+            username: usernameEntered,
+            password: passEntered
+        }
+        axios.post(`http://localhost:5000/login/`, user)
             .then(function (response) {
-                console.log(JSON.parse(response));
+                console.log(response.data)
+                localStorage.setItem("id",JSON.stringify(response.data.idUser));
             })
             .catch(function (error) {
                 console.log(error);
@@ -47,7 +46,7 @@ const LoginPanel = () => {
         }
         setValidate(true)
         getUser();
-        // navigate('/sessions')
+        navigate('/sessions')
     }
 
     return (

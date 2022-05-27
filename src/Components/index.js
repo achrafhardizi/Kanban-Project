@@ -11,8 +11,6 @@ export {default as Sessions} from './Sessions/Sessions'
 export {default as Appearance} from './Settings/Appearance'
 export {default as Notification} from './Settings/Notification'
 export {default as Session} from './Session/Session'
-// export {default as DropWrapper} from './DropWrapper/DropWrapper'
-
 
 /*
  * Pages
@@ -34,13 +32,13 @@ export {default as Tag} from "./UI/Tag/Tag"
  * Modals
  */
 
-export {default as AddSessionModal } from "./Modals/AddSessionModal/AddSessionModal"
-export {default as EditSessionModal } from "./Modals/EditSessionModal/EditSessionModal"
+export {default as AddSessionModal} from "./Modals/AddSessionModal/AddSessionModal"
+export {default as EditSessionModal} from "./Modals/EditSessionModal/EditSessionModal"
 export {default as AddTaskModal} from "./Modals/AddTaskModal/AddTaskModal"
 export {default as AddTagModal} from "./Modals/AddTagModal/AddTagModal"
 export {default as EditSectionModal} from "./Modals/EditSectionModal/EditSectionModal"
-export {default as EditTaskModal } from "./Modals/EditTaskModal/EditTaskModal"
-export {default as EditTaskColorModal } from "./Modals/EditTaskColorModal/EditTaskColorModal"
+export {default as EditTaskModal} from "./Modals/EditTaskModal/EditTaskModal"
+export {default as EditTaskColorModal} from "./Modals/EditTaskColorModal/EditTaskColorModal"
 
 
 

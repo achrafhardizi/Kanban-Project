@@ -4,8 +4,8 @@ import {Sidebar} from "../../index";
 import {useRef, useState} from "react";
 import {BsCamera} from "react-icons/bs"
 
-const Profile = () => {
-    let [profilePicture , setProfilePicture] = useState(avatar)
+const Profile = ({username, firstName, lastName, email, birthday, password, joindate}) => {
+    let [profilePicture, setProfilePicture] = useState(avatar)
 
     const loadProfilePicture = (event) => {
         setProfilePicture(URL.createObjectURL(event.target.files[0]));
@@ -28,14 +28,24 @@ const Profile = () => {
                     </div>
                     <div className={styles["profileInfo__container"]}>
                         <div className={styles["profileInfo__card"]}>
+                            <div className={styles["profileInfo__password"]}>
+                                <span>Nom d'utilisateur :</span> <p>{username}</p>
+                            </div>
                             <div className={styles["profileInfo__name"]}>
-                                <span>Nom :</span> <p>{"john Doe"}</p>
+                                <span>Prenom :</span> <p>{firstName}</p>
+                            </div>
+                            <div className={styles["profileInfo__name"]}>
+                                <span>Nom :</span> <p>{lastName}</p>
                             </div>
                             <div className={styles["profileInfo__email"]}>
-                                <span>E-mail :</span> <p>{"johndoe45@gmail.com"}</p>
+                                <span>Birthday :</span> <p>{birthday}</p>
                             </div>
+                            <div className={styles["profileInfo__email"]}>
+                                <span>E-mail :</span> <p>{email}</p>
+                            </div>
+
                             <div className={styles["profileInfo__password"]}>
-                                <span>Mot de passe :</span> <p>{"***************"}</p>
+                                <span>Mot de passe :</span> <p>{password}</p>
                             </div>
                         </div>
                         <button className={styles["edit__profileInfo"]}>Modifier les informations du profil</button>
