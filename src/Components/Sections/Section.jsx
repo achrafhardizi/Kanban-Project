@@ -11,7 +11,7 @@ const Section = (props) => {
     const [section, setSection] = useState(props.section);
     const [showAddTaskModal, setShowAddTaskModal] = useState(false);
     const [showEditSectionModal, setShowEditSectionModal] = useState(false);
-    const [color, setColor] = useState(props.section.bgColor);
+    const [color, setColor] = useState(props.section.sectionColor);
 
     const changeColor = (updatedColor) => {
         setColor(updatedColor.hex);
@@ -48,7 +48,7 @@ const Section = (props) => {
             <div className={styles["card__footer"]}>
                 <span onClick={addTaskClickHandler}>Ajouter une tâche</span>
                 <FontAwesomeIcon onClick={addTaskClickHandler} icon={faCirclePlus} style={{cursor:"pointer"}}/>
-                <AddTaskModal show={showAddTaskModal} showModalHandler={addTaskClickHandler}/>
+                <AddTaskModal section={props.section} show={showAddTaskModal} showModalHandler={addTaskClickHandler}/>
             </div>
         </div>
     );

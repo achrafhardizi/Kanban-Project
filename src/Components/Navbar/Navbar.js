@@ -32,7 +32,7 @@ const Navbar = (props) => {
             <div className={styles["nav__top"]}>
                 <h1 className={styles["nav__title"]}>{props.sessionInfo.nameSession}</h1>
                 <div className={styles["usersNum"]}>
-                    <FontAwesomeIcon icon={faUserCircle}/> / {19}
+                    <FontAwesomeIcon icon={faUserCircle}/> / {props.memberNum+1}
                 </div>
             </div>
             <div className={styles["nav__bot"]}>

@@ -10,6 +10,7 @@ import axios from "axios";
 const Workspace = () => {
 
     let {sessionId} = useParams();
+    const [membersCount,setMembersCount] = useState(null);
     const [session, setSession] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -24,7 +25,14 @@ const Workspace = () => {
             .catch(err => {
                 console.log(err);
             })
-
+        axios.get(`http://localhost:5000/sessions/getcount/${sessionId}`)
+            .then(res => {
+                console.log(res.data);
+                setMembersCount(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }, []);
 
     const addNewSection = () =>{
@@ -44,13 +52,13 @@ const Workspace = () => {
             {
                 loading ? <p>loading </p> :
                 <div className={styles.body}>
-                    <Navbar sessionInfo={session}/>
+                    <Navbar sessionInfo={session} memberNum={membersCount}/>
                     <div className={styles.layout}>
                         {session.sections.map((e) => (
                             <Section session={session} section={e} key={e.idSection}>
                                 {
                                     e.taches.map((task, i) => (
-                                        <Task task={task} key={task.idTask}/>
+                                        <Task section={e} task={task} key={task.idTask}/>
                                     ))
                                 }
                             </Section>))

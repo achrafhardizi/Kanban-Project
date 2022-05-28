@@ -46,8 +46,8 @@ const Task = (props) => {
                     />
                 </div>
             </div>
-            <EditTaskModal show={showEditTaskModal}/>
-            <EditTaskColorModal show={showEditTaskColorModal}/>
+            <EditTaskModal show={showEditTaskModal} section={props.section} task={props.task}/>
+            <EditTaskColorModal show={showEditTaskColorModal} color={color} setColor={setColor}/>
         </>
     );
 };

@@ -28,20 +28,43 @@
     padding: .5em 1em;
 }
 
-.task__tags span{
-    color: var(--bg-black-dark);
-    font-weight: bold;
-}
-.tags__group{
-    margin-top: .5em;
+.task__description{
     display: flex;
-    gap: .5em;
-    flex-wrap: wrap;
-    max-width: 20vw;
+    flex-direction: column;
+    margin-bottom: 1em;
 }
 
-.tags__group > *{
-    flex: 0 0 fit-content;
+
+.task__description label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: .5em;
+    color: var(--bg-black-dark);
+}
+
+.task__dates {
+    display: flex;
+    margin-bottom: 1em;
+    gap:1em;
+}
+
+.task__dates label{
+    color: var(--bg-black-dark);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.task__startDay{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+}
+
+.task__finishDay{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
 }
 
 .addTask {
