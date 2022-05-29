@@ -1,10 +1,13 @@
 import styles from "./Profile.module.css";
 import avatar from "../../../Assets/UserProfilePicutres/default-avatar-profile.jpg"
-import {Sidebar} from "../../index";
+import {EditProfileModal, Sidebar} from "../../index";
 import {useRef, useState} from "react";
 import {BsCamera} from "react-icons/bs"
 
 const Profile = ({username, firstName, lastName, email, birthday, password, joindate}) => {
+
+    const [showEditProfileModal, setShowEditProfileModal] = useState(false);
+
     let [profilePicture, setProfilePicture] = useState(avatar)
 
     const loadProfilePicture = (event) => {
@@ -38,7 +41,7 @@ const Profile = ({username, firstName, lastName, email, birthday, password, join
                                 <span>Nom :</span> <p>{lastName}</p>
                             </div>
                             <div className={styles["profileInfo__email"]}>
-                                <span>Birthday :</span> <p>{birthday}</p>
+                                <span>Date d'anniversaire :</span> <p>{birthday}</p>
                             </div>
                             <div className={styles["profileInfo__email"]}>
                                 <span>E-mail :</span> <p>{email}</p>
@@ -48,7 +51,10 @@ const Profile = ({username, firstName, lastName, email, birthday, password, join
                                 <span>Mot de passe :</span> <p>{password}</p>
                             </div>
                         </div>
-                        <button className={styles["edit__profileInfo"]}>Modifier les informations du profil</button>
+                        <button className={styles["edit__profileInfo"]}
+                                onClick={()=>setShowEditProfileModal(true)}
+                        >Modifier les informations du profil</button>
+                        <EditProfileModal show={showEditProfileModal}/>
                     </div>
                 </div>
             </div>

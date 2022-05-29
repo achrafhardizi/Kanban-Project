@@ -65,7 +65,7 @@
     margin-bottom: .5em;
 }
 
-.tagItem{
+.tagItem {
     display: grid;
     grid-template-columns: 1fr min-content;
     font-size: 1.5rem;
@@ -80,6 +80,30 @@
     padding-left: 1em;
     border: 2px solid var(--bg-black-dark);
     color:  var(--bg-black-dark);
+}
+
+.tagItem > *:nth-child(2){
+    padding: 0.1em;
+}
+
+.user{
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    font-size: 1.5rem;
+    align-items: center;
+    background-color: var(--bg-black-dark);
+    color: var(--bg-white-light);
+}
+
+.user div{
+    font-size: .75rem;
+    font-weight: bold;
+    padding-left: 1em;
+    border: 2px solid var(--bg-black-dark);
+}
+
+.user > *:nth-child(2){
+    padding: 0.2em;
 }
 
 .task__dates {

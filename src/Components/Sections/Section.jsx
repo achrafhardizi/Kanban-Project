@@ -26,6 +26,7 @@ const Section = (props) => {
         setShowEditSectionModal(!showEditSectionModal);
     }
 
+
     const classes = styles.card + " " + props.className;
 
     return (

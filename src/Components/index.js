@@ -39,9 +39,4 @@ export {default as AddTagModal} from "./Modals/AddTagModal/AddTagModal"
 export {default as EditSectionModal} from "./Modals/EditSectionModal/EditSectionModal"
 export {default as EditTaskModal} from "./Modals/EditTaskModal/EditTaskModal"
 export {default as EditTaskColorModal} from "./Modals/EditTaskColorModal/EditTaskColorModal"
-
-
-
-
-
-
+export {default as EditProfileModal} from "./Modals/EditProfileModal/EditProfileModal"

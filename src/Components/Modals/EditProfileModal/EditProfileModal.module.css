@@ -1,0 +1,37 @@
+.form {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.modal__title{
+    text-align: center;
+    margin-bottom: 1em;
+    padding-block: .5em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--bg-black-dark);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.formItem{
+    display: flex;
+    flex-direction: column;
+}
+
+.formItem label{
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.formItem input{
+    border: 1px solid var(--bg-black-dark);
+    border-radius: 4px;
+    padding: 0.25em;
+}
+
+.joined__date{
+    font-size: 0.85rem;
+    text-align: center;
+}

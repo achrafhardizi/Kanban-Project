@@ -13,9 +13,9 @@ const Workspace = () => {
     const [membersCount,setMembersCount] = useState(null);
     const [session, setSession] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [tags, setTags] = useState(null);
 
     useEffect(() => {
-        const userId = localStorage.getItem("id")
         axios.get(`http://localhost:5000/sessions/get/${sessionId}`)
             .then(res => {
                 console.log(res.data);
@@ -33,12 +33,18 @@ const Workspace = () => {
             .catch(err => {
                 console.log(err);
             })
+        axios.get("http://localhost:5000/tags/getall")
+            .then(res => {
+                console.log(res)
+                setTags(res.data);
+            })
+            .then(err => console.log(err))
     }, []);
 
     const addNewSection = () =>{
         const newSection ={
             nameSection :"nouvelle section",
-            sectionColor : "#fff",
+            sectionColor : "#1f1f1f",
             session:session
         }
         axios.post(`http://localhost:5000/sections/add`,newSection)
@@ -47,18 +53,19 @@ const Workspace = () => {
         window.location.reload();
     }
 
+
     return (
         <>
             {
                 loading ? <p>loading </p> :
                 <div className={styles.body}>
-                    <Navbar sessionInfo={session} memberNum={membersCount}/>
+                    <Navbar tags={tags} sessionInfo={session} memberNum={membersCount}/>
                     <div className={styles.layout}>
                         {session.sections.map((e) => (
                             <Section session={session} section={e} key={e.idSection}>
                                 {
                                     e.taches.map((task, i) => (
-                                        <Task section={e} task={task} key={task.idTask}/>
+                                        <Task sessionId={sessionId} tags={tags} section={e} task={task} key={task.idTask}/>
                                     ))
                                 }
                             </Section>))

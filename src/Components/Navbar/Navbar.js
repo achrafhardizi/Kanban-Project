@@ -62,7 +62,7 @@ const Navbar = (props) => {
                     <div className={styles.addTag} onClick={addTagClickHandler}>
                         ajouter Etiquette <FontAwesomeIcon icon={faCirclePlus}/>
                     </div>
-                    <AddTagModal show={showModal} showModalHandler={addTagClickHandler}/>
+                    <AddTagModal tags={props.tags} show={showModal} showModalHandler={addTagClickHandler}/>
                 </div>
             </div>
         </div>

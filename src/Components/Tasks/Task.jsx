@@ -8,10 +8,12 @@ const Task = (props) => {
 
     const [task, setTask] = useState(props.task)
 
+    const [deadline, setDeadline] = useState()
     const [showEditTaskModal, setShowEditTaskModal] = useState(false);
     const [showEditTaskColorModal, setShowEditTaskColorModal] = useState(false);
 
     const [color, setColor] = useState('#616161');
+
 
     const changeColor = (updatedColor) => {
         setColor(updatedColor.hex);
@@ -33,10 +35,9 @@ const Task = (props) => {
                  style={{backgroundColor: task.colorTask}}
             >
                 <div className={styles["task__tags"]}>
-                    {/*{task.tags.map(tag => (*/}
-                    {/*    <Tag key={tag.tagId} tagName={tag.tagName} tagColor={tag.tagColor}/>*/}
-                    {/*))}*/}
-                    tags
+                    {task.taches_tags.map(tag => (
+                        <Tag key={tag.idTag} tagName={tag.nameTag} tagColor={tag.tagColor}/>
+                    ))}
                 </div>
                 <div className={styles["task__name"]}>
                     <span>{task.nameTask}</span>
@@ -46,7 +47,7 @@ const Task = (props) => {
                     />
                 </div>
             </div>
-            <EditTaskModal show={showEditTaskModal} section={props.section} task={props.task}/>
+            <EditTaskModal show={showEditTaskModal} sessionId={props.sessionId} section={props.section} task={props.task} tags={props.tags}/>
             <EditTaskColorModal show={showEditTaskColorModal} color={color} setColor={setColor}/>
         </>
     );
