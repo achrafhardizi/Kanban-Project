@@ -3,7 +3,6 @@
     width: 100%;
     /*display: grid;*/
     /*place-items: center;*/
-
     background-color: #616161;
     position: relative;
 }
@@ -26,7 +25,7 @@
 .add__session{
     position: absolute;
     bottom: 5%;
-    right: 15%;
+    right: 7%;
     display: grid;
     place-items: center;
     padding: 1em;
