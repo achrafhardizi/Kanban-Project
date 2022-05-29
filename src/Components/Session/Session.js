@@ -37,7 +37,7 @@ const Session = (props,{owned}) => {
                 >
                     {props.session.nameSession}
                 </span>
-                <BsThreeDotsVertical style={{color:colorIsbright(props.session.bgColor)}} onClick={editSessionClickHandler}/>
+                <BsThreeDotsVertical style={{color:colorIsbright(props.session.bgColor), cursor: 'pointer'}} onClick={editSessionClickHandler}/>
                 <EditSessionModal show={showEditSessionModal} user={props.user} session={props.session}/>
             </div>
             <div className={styles["session__join"]}>

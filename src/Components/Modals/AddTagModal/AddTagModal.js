@@ -48,7 +48,7 @@ const AddTagModal = (props) => {
                 <div className={styles["task__tags"]}>
                     <label htmlFor="task__members">Étiquettes :</label>
                     <div className={styles["tags__group"]}>
-                        {props.tags.map(tag => (
+                        {props.tags===null ? "test" : props.tags.map(tag => (
                             <div className={styles["tagItem"]} key={tag.idTag}>
                                 <div style={{backgroundColor: tag.tagColor}}>{tag.nameTag}</div>
                                 <FaTimes onClick={() => deleteTag(tag.idTag)}/>

@@ -140,7 +140,7 @@ const EditTaskModal = (props) => {
                                 <label htmlFor="task__members">Qui doit faire cette tâche</label>
                                 <div className={styles["members__group"]}>
                                     {
-                                        taskUsers.map(user => (
+                                        taskUsers===null ? "test" : taskUsers.map(user => (
                                             <div className={styles["user"]} key={user.id_user}>
                                                 <div>{user.username}</div>
                                                 <FaTimes onClick={()=>removeTask(user.id_user)}/>

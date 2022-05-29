@@ -123,7 +123,7 @@ const EditSessionModal = (props) => {
                             <label htmlFor="session__members">Membres :</label>
                             <div className={styles["members_x_group"]}>
                                 {
-                                    sessionUsers.map(user => (
+                                    sessionUsers===null ? "test" : sessionUsers.map(user => (
                                         <div className={styles["user"]} key={user.id_user}>
                                             <div>{user.username}</div>
                                             <FaTimes onClick={()=>deleteUserfromSession(user.id_user)}/>
