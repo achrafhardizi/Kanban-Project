@@ -4,7 +4,6 @@ import React, {useEffect, useState} from "react";
 import classNames from "classnames";
 import moment from "moment";
 import {FaCheck, FaTimes} from "react-icons/fa"
-import {BsFillPatchPlusFill} from "react-icons/bs"
 import axios from "axios";
 
 
@@ -13,8 +12,6 @@ const EditTaskModal = (props) => {
     const [loading, setLoading] = useState(true);
     const [users, setUsers] = useState([]);
     const [taskUsers, setTaskUsers] = useState([]);
-    const [selectedTag, setSelectedTag] = useState("");
-    const [tagSelectedId, setTagSelectedId] = useState(null);
     const [button, setButton] = useState(1);
     const [taskName, setTaskName] = useState(props.task.nameTask);
     const [taskDesc, setTaskDesc] = useState(props.task.descriptionTask);
@@ -29,16 +26,6 @@ const EditTaskModal = (props) => {
     const finishDateOnChangeHandler = (event) => {
         const newDate = moment(new Date(event.target.value)).format('YYYY-MM-DD');
         setFinishDate(newDate);
-    }
-
-    const tagSelectedChangeHandler = (e) => {
-        const index = e.target.selectedIndex;
-        const el = e.target.childNodes[index];
-        const option = el.getAttribute('id');
-        setSelectedTag(e.target.value);
-        setTagSelectedId(option);
-        console.log(selectedTag,tagSelectedId)
-
     }
 
     useEffect(() => {

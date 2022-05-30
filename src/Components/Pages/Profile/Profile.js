@@ -1,10 +1,31 @@
 import styles from "./Profile.module.css";
 import avatar from "../../../Assets/UserProfilePicutres/default-avatar-profile.jpg"
 import {EditProfileModal, Sidebar} from "../../index";
-import {useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import {BsCamera} from "react-icons/bs"
+import axios from "axios";
 
-const Profile = ({username, firstName, lastName, email, birthday, password, joindate}) => {
+const Profile = () => {
+
+
+    const [userData, setUserData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+
+    useEffect(() => {
+        const userId = localStorage.getItem("id")
+        axios.get(`http://localhost:5000/users/get/${userId}`)
+            .then(res => {
+                console.log(res.data);
+                setUserData(res.data);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+
+    }, []);
+
 
     const [showEditProfileModal, setShowEditProfileModal] = useState(false);
 
@@ -17,48 +38,56 @@ const Profile = ({username, firstName, lastName, email, birthday, password, join
 
 
     return (
-        <div className={styles.page}>
-            <Sidebar/>
-            <div className={styles.body}>
-                <div className={styles.profile}>
-                    <div className={styles["profile__picture"]}>
-                        <label className={styles["profile__changePic"]} htmlFor="profilePic"><BsCamera/></label>
-                        <input id="profilePic" type="file" onChange={loadProfilePicture}/>
-                        <img src={profilePicture} alt="user profile"/>
-                    </div>
-                    <div className={styles["profile__name"]}>
-                        <h1>Nom d'utilisateur</h1>
-                    </div>
-                    <div className={styles["profileInfo__container"]}>
-                        <div className={styles["profileInfo__card"]}>
-                            <div className={styles["profileInfo__password"]}>
-                                <span>Nom d'utilisateur :</span> <p>{username}</p>
-                            </div>
-                            <div className={styles["profileInfo__name"]}>
-                                <span>Prenom :</span> <p>{firstName}</p>
-                            </div>
-                            <div className={styles["profileInfo__name"]}>
-                                <span>Nom :</span> <p>{lastName}</p>
-                            </div>
-                            <div className={styles["profileInfo__email"]}>
-                                <span>Date d'anniversaire :</span> <p>{birthday}</p>
-                            </div>
-                            <div className={styles["profileInfo__email"]}>
-                                <span>E-mail :</span> <p>{email}</p>
-                            </div>
+        <>
+            {
+                loading ?
+                    <p style={{display: "none"}}>Loading</p>
+                    : <div className={styles.page}>
+                        <Sidebar/>
+                        <div className={styles.body}>
+                            <div className={styles.profile}>
+                                <div className={styles["profile__picture"]}>
+                                    <label className={styles["profile__changePic"]}
+                                           htmlFor="profilePic"><BsCamera/></label>
+                                    <input id="profilePic" type="file" onChange={loadProfilePicture}/>
+                                    <img src={profilePicture} alt="user profile"/>
+                                </div>
+                                <div className={styles["profile__name"]}>
+                                    <h1>Nom d'utilisateur</h1>
+                                </div>
+                                <div className={styles["profileInfo__container"]}>
+                                    <div className={styles["profileInfo__card"]}>
+                                        <div className={styles["profileInfo__password"]}>
+                                            <span>Nom d'utilisateur :</span> <p>{userData.username}</p>
+                                        </div>
+                                        <div className={styles["profileInfo__name"]}>
+                                            <span>Prenom :</span> <p>{userData.firstName}</p>
+                                        </div>
+                                        <div className={styles["profileInfo__name"]}>
+                                            <span>Nom :</span> <p>{userData.lastName}</p>
+                                        </div>
+                                        <div className={styles["profileInfo__email"]}>
+                                            <span>Date d'anniversaire :</span> <p>{userData.birthdate}</p>
+                                        </div>
+                                        <div className={styles["profileInfo__email"]}>
+                                            <span>E-mail :</span> <p>{userData.email}</p>
+                                        </div>
 
-                            <div className={styles["profileInfo__password"]}>
-                                <span>Mot de passe :</span> <p>{password}</p>
+                                        <div className={styles["profileInfo__password"]}>
+                                            <span>Mot de passe :</span> <p>{userData.password}</p>
+                                        </div>
+                                    </div>
+                                    <button className={styles["edit__profileInfo"]}
+                                            onClick={() => setShowEditProfileModal(true)}
+                                    >Modifier les informations du profil
+                                    </button>
+                                    <EditProfileModal show={showEditProfileModal} user={userData}/>
+                                </div>
                             </div>
                         </div>
-                        <button className={styles["edit__profileInfo"]}
-                                onClick={()=>setShowEditProfileModal(true)}
-                        >Modifier les informations du profil</button>
-                        <EditProfileModal show={showEditProfileModal}/>
                     </div>
-                </div>
-            </div>
-        </div>
+            }
+        </>
     );
 };
 

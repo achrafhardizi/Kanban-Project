@@ -3,11 +3,29 @@ import {Modal} from "../../index";
 import {SwatchesPicker} from "react-color";
 import React from "react";
 import classNames from "classnames";
+import axios from "axios";
 
 const EditTaskColorModal = (props) => {
 
-    const editTaskColorSubmitHandler = () => {
-        /*logic*/
+    const editTaskColorSubmitHandler = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        const task = {
+            nameTask: props.task.nameTask,
+            descriptionTask: props.task.descriptionTask ? props.task.descriptionTask : "",
+            colorTask: props.color,
+            startDate: props.task.startDate,
+            finishDate: props.task.finishDate,
+            section: props.section
+        }
+        axios.put(`http://localhost:5000/tasks/update/${props.task.idTask}`, task)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        window.location.reload();
     }
 
     return (

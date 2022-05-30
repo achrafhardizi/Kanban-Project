@@ -20,7 +20,7 @@
 }
 
 .profile__picture img{
-    width: 11%;
+    width: 7%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
@@ -34,10 +34,10 @@
 .profile__changePic{
     position: absolute;
     z-index: 5;
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding: .35em;
-    top: 18%;
-    right: 41%;
+    top: 13%;
+    right: 43.5%;
     border-radius: 50%;
     color: var(--bg-white-light);
     background-color: var(--bg-black-dark);
