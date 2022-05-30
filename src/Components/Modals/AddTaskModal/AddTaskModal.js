@@ -59,7 +59,7 @@ const AddTaskModal = (props) => {
         axios.post(`http://localhost:5000/tasks/add`, task)
             .then(res => console.log(res))
             .catch(err => console.log(err))
-        // window.location.reload()
+        window.location.reload()
     }
 
     return (
