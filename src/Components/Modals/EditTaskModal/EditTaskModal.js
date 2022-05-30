@@ -11,8 +11,8 @@ import axios from "axios";
 const EditTaskModal = (props) => {
 
     const [loading, setLoading] = useState(true);
-    const [users, setUsers] = useState(null);
-    const [taskUsers, setTaskUsers] = useState(null);
+    const [users, setUsers] = useState([]);
+    const [taskUsers, setTaskUsers] = useState([]);
     const [selectedTag, setSelectedTag] = useState("");
     const [tagSelectedId, setTagSelectedId] = useState(null);
     const [button, setButton] = useState(1);
