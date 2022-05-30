@@ -22,14 +22,19 @@ const EditModalProfile = (props) => {
     const birthdayChangeHandler = (event) => {
         const newDate = moment(new Date(event.target.value)).format('YYYY-MM-DD');
         setUserInfo((prevState) => {
-            return {...prevState,birthday: newDate}
+            return {...prevState,birthdate: newDate}
         });
     }
 
     const editProfileSubmitHandler = (e) => {
+        const userId = localStorage.getItem("id")
+        console.log(userInfo.birthdate);
         e.stopPropagation();
         e.preventDefault();
-
+        axios.put(`http://localhost:5000/users/update/${userId}`,userInfo)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+        window.location.reload()
     }
 
     return (
