@@ -7,40 +7,31 @@ import axios from "axios"
 
 const LoginPanel = (props) => {
 
+    const [user, setUser] = useState({
+        username: "",
+        password: ""
+    });
 
     const getUser = () => {
-        const user = {
-            username: usernameEntered,
-            password: passEntered
-        }
+
         axios.post(`http://localhost:5000/login/`, user)
             .then(function (response) {
-                console.log(response.data)
-                localStorage.setItem("id",JSON.stringify(response.data.idUser));
+                console.log("user", response.data)
+                localStorage.setItem("id", JSON.stringify(response.data.idUser));
             })
             .catch(function (error) {
-                console.log(error);
+                localStorage.clear()
             });
     }
-
-    const [usernameEntered, setUsernameEntered] = useState("");
-    const [passEntered, setPassEntered] = useState("");
     const [validate, setValidate] = useState(true);
     let navigate = useNavigate();
 
-    const usernameChangeHandler = (event) => {
-        setUsernameEntered(event.target.value)
-    }
-
-    const passChangeHandler = (event) => {
-        setPassEntered(event.target.value)
-    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        if ((usernameEntered.trim().length === 0)
-            || passEntered.trim().length === 0) {
+        if ((user.username.trim().length === 0)
+            || user.password.trim().length === 0) {
             setValidate(false);
             return;
         }
@@ -54,13 +45,25 @@ const LoginPanel = (props) => {
             <div className={styles.login}>
                 <h1>SignIn</h1>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" value={usernameEntered}
+                    <input type="text" value={user.username}
                            className={classNames(styles.input, {[styles.invalid]: !validate})}
-                           onChange={usernameChangeHandler} placeholder="Nom d'utilisateur" required="required"/>
+                           onChange={(e) => setUser(
+                               prevState => {
+                                   return {
+                                       ...prevState, username: e.target.value
+                                   }
+                               }
+                           )} placeholder="Nom d'utilisateur" required="required"/>
                     {!validate && <p className={styles.errorMessage}>username non valide au moins 5 caractères!</p>}
-                    <input type="password" value={passEntered}
+                    <input type="password" value={user.password}
                            className={classNames(styles.input, {[styles.invalid]: !validate})}
-                           onChange={passChangeHandler} placeholder="Mot de passe" required="required"/>
+                           onChange={(e) => setUser(
+                               prevState => {
+                                   return {
+                                       ...prevState, password: e.target.value
+                                   }
+                               }
+                           )} placeholder="Mot de passe" required="required"/>
                     <button type="submit" className={styles.button}>Se Connecter</button>
                     <Link to="signUp">Creer un Compte</Link>
                     <Link to="forgotPassword">mot de passe oublié?</Link>

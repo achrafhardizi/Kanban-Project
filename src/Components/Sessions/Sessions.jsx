@@ -3,6 +3,7 @@ import {useState, useEffect} from "react";
 import {AddSessionModal, Session} from "../index";
 import {BsPlusLg} from "react-icons/bs"
 import axios from "axios";
+import Loader from "../UI/Loader/Loader";
 
 
 const Sessions = () => {
@@ -11,16 +12,18 @@ const Sessions = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const userId = localStorage.getItem("id")
-        axios.get(`http://localhost:5000/users/get/${userId}`)
-            .then(res => {
-                console.log(res.data);
-                setUserData(res.data);
-                setLoading(false);
-            })
-            .catch(err => {
-                console.log(err);
-            })
+        setTimeout(()=>{
+            const userId = localStorage.getItem("id")
+            axios.get(`http://localhost:5000/users/get/${userId}`)
+                .then(res => {
+                    console.log(res.data);
+                    setUserData(res.data);
+                    setLoading(false);
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+        },1000)
 
     }, []);
 
@@ -34,7 +37,7 @@ const Sessions = () => {
     return (
         <>
             {
-                loading ? <p>loading </p> :
+                loading ? <Loader/> :
                 <div className={styles.page}>
                     <div className={styles.container}>
                         {
