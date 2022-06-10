@@ -6,6 +6,7 @@ import {faCirclePlus} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useParams} from "react-router-dom";
 import axios from "axios";
+import Loader from "../../UI/Loader/Loader";
 
 const Workspace = () => {
 
@@ -57,7 +58,7 @@ const Workspace = () => {
     return (
         <>
             {
-                loading ? <p>loading </p> :
+                loading ? <Loader/> :
                 <div className={styles.body}>
                     <Navbar tags={tags} sessionInfo={session} memberNum={membersCount}/>
                     <div className={styles.layout}>
