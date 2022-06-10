@@ -25,6 +25,14 @@
     color: var(--bg-black-dark);
 }
 
+/*.session__join .prop{*/
+/*    color: ;*/
+/*}*/
+
+.session__join .member{
+
+}
+
 .session__enter {
     display: grid;
     place-items: center;

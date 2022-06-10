@@ -7,7 +7,7 @@ import axios from "axios";
 
 const Sessions = () => {
 
-    const [userData, setUserData] = useState(null);
+    const [userData, setUserData] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
