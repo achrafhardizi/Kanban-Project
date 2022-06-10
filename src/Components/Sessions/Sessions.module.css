@@ -47,3 +47,30 @@
         right: 10%;
     }
 }
+
+.d-flex{
+    height: 100%;
+    /*background-color: red;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-block: 14%;
+}
+
+.d-flex > button{
+    background-color: var(--bg-black-dark);
+    border: none;
+
+    color: var(--bg-white-light);
+    padding: .5em 1.75em;
+    font-size: 1.5em;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.notFound {
+    font-size: 6em;
+    font-weight: bolder;
+    color: rgba(255,255,255,.4);
+}
