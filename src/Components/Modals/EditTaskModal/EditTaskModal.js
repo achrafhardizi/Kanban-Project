@@ -140,7 +140,11 @@ const EditTaskModal = (props) => {
                                 <label htmlFor="task__members">Attibuer au Membres :</label>
                                 <div className={styles["members__group"]}>
                                     {
-                                        users.map(user => (
+                                        users.filter(user => {
+                                            if(taskUsers === null) return;
+                                            let taskUsersId = taskUsers.map(user => { return  user.id_user})
+                                            return !taskUsersId.includes(user.id_user)
+                                        }).map(user => (
                                             <div className={styles["user"]} key={user.id_user}>
                                                 <div>{user.username}</div>
                                                 <FaCheck onClick={()=>assignTask(user.id_user)} />
