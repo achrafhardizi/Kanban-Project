@@ -13,7 +13,7 @@ const Navbar = (props) => {
     const [showModal, setShowModal] = useState(false);
 
     const addTagClickHandler = () => {
-        setShowModal(!showModal);
+        if(props.sessionInfo.owned) setShowModal(!showModal);
     }
 
     const selectClickHandler = () => {

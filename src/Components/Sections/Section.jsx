@@ -6,7 +6,7 @@ import {useState} from "react";
 import {AddTaskModal, EditSectionModal} from "../index";
 
 
-const Section = (props,{owned}) => {
+const Section = (props) => {
 
     const [section, setSection] = useState(props.section);
     const [showAddTaskModal, setShowAddTaskModal] = useState(false);
@@ -19,11 +19,12 @@ const Section = (props,{owned}) => {
 
 
     const addTaskClickHandler = () => {
-        setShowAddTaskModal(!showAddTaskModal);
+        if(props.session.owned) setShowAddTaskModal(!showAddTaskModal);
     }
 
     const editSectionClickHandler = () => {
-        setShowEditSectionModal(!showEditSectionModal);
+        console.log("owned modal",props.session.owned);
+        if(props.session.owned) setShowEditSectionModal(!showEditSectionModal);
     }
 
 

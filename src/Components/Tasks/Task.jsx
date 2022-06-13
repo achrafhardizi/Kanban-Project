@@ -23,11 +23,11 @@ const Task = (props) => {
 
 
     const editTaskClickHandler = () => {
-        setShowEditTaskModal(prevState => !prevState);
+        if(props.session.owned) setShowEditTaskModal(prevState => !prevState);
     }
 
     const editTaskColorClickHandler = () => {
-        setShowEditTaskColorModal(prevState => !prevState);
+        if (props.session.owned) setShowEditTaskColorModal(prevState => !prevState);
     }
 
     return (
