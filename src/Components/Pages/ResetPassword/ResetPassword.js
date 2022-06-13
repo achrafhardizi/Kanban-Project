@@ -2,12 +2,14 @@ import styles from "./ResetPassword.module.css";
 import classNames from "classnames";
 import {useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
+import axios from "axios";
 
 const ResetPassword = () => {
     const [passEntered, setPassEntered] = useState("");
     const [confirmPassEntered, setConfirmPassEntered] = useState("");
     const [validatePass, setValidatePass] = useState(true);
     const [validateConfirmPass, setValidateConfirmPass] = useState(true);
+    const [userInfo, setUserInfo] = useState(null);
     let {userId } = useParams();
 
     let navigate = useNavigate();
@@ -33,7 +35,17 @@ const ResetPassword = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
-
+        console.log(validatePass,validateConfirmPass);
+        if(!validatePass && !validateConfirmPass) return;
+        axios.get(`http://localhost:5000/users/get/${userId}`)
+            .then(user => {
+                console.log(user);
+                axios.put(`http://localhost:5000/users/update/${userId}`,{...user.data,password:passEntered})
+                    .then(res => console.log("update password",res))
+                    .catch(e => console.log("error update password",e))
+            })
+            .catch(e => console.log(e))
+        navigate("/");
     }
 
     return (

@@ -41,7 +41,7 @@ const Session = (props,{owned}) => {
                 <EditSessionModal show={showEditSessionModal} user={props.user} session={props.session}/>
             </div>
             <div className={styles["session__join"]}>
-                {owned ? <span className={styles["prop"]}>{"propriétaire"}</span> :<span className={styles["member"]}>{"membre"}</span>}
+                {owned === true ? <span className={styles["prop"]}>{"propriétaire"}</span> : <span className={styles["member"]}>{"membre"}</span>}
             </div>
             <Link className={styles["session__enter"]} to={`workspace${props.session.idSession}`}><BsDoorOpen style={{color:props.session.bgColor}}/></Link>
         </div>
