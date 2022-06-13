@@ -29,8 +29,6 @@ const ForgotPass = () => {
         setValidEmail(true);
     }
 
-
-
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();

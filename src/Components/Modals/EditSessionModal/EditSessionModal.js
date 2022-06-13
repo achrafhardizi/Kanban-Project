@@ -7,6 +7,7 @@ import {SliderPicker} from "react-color";
 import {useState} from "react";
 import axios from "axios";
 import {FaCheck, FaTimes} from "react-icons/fa";
+import CloseIcon from "@mui/icons-material/Close";
 
 const EditSessionModal = (props) => {
 
@@ -100,7 +101,10 @@ const EditSessionModal = (props) => {
                 <p style={{display:"none"}}>loading</p> :
                 <Modal show={props.show}>
                     <form className={styles.form} onSubmit={editSessionSubmitHandler}>
-                        <div className={styles["modal__title"]}>Modifier la session</div>
+                        <div className={styles["modal__title"]}>
+                            <div>Modifier la session</div>
+                        <span style={{display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
+                    </div>
                         <div className={styles["session__textInfo"]}>
                             <div className={styles["session__name"]}>
                                 <label htmlFor="session__name">Nom de la session</label>

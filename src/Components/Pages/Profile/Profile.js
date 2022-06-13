@@ -98,7 +98,7 @@ const Profile = () => {
                                                     onClick={() => setShowEditProfileModal(true)}
                                             >Modifier les informations du profil
                                             </button>
-                                            <EditProfileModal show={showEditProfileModal} user={userData}/>
+                                            <EditProfileModal show={showEditProfileModal} closeModal={setShowEditProfileModal} user={userData}/>
                                         </div>
                                     </div>
                                 </div>

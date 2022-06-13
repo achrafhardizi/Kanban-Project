@@ -5,6 +5,7 @@ import React, {useEffect, useState} from "react";
 import classNames from "classnames";
 import {FaTimes} from "react-icons/fa";
 import axios from "axios";
+import CloseIcon from "@mui/icons-material/Close";
 
 const AddTagModal = (props) => {
 
@@ -38,7 +39,10 @@ const AddTagModal = (props) => {
     return (
         <Modal show={props.show} showModalHandler={props.showModalHandler}>
             <form className={styles.form} onSubmit={addTagSubmitHandler}>
-                <div className={styles["modal__title"]}>Ajouter étiquette</div>
+                <div className={styles["modal__title"]}>
+                    <div>Ajouter étiquette</div>
+                    <span style={{display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
+                </div>
                 <div className={styles["tag__name"]}>
                     <label htmlFor="tag__name">Nom de l'étiquette</label>
                     <input type="text" value={tagName}

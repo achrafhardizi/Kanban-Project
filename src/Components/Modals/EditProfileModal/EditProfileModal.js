@@ -4,6 +4,7 @@ import classNames from "classnames";
 import {Modal} from "../../index";
 import axios from "axios";
 import moment from "moment";
+import CloseIcon from "@mui/icons-material/Close";
 
 const EditModalProfile = (props) => {
 
@@ -40,7 +41,10 @@ const EditModalProfile = (props) => {
     return (
         <Modal show={props.show} showModalHandler={props.showModalHandler}>
             <form className={styles.form} onSubmit={editProfileSubmitHandler}>
-                <div className={styles["modal__title"]}>Modifier votre Profile</div>
+                <div className={styles["modal__title"]}>
+                    <div>Modifier votre Profile</div>
+                <span style={{display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
+            </div>
                 <div className={classNames(styles["formItem"])}>
                     <label htmlFor="">Nom d'utilisateur :</label>
                     <input type="text" value={userInfo.username} onChange={(e)=>{

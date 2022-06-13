@@ -41,6 +41,7 @@ const Section = (props) => {
                                   showModalHandler={editSectionClickHandler}
                                   section={props.section}
                                   session={props.session}
+                                  closeModal={setShowEditSectionModal}
                                   color={color}
                                   changeColor={changeColor}/>
             </div>
@@ -50,7 +51,7 @@ const Section = (props) => {
             <div className={styles["card__footer"]}>
                 <span onClick={addTaskClickHandler}>Ajouter une tâche</span>
                 <FontAwesomeIcon onClick={addTaskClickHandler} icon={faCirclePlus} style={{cursor:"pointer"}}/>
-                <AddTaskModal section={props.section} show={showAddTaskModal} showModalHandler={addTaskClickHandler}/>
+                <AddTaskModal section={props.section} show={showAddTaskModal} closeModal={setShowAddTaskModal} showModalHandler={addTaskClickHandler}/>
             </div>
         </div>
     );

@@ -6,6 +6,7 @@ import {BsFillPatchPlusFill} from "react-icons/bs";
 import moment from "moment";
 import {SliderPicker} from "react-color";
 import axios from "axios";
+import CloseIcon from "@mui/icons-material/Close";
 
 
 const AddTaskModal = (props) => {
@@ -65,7 +66,10 @@ const AddTaskModal = (props) => {
     return (
         <Modal show={props.show} showModalHandler={props.showModalHandler}>
             <form className={styles.form} onSubmit={addTaskSubmitHandler}>
-                <div className={styles["modal__title"]}>Ajouter une tâche</div>
+                <div className={styles["modal__title"]}>
+                    <div>Ajouter une tâche</div>
+                    <span style={{display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
+                </div>
                 <div className={styles["task__name"]}>
                     <label htmlFor="task__name">Nom de la tâche</label>
                     <input type="text" value={taskName} placeholder="Nom de la tâche"

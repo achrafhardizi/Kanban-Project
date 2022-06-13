@@ -5,7 +5,9 @@
 }
 
 .modal__title{
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 1em;
     padding-block: .5em;
     font-size: 1.5rem;

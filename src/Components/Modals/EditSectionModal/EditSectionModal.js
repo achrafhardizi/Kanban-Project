@@ -4,6 +4,7 @@ import {SwatchesPicker} from "react-color";
 import React, {useState} from "react";
 import classNames from "classnames";
 import axios from "axios";
+import CloseIcon from "@mui/icons-material/Close";
 
 const EditSectionModal = (props) => {
 
@@ -43,7 +44,10 @@ const EditSectionModal = (props) => {
     return (
         <Modal show={props.show} showModalHandler={props.showModalHandler}>
             <form className={styles.form} onSubmit={editSectionSubmitHandler}>
-                <div className={styles["modal__title"]}>Modifier la section</div>
+                <div className={styles["modal__title"]}>
+                    <div>Modifier la section</div>
+                    <span style={{display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
+                </div>
                 <div className={styles["section__name"]}>
                     <label htmlFor="section__name">Nom de la section</label>
                     <input type="text" value={sectionName}
