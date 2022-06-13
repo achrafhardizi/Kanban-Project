@@ -1,13 +1,14 @@
 import styles from "./ResetPassword.module.css";
 import classNames from "classnames";
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const ResetPassword = () => {
     const [passEntered, setPassEntered] = useState("");
     const [confirmPassEntered, setConfirmPassEntered] = useState("");
     const [validatePass, setValidatePass] = useState(true);
     const [validateConfirmPass, setValidateConfirmPass] = useState(true);
+    let {userId } = useParams();
 
     let navigate = useNavigate();
     const regex = new RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})");

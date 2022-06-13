@@ -25,7 +25,7 @@ const App = () => {
                         <Route exact path='/' element={<LoginPanel/>}/>
                         <Route exact path="signUp" element={<SignUp/>}/>
                         <Route exact path="forgotPassword" element={<ForgotPass/>}/>
-                        <Route exact path="resetPassword" element={<ResetPassword/>}/>
+                        <Route exact path="resetPassword/:userId" element={<ResetPassword/>}/>
                         <Route path='sessions' element={<Home setColor={setColor} color={color}/>}>
                             <Route index element={<Sessions/>}/>
                             <Route path='workspace:sessionId' element={<Workspace/>}/>
