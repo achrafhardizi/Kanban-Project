@@ -5,6 +5,7 @@ import classNames from "classnames";
 import moment from "moment";
 import {FaCheck, FaTimes} from "react-icons/fa"
 import axios from "axios";
+import {FormControl, FormHelperText, InputLabel, MenuItem, Select} from "@mui/material";
 
 
 const EditTaskModal = (props) => {
@@ -17,6 +18,10 @@ const EditTaskModal = (props) => {
     const [taskDesc, setTaskDesc] = useState(props.task.descriptionTask);
     const [startDate, setStartDate] = useState(props.task.startDate);
     const [finishDate, setFinishDate] = useState(props.task.finishDate);
+    const [newsection, setNewSection] = useState(props.section.idSection);
+    const [Sections, setSections] = useState([]);
+
+
 
     const startDateOnChangeHandler = (event) => {
         const newDate = moment(new Date(event.target.value)).format('YYYY-MM-DD');
@@ -43,6 +48,18 @@ const EditTaskModal = (props) => {
             })
             .catch(err => console.log(err))
     }, []);
+    axios.get('http://localhost:5000/sessions/get/'+props.sessionId)
+        .then(res => {
+            setSections(res.data.sections)
+            setLoading(false)
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
+    const ChangeSection = (event) => {
+        setNewSection(event.target.value);
+    };
 
 
     const assignTask = (idUser) => {
@@ -88,7 +105,9 @@ const EditTaskModal = (props) => {
                 colorTask: props.task.colorTask,
                 startDate: startDate,
                 finishDate: finishDate,
-                section: props.section
+                section: {
+                    idSection: newsection
+                }
             }
             console.log(task);
             axios.put(`http://localhost:5000/tasks/update/${props.task.idTask}`, task)
@@ -117,12 +136,34 @@ const EditTaskModal = (props) => {
                                            onChange={(e) => setTaskName(e.target.value)}
                                            required={true}/>
                                 </div>
+
                                 <div className={styles["task__description"]}>
                                     <label htmlFor="task__description">Description de la tâche</label>
                                     <textarea cols="30" rows="5" value={taskDesc ? taskDesc : ""}
                                               onChange={(e) => setTaskDesc(e.target.value)}/>
                                 </div>
                             </div>
+
+                            <div>
+                                <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">Changer Section</InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        value={newsection}
+                                        label="Changer Section"
+                                        onChange={ChangeSection}
+
+                                    >
+                                        {Sections.map(sec => (
+                                            <MenuItem key={sec.idSection} value={sec.idSection}>{sec.nameSection}</MenuItem>
+                                        ))}
+
+                                    </Select>
+                                    <FormHelperText>Deplacer la tâche</FormHelperText>
+                                </FormControl>
+                            </div>
+
                             <div className={styles["task__members"]}>
                                 <label htmlFor="task__members">Qui doit faire cette tâche</label>
                                 <div className={styles["members__group"]}>

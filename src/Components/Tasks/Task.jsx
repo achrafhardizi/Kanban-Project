@@ -3,16 +3,18 @@ import styles from "./Task.module.css"
 import taskEdit from "../../Assets/taskEdit.png"
 import {EditTaskColorModal, EditTaskModal, Tag} from "../index";
 import classNames from "classnames";
+import WarningIcon from '@mui/icons-material/Warning';
+import {Chip} from "@mui/material";
 
 const Task = (props) => {
 
     const [task, setTask] = useState(props.task)
 
-    const [deadline, setDeadline] = useState()
     const [showEditTaskModal, setShowEditTaskModal] = useState(false);
     const [showEditTaskColorModal, setShowEditTaskColorModal] = useState(false);
 
     const [color, setColor] = useState('#616161');
+
 
 
     const changeColor = (updatedColor) => {
@@ -46,6 +48,16 @@ const Task = (props) => {
                          className={styles["edit__icon"]}
                     />
                 </div>
+                {(new Date(task.finishDate)<=new Date()) &&
+                    <div style={{
+                        marginTop: '15px',
+                        display: 'flex',
+                        justifyContent: 'flex-end',
+                        alignItems: 'flex-end'
+                    }}>
+                        <Chip color="error" label={"Tache en retard"} icon={<WarningIcon/>}/>
+                    </div>
+                }
             </div>
             <EditTaskModal show={showEditTaskModal} sessionId={props.sessionId} section={props.section} task={props.task} tags={props.tags}/>
             <EditTaskColorModal show={showEditTaskColorModal} section={props.section} task={props.task} color={color} changeColor={changeColor}/>

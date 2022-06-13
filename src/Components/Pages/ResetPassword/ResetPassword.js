@@ -33,8 +33,7 @@ const ResetPassword = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        // logic
-        navigate('/');
+
     }
 
     return (

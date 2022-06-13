@@ -9,7 +9,7 @@ const ForgotPass = () => {
 
     const [emailEntered, setEmailEntered] = useState("");
     const [validEmail, setValidEmail] = useState(true);
-    const [emailUser, setEmailUser] = useState(true);
+    const [emailUser, setEmailUser] = useState(null);
     let navigate = useNavigate()
 
     const validateEmail = (email) => {
@@ -34,14 +34,18 @@ const ForgotPass = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
+        if(validateEmail(emailEntered) == null) return;
         axios.post("http://localhost:5000/login/resetpassword",{
             email: emailEntered.toLowerCase()
         })
-            .then(res => console.log("response Reset Password",res))
-            .catch(err => {
-                setEmailUser(false);
-                console.log(err);
+            .then(res => {
+                if(res.data === false) setEmailUser(false)
+                if(res.data === true) setEmailUser(true)
+                console.log(res)
                 return;
+            })
+            .catch(err => {
+                console.log(err);
             })
     }
 
@@ -57,7 +61,7 @@ const ForgotPass = () => {
                            className={classNames(styles.input, {[styles.invalid]: !validEmail})}
                            onChange={emailChangeHandler} placeholder="e.g. email@gmail.com" required="required"/>
                     {!validEmail && <p className={styles.errorMessage}>email non valide</p>}
-                    {!emailUser ? <Alert variant="outlined" style={{backgroundColor:"rgba(0,0,0,.4)"}} severity="error">utilisateur non trouve!</Alert> : <Alert style={{backgroundColor:"hsla(131,42%,10%,.8)",color:"var(--bg-white-light)",marginBottom:"1em"}} severity="success">email envoye</Alert>}
+                    {emailUser !== null && ( emailUser ? <Alert style={{backgroundColor:"hsla(131,42%,10%,.8)",color:"var(--bg-white-light)",marginBottom:"1em"}} severity="success">email envoye</Alert> : <Alert style={{backgroundColor:"hsla(3.86,71.55%,10.14%,.8)",color:"var(--bg-white-light)",marginBottom:"1em"}} severity="error">email non trouve!</Alert>)}
                     <button type="submit" className={styles.button}>Mot de passe oublié</button>
                 </form>
             </div>
