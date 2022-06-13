@@ -2,6 +2,7 @@ import {useState} from 'react';
 import styles from "./ForgotPass.module.css";
 import classNames from "classnames";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 const ForgotPass = () => {
 
@@ -31,7 +32,11 @@ const ForgotPass = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
-
+        axios.post("http://localhost:5000/login/resetpassword",{
+            email: emailEntered.toLowerCase()
+        })
+            .then(res => console.log("response Reset Password",res))
+            .catch(err => console.log(err))
     }
 
     return (
