@@ -26,6 +26,11 @@
     height: 300px;
 }
 
+.errorMessage{
+    font-size: .75em;
+    color: red !important;
+}
+
 .forgotPass h1 {
     color: #fff;
     text-align: center;

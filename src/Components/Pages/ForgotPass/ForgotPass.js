@@ -3,6 +3,7 @@ import styles from "./ForgotPass.module.css";
 import classNames from "classnames";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
+import {Alert} from "@mui/material";
 
 const ForgotPass = () => {
 
@@ -56,7 +57,7 @@ const ForgotPass = () => {
                            className={classNames(styles.input, {[styles.invalid]: !validEmail})}
                            onChange={emailChangeHandler} placeholder="e.g. email@gmail.com" required="required"/>
                     {!validEmail && <p className={styles.errorMessage}>email non valide</p>}
-                    {!emailUser && <p className={styles.errorMessage}>email non trouve</p>}
+                    {!emailUser ? <Alert variant="outlined" style={{backgroundColor:"rgba(0,0,0,.4)"}} severity="error">utilisateur non trouve!</Alert> : <Alert style={{backgroundColor:"hsl(131,42%,20%)"}}  severity="success">email envoye</Alert>}
                     <button type="submit" className={styles.button}>Mot de passe oublié</button>
                 </form>
             </div>
