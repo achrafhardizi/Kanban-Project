@@ -4,6 +4,7 @@ import {SwatchesPicker} from "react-color";
 import React from "react";
 import classNames from "classnames";
 import axios from "axios";
+import CloseIcon from "@mui/icons-material/Close";
 
 const EditTaskColorModal = (props) => {
 
@@ -31,7 +32,10 @@ const EditTaskColorModal = (props) => {
     return (
         <Modal show={props.show}>
             <form className={styles.form} onSubmit={editTaskColorSubmitHandler}>
-                <div className={styles["modal__title"]}>Modifier la couleur de la tâche</div>
+                <div className={styles["modal__title"]}>
+                    <div>Modifier la couleur de la tâche</div>
+                <span style={{display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
+            </div>
                 <SwatchesPicker className='mt-2' color={props.color} onChange={props.changeColor}/>
                 <button type="submit" className={classNames(styles["editTask__color"], styles["btn-1"])}>Modifier la couleur de la tâche</button>
             </form>

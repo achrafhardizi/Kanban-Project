@@ -6,6 +6,7 @@ import moment from "moment";
 import {FaCheck, FaTimes} from "react-icons/fa"
 import axios from "axios";
 import {FormControl, FormHelperText, InputLabel, MenuItem, Select} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 
 const EditTaskModal = (props) => {
@@ -127,7 +128,10 @@ const EditTaskModal = (props) => {
                 loading ? <p style={{display: "none"}}>Loading</p> :
                     <Modal show={props.show}>
                         <form className={styles.form} onSubmit={editTaskSubmitHandler}>
-                            <div className={styles["modal__title"]}>Modifier la tâche</div>
+                            <div className={styles["modal__title"]}>
+                                <div>Modifier la tâche</div>
+                            <span style={{display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
+                        </div>
                             <div className={styles["task__textInfo"]}>
                                 <div className={styles["task__name"]}>
                                     <label htmlFor="task__name">Nom de la tâche</label>

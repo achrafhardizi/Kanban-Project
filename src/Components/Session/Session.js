@@ -37,7 +37,7 @@ const Session = (props) => {
                     {props.session.nameSession}
                 </span>
                 <BsThreeDotsVertical style={{color:colorIsbright(props.session.bgColor), cursor: 'pointer'}} onClick={editSessionClickHandler}/>
-                <EditSessionModal show={showEditSessionModal} user={props.user} session={props.session}/>
+                <EditSessionModal show={showEditSessionModal} closeModal={setShowEditSessionModal} user={props.user} session={props.session}/>
             </div>
             <Link className={styles["session__enter"]} to={`workspace${props.session.idSession}`}><BsDoorOpen style={{color:props.session.bgColor}}/></Link>
         </div>

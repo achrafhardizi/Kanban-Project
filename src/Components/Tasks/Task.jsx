@@ -59,8 +59,8 @@ const Task = (props) => {
                     </div>
                 }
             </div>
-            <EditTaskModal show={showEditTaskModal} sessionId={props.sessionId} section={props.section} task={props.task} tags={props.tags}/>
-            <EditTaskColorModal show={showEditTaskColorModal} section={props.section} task={props.task} color={color} changeColor={changeColor}/>
+            <EditTaskModal show={showEditTaskModal} sessionId={props.sessionId} closeModal={setShowEditTaskModal} section={props.section} task={props.task} tags={props.tags}/>
+            <EditTaskColorModal show={showEditTaskColorModal} section={props.section} closeModal={setShowEditTaskColorModal} task={props.task} color={color} changeColor={changeColor}/>
         </>
     );
 };

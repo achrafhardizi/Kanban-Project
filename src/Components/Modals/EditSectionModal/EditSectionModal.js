@@ -46,7 +46,7 @@ const EditSectionModal = (props) => {
             <form className={styles.form} onSubmit={editSectionSubmitHandler}>
                 <div className={styles["modal__title"]}>
                     <div>Modifier la section</div>
-                    <span style={{display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
+                    <span style={{color:"black",display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
                 </div>
                 <div className={styles["section__name"]}>
                     <label htmlFor="section__name">Nom de la section</label>

@@ -103,8 +103,8 @@ const EditSessionModal = (props) => {
                     <form className={styles.form} onSubmit={editSessionSubmitHandler}>
                         <div className={styles["modal__title"]}>
                             <div>Modifier la session</div>
-                        <span style={{display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
-                    </div>
+                            <span style={{display: 'grid', placeItems: 'center', cursor: 'pointer'}} onClick={() => props.closeModal(false)}><CloseIcon/></span>
+                        </div>
                         <div className={styles["session__textInfo"]}>
                             <div className={styles["session__name"]}>
                                 <label htmlFor="session__name">Nom de la session</label>
