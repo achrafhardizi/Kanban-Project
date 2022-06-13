@@ -1,12 +1,13 @@
 import {useState} from 'react';
 import styles from "./ForgotPass.module.css";
 import classNames from "classnames";
+import {useNavigate} from "react-router-dom";
 
 const ForgotPass = () => {
 
     const [emailEntered, setEmailEntered] = useState("");
     const [validEmail, setValidEmail] = useState(true);
-
+    let navigate = useNavigate()
 
     const validateEmail = (email) => {
         return String(email)
@@ -30,7 +31,7 @@ const ForgotPass = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
-        // logic
+
     }
 
     return (
