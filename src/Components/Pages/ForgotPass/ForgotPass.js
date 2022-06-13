@@ -8,6 +8,7 @@ const ForgotPass = () => {
 
     const [emailEntered, setEmailEntered] = useState("");
     const [validEmail, setValidEmail] = useState(true);
+    const [emailUser, setEmailUser] = useState(true);
     let navigate = useNavigate()
 
     const validateEmail = (email) => {
@@ -36,7 +37,11 @@ const ForgotPass = () => {
             email: emailEntered.toLowerCase()
         })
             .then(res => console.log("response Reset Password",res))
-            .catch(err => console.log(err))
+            .catch(err => {
+                setEmailUser(false);
+                console.log(err);
+                return;
+            })
     }
 
     return (
@@ -51,6 +56,7 @@ const ForgotPass = () => {
                            className={classNames(styles.input, {[styles.invalid]: !validEmail})}
                            onChange={emailChangeHandler} placeholder="e.g. email@gmail.com" required="required"/>
                     {!validEmail && <p className={styles.errorMessage}>email non valide</p>}
+                    {!emailUser && <p className={styles.errorMessage}>email non trouve</p>}
                     <button type="submit" className={styles.button}>Mot de passe oublié</button>
                 </form>
             </div>
