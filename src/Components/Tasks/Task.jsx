@@ -55,7 +55,7 @@ const Task = (props) => {
                         justifyContent: 'flex-end',
                         alignItems: 'flex-end'
                     }}>
-                        <Chip color="error" label={"Tache en retard"} icon={<WarningIcon/>}/>
+                        <Chip  style={{paddingLeft:".35em"}} color="error" label={"Tache en retard"} icon={<WarningIcon fontSize={"small"}/>}/>
                     </div>
                 }
             </div>

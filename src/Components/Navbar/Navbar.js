@@ -36,28 +36,28 @@ const Navbar = (props) => {
                 </div>
             </div>
             <div className={styles["nav__bot"]}>
-                <div className={styles["select-box"]}>
-                    <div className={classNames(styles["options-container"],{[styles["active"]]:clicked})}>
-                        <div className={styles["option"]} onClick={optionClickHandler}>
-                            <input type="radio" className={styles["radio"]} id="section" name="filter"/>
-                            <label htmlFor="section">Section</label>
-                        </div>
+                {/*<div className={styles["select-box"]}>*/}
+                {/*    <div className={classNames(styles["options-container"],{[styles["active"]]:clicked})}>*/}
+                {/*        <div className={styles["option"]} onClick={optionClickHandler}>*/}
+                {/*            <input type="radio" className={styles["radio"]} id="section" name="filter"/>*/}
+                {/*            <label htmlFor="section">Section</label>*/}
+                {/*        </div>*/}
 
-                        <div className={styles["option"]} onClick={optionClickHandler}>
-                            <input type="radio" className={styles["radio"]} id="tag" name="filter"/>
-                            <label htmlFor="tag">Etiquette</label>
-                        </div>
+                {/*        <div className={styles["option"]} onClick={optionClickHandler}>*/}
+                {/*            <input type="radio" className={styles["radio"]} id="tag" name="filter"/>*/}
+                {/*            <label htmlFor="tag">Etiquette</label>*/}
+                {/*        </div>*/}
 
-                        <div className={styles["option"]} onClick={optionClickHandler}>
-                            <input type="radio" className={styles["radio"]} id="state" name="filter"/>
-                            <label htmlFor="state">État</label>
-                        </div>
-                    </div>
+                {/*        <div className={styles["option"]} onClick={optionClickHandler}>*/}
+                {/*            <input type="radio" className={styles["radio"]} id="state" name="filter"/>*/}
+                {/*            <label htmlFor="state">État</label>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
 
-                    <div className={styles["selected"]} onClick={selectClickHandler}>
-                        {selected}
-                    </div>
-                </div>
+                {/*    <div className={styles["selected"]} onClick={selectClickHandler}>*/}
+                {/*        {selected}*/}
+                {/*    </div>*/}
+                {/*</div>*/}
                 <div className={styles["nav__bot_right"]}>
                     <div className={styles.addTag} onClick={addTagClickHandler}>
                         ajouter Etiquette <FontAwesomeIcon icon={faCirclePlus}/>
