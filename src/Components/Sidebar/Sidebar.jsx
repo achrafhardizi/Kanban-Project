@@ -2,18 +2,17 @@
 import React, {useState} from "react";
 
 import homeIcon from "../../Assets/home.png"
-import settingsIcon from "../../Assets/settings.png"
-import appearanceIcon from "../../Assets/appearance.png"
-import notificationIcon from "../../Assets/notification.png"
 import profilIcon from "../../Assets/profile.png"
+import logoutIcon from "../../Assets/logout.png"
 
 import styles from "./Sidebar.module.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import classNames from "classnames";
 
 
 const Sidebar = (color) => {
     const [dropped, setDropped] = useState(false);
+    let navigate = useNavigate();
 
     const submenuClickHandler = () => {
         setDropped(!dropped);
@@ -53,6 +52,15 @@ const Sidebar = (color) => {
                 <Link to='/profile'>
                     <img src={profilIcon} className={classNames(styles["row__icon"])}/>
                     <span>profile</span>
+                </Link>
+            </div>
+            <div className={styles.row} onClick={()=>{
+                localStorage.clear()
+                navigate("/");
+            }}>
+                <Link to='/profile'>
+                    <img src={logoutIcon} className={classNames(styles["row__icon"])}/>
+                    <span>se deconnecter</span>
                 </Link>
             </div>
         </nav>
