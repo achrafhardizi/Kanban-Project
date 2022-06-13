@@ -57,7 +57,7 @@ const ForgotPass = () => {
                            className={classNames(styles.input, {[styles.invalid]: !validEmail})}
                            onChange={emailChangeHandler} placeholder="e.g. email@gmail.com" required="required"/>
                     {!validEmail && <p className={styles.errorMessage}>email non valide</p>}
-                    {!emailUser ? <Alert variant="outlined" style={{backgroundColor:"rgba(0,0,0,.4)"}} severity="error">utilisateur non trouve!</Alert> : <Alert style={{backgroundColor:"hsl(131,42%,20%)"}} severity="success">email envoye</Alert>}
+                    {!emailUser ? <Alert variant="outlined" style={{backgroundColor:"rgba(0,0,0,.4)"}} severity="error">utilisateur non trouve!</Alert> : <Alert style={{backgroundColor:"hsla(131,42%,10%,.8)",color:"var(--bg-white-light)",marginBottom:"1em"}} severity="success">email envoye</Alert>}
                     <button type="submit" className={styles.button}>Mot de passe oublié</button>
                 </form>
             </div>
