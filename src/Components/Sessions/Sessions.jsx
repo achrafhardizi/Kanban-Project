@@ -22,6 +22,12 @@ const Sessions = () => {
                 .then(res => {
                     console.log(res.data);
                     setUserData(res.data);
+                    res.data["joined_sessions"].map(session =>{
+                        localStorage.setItem(`${session.idSession}`,JSON.stringify({owned:false}))
+                    })
+                    res.data["owned_sessions"].map(session =>{
+                        localStorage.setItem(`${session.idSession}`,JSON.stringify({owned:true}))
+                    })
                     setLoading(false);
                 })
                 .catch(err => {
@@ -30,7 +36,6 @@ const Sessions = () => {
                     setLoading(false);
                 })
         }, 1000)
-
     }, []);
 
 
@@ -61,7 +66,7 @@ const Sessions = () => {
                                             <Session session={e}
                                                      user={userData}
                                                      id={e.idSession}
-                                                     owned={false} key={e.idSession}/>
+                                                     key={e.idSession}/>
                                         ))
                                     }
                                     {
@@ -69,7 +74,7 @@ const Sessions = () => {
                                             <Session session={e}
                                                      user={userData}
                                                      id={e.idSession}
-                                                     owned={true} key={e.idSession}/>
+                                                     key={e.idSession}/>
                                         ))
                                     }
                                 </div>

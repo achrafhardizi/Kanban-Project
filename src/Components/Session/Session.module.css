@@ -3,7 +3,7 @@
     padding: 1em;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 5em;
     align-self: flex-start;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,.4);
@@ -19,10 +19,6 @@
 .session__header span{
     font-size: 1.25rem;
     font-weight: bold;
-}
-
-.session__join span{
-    color: var(--bg-black-dark);
 }
 
 .session__enter {

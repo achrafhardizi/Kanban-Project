@@ -12,6 +12,7 @@ const Workspace = () => {
 
     let {sessionId} = useParams();
     const [membersCount,setMembersCount] = useState(null);
+    const [owned, setOwned] = useState(null);
     const [session, setSession] = useState(null);
     const [loading, setLoading] = useState(true);
     const [tags, setTags] = useState(null);
@@ -21,6 +22,10 @@ const Workspace = () => {
             .then(res => {
                 console.log(res.data);
                 setSession(res.data);
+                let session = JSON.parse(localStorage.getItem(`${sessionId}`))
+                if(session.owned === false) setOwned(false)
+                else setOwned(true)
+                console.log("owned",owned)
                 setLoading(false);
             })
             .catch(err => {
@@ -63,9 +68,9 @@ const Workspace = () => {
                     <Navbar tags={tags} sessionInfo={session} memberNum={membersCount}/>
                     <div className={styles.layout}>
                         {session.sections.map((e) => (
-                            <Section session={session} section={e} key={e.idSection}>
+                            <Section session={session} owned={owned} section={e} key={e.idSection}>
                                 {
-                                    e.taches.map((task, i) => (
+                                    e.taches.map((task) => (
                                         <Task sessionId={sessionId} tags={tags} section={e} task={task} key={task.idTask}/>
                                     ))
                                 }

@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {useContext, useState} from "react";
 import {EditSessionModal} from "../index";
 
-const Session = (props,{owned}) => {
+const Session = (props) => {
 
     const [showEditSessionModal, setShowEditSessionModal] = useState(false);
 
@@ -13,7 +13,6 @@ const Session = (props,{owned}) => {
     }
 
     const  colorIsbright = (color) => {
-
         color = color.substring(1);
         let rgb = parseInt(color, 16),
             red = (rgb >> 16) & 0xff,
@@ -39,9 +38,6 @@ const Session = (props,{owned}) => {
                 </span>
                 <BsThreeDotsVertical style={{color:colorIsbright(props.session.bgColor), cursor: 'pointer'}} onClick={editSessionClickHandler}/>
                 <EditSessionModal show={showEditSessionModal} user={props.user} session={props.session}/>
-            </div>
-            <div className={styles["session__join"]}>
-                {owned === true ? <span className={styles["prop"]}>{"propriétaire"}</span> : <span className={styles["member"]}>{"membre"}</span>}
             </div>
             <Link className={styles["session__enter"]} to={`workspace${props.session.idSession}`}><BsDoorOpen style={{color:props.session.bgColor}}/></Link>
         </div>

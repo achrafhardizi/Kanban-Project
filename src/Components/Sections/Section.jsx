@@ -6,7 +6,7 @@ import {useState} from "react";
 import {AddTaskModal, EditSectionModal} from "../index";
 
 
-const Section = (props) => {
+const Section = (props,{owned}) => {
 
     const [section, setSection] = useState(props.section);
     const [showAddTaskModal, setShowAddTaskModal] = useState(false);
