@@ -2,11 +2,16 @@ import { useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import styles from "./SignUp.module.css"
 import classNames from "classnames";
+import axios from "axios";
+
 
 
 const SignUp = () => {
 
     const [usernameEntered, setUsernameEntered] = useState("");
+    const [prenom, setPrenom] = useState("");
+    const [nom, setNom] = useState("");
+    const [email, setEmail] = useState("");
     const [passEntered, setPassEntered] = useState("");
     const [confirmPassEntered, setConfirmPassEntered] = useState("");
     const [validateUser, setValidateUser] = useState(true);
@@ -28,7 +33,7 @@ const SignUp = () => {
     const validatePassword = (password) => {
         return regex.test(password);
     }
-    
+
     const passChangeHandler = (event) => {
         setPassEntered(event.target.value)
         if(!validatePassword(passEntered)){
@@ -49,7 +54,21 @@ const SignUp = () => {
             setValidateConfirmPass(false);
             return;
         }
-        navigate('/sessions');
+        let newUser = {
+            firstName: prenom,
+            lastName: nom,
+            username: usernameEntered,
+            email: email,
+            password: passEntered
+,            joindate: new Date(),
+        }
+        axios.post('http://localhost:5000/users/add', newUser)
+            .then(res =>{
+                console.log(res);
+            }).catch(e =>
+            console.log(e)
+        )
+        navigate('/');
     }
 
     return (
@@ -61,6 +80,16 @@ const SignUp = () => {
                            className={classNames(styles.input, {[styles.invalid]: !validateUser})}
                            onChange={usernameChangeHandler} placeholder="Nom d'utilisateur" required="required"/>
                     {!validateUser && <p className={styles.errorMessage}>username non valide au moins 5 caractères!</p>}
+                    <input type="text" value={nom}
+                           className={classNames(styles.input, {[styles.invalid]: !validateUser})}
+                           onChange={(e) => setNom(e.target.value)} placeholder="Nom" required="required"/>
+                    <input type="text" value={prenom}
+                           className={classNames(styles.input, {[styles.invalid]: !validateUser})}
+                           onChange={(e) => setPrenom(e.target.value)} placeholder="Prenom" required="required"/>
+
+                    <input type="email" value={email}
+                           className={classNames(styles.input, {[styles.invalid]: !validateUser})}
+                           onChange={(e) => setEmail(e.target.value)} placeholder="Email" required="required"/>
                     <input type="password"
                            className={classNames(styles.input, {[styles.invalid]: !validatePass})}
                            onChange={passChangeHandler} placeholder="Mot de passe" required="required"/>
