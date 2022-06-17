@@ -1,0 +1,44 @@
+.backdrop{
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: rgba(0,0,0,.6);
+    z-index: 7;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal{
+    max-height: 95vh;
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 8;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--bg-white-light);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.modal::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-inline: 1em;
+    border-radius: 20px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}

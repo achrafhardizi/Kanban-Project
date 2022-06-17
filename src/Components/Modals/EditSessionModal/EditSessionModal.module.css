@@ -1,0 +1,119 @@
+.form {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    padding-block: .5em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--bg-black-dark);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.session__name{
+    color: var(--bg-black-dark);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.session__name label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.session__name input{
+    padding: .5em 1em;
+}
+
+.session__description{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.session__description label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.session__textInfo{
+    display: flex;
+    gap:1em;
+}
+
+.owner span{
+    font-size: .85rem;
+    padding: 0.1em 0.5em;
+    background-color: gold;
+    border-radius: 8px;
+}
+
+.session__members label,.session__owner label,.session__color label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.user{
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    font-size: 1.5rem;
+    align-items: center;
+    background-color: var(--bg-black-dark);
+    color: var(--bg-white-light);
+}
+
+.user div{
+    font-size: .75rem;
+    font-weight: bold;
+    padding-left: 1em;
+    border: 2px solid var(--bg-black-dark);
+}
+
+.user > *:nth-child(2){
+    padding: 0.2em;
+}
+
+.editSession,.deleteSession {
+    width: 100%;
+    border-radius: 5px;
+    padding: .25em .5em;
+    margin-top: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:inset 2px 2px 2px 0 rgba(255,255,255,.5), 7px 7px 20px 0 rgba(0,0,0,.1), 4px 4px 5px 0 rgba(0,0,0,.1);
+    color: var(--bg-white-light);
+    outline: none;
+}
+
+.btn-1 {
+    background: linear-gradient(0deg, var(--bg-black-dark) 0%, #3f3f3f 100%);
+    border: none;
+}
+
+.btn-1:hover {
+    background: linear-gradient(0deg, #3f3f3f 0%, #5e5e5e 100%);
+}
+
+.btn-2 {
+    background: linear-gradient(0deg, #f12222 0%, lightcoral 100%);
+    border: none;
+}
+
+.btn-2:hover {
+    background: linear-gradient(0deg, #f33d3d 0%, lightcoral 100%);
+}
+
+.button__group{
+    display: flex;
+    gap: .5em;
+}

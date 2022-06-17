@@ -1,0 +1,125 @@
+.navbar {
+    padding: 1.5em 1em 1em 1em;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.nav__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+    color: var(--bg-white-light);
+}
+
+.nav__top h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.nav__bot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select-box {
+    display: flex;
+    width: 150px;
+    flex-direction: column;
+    font-size: 0.75rem;
+}
+
+.select-box .options-container {
+    position: absolute;
+    inset: 160px 0 0 99px;
+    background: var(--bg-black-lighter);
+    color: var(--bg-white-dark);
+    width: 150px;
+    height: fit-content;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 8px;
+    order: 1;
+    z-index: 4;
+    pointer-events: none;
+}
+
+@media screen and (min-width: 1200px) {
+    .select-box .options-container {
+        inset: 160px 0 0 90px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .select-box .options-container {
+        inset: 130px 0 0 99px;
+    }
+}
+
+.selected {
+    background: var(--bg-black-dark);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: var(--bg-white-dark);
+    position: relative;
+}
+
+.selected::after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f078";
+    font-weight: 900;
+    background-size: contain;
+    position: absolute;
+    height: 100%;
+    width: 1rem;
+    right: 7%;
+}
+
+.select-box .options-container.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.select-box .options-container.active + .selected::after {
+    transform: rotateX(180deg);
+    top: -35%;
+}
+
+.select-box .option,
+.selected {
+    padding: 1em 1.5em;
+    cursor: pointer;
+}
+
+.select-box .option:last-child:hover {
+    background: #414b57;
+    border-radius: 0 0 8px 8px;
+}
+
+.select-box .option:first-child:hover {
+    background: #414b57;
+    border-radius: 8px 8px 0 0;
+}
+
+.select-box .option:hover {
+    background: #414b57;
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .option .radio {
+    display: none;
+}
+
+.addTag {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-size: .75rem;
+    padding: .5em 1em;
+    background-color: var(--bg-black-dark);
+    color: var(--bg-white-light);
+    border-radius: 8px;
+}

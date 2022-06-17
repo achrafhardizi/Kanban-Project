@@ -1,0 +1,141 @@
+.page{
+    display: flex;
+    height: 100%;
+    background-color: #616161;
+}
+
+.body{
+    flex : 1 1 auto;
+    background-color: #616161;
+}
+
+.profile{
+    height: 100%;
+}
+
+.profile__picture{
+    margin-top: 1em;
+    object-fit: cover;
+    display: grid;
+    place-items: center;
+}
+
+.profile__picture img{
+    width: 7%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 0;
+    position: relative;
+}
+
+.profile__picture input{
+    display: none;
+}
+.profile__changePic{
+    position: absolute;
+    z-index: 5;
+    font-size: 1rem;
+    padding: .35em;
+    top: 13%;
+    right: 43.5%;
+    border-radius: 50%;
+    color: var(--bg-white-light);
+    background-color: var(--bg-black-dark);
+    display: grid;
+    place-items: center;
+}
+
+.profile__name{
+    color:var(--bg-white-light);
+    text-align:center
+}
+
+.profileInfo__container{
+    height: 100%;
+    margin: 1.5em 10em;
+}
+
+.profileInfo__card{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-white-light);
+    border-radius: 12px;
+    box-shadow: 0 6px 6px rgba(0,0,0,.4);
+}
+
+.profileInfo__card > *{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileInfo__card > * > *{
+    padding: 1em;
+}
+
+.profileInfo__card > * > p{
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.profileInfo__card > *:nth-child(even){
+    background-color: var(--bg-white-darker);
+}
+
+.edit__profileInfo {
+    margin-top: 1em;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding-block: 0.5em;
+    font-size: 1rem;
+    border-radius: 4px;
+    background: linear-gradient(to right, #2E2D38, #1D1E22, #2D3238, #293033);
+    background-size: 500%;
+    color: white;
+    cursor: pointer;
+}
+
+.edit__profileInfo:hover {
+    animation-name: gradientButton;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes gradientButton {
+    0% {
+        background-position: 0 50%
+    }
+    100% {
+        background-position: 100%
+    }
+}
+
+.d-flex{
+    height: 100%;
+    width: 100%;
+    /*background-color: red;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-block: 14%;
+}
+
+.d-flex > button{
+    background-color: var(--bg-black-dark);
+    border: none;
+
+    color: var(--bg-white-light);
+    padding: .5em 1.75em;
+    font-size: 1.5em;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.notFound {
+    font-size: 6em;
+    font-weight: bolder;
+    color: rgba(255,255,255,.4);
+}

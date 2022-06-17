@@ -1,39 +1,66 @@
-import React, {useState} from 'react';
-import {Badge, Card, Dropdown, Form} from "react-bootstrap";
-import {BsChatRight, BsPersonCircle, BsPlusCircle} from "react-icons/bs";
-import {BiDotsHorizontalRounded, BiLinkAlt} from "react-icons/bi";
-import {Taskoptions} from "../index";
+import {useState} from 'react';
+import styles from "./Task.module.css"
+import taskEdit from "../../Assets/taskEdit.png"
+import {EditTaskColorModal, EditTaskModal, Tag} from "../index";
+import classNames from "classnames";
+import WarningIcon from '@mui/icons-material/Warning';
+import {Chip} from "@mui/material";
 
-const Task = ({ tags, name, color = "rgba(255, 255, 255, 1)" }) => {
-    const [show, setShow] = useState(false);
+const Task = (props) => {
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const [task, setTask] = useState(props.task)
+
+    const [showEditTaskModal, setShowEditTaskModal] = useState(false);
+    const [showEditTaskColorModal, setShowEditTaskColorModal] = useState(false);
+
+    const [color, setColor] = useState('#616161');
+
+
+
+    const changeColor = (updatedColor) => {
+        setColor(updatedColor.hex);
+    }
+
+
+    const editTaskClickHandler = () => {
+        if(props.session.owned) setShowEditTaskModal(prevState => !prevState);
+    }
+
+    const editTaskColorClickHandler = () => {
+        if (props.session.owned) setShowEditTaskColorModal(prevState => !prevState);
+    }
 
     return (
         <>
-            <Card
-                className="m-3"
-                style={{ backgroundColor: color }}
+            <div className={classNames(styles.card)} onClick={editTaskClickHandler}
+                 onContextMenu={editTaskColorClickHandler}
+                 style={{backgroundColor: task.colorTask}}
             >
-                <Card.Body>
-                    <Badge bg="primary">Important!</Badge>
-                    <Form className="d-flex justify-content-center mt-3">
-                        Testing task{" "}
-                        {/*Name of the task, can be used as a description too (following the examples sent on whatsapp)*/}
-                    </Form>
-                    <Form className="d-flex justify-content-end mt-3">
-                        <Dropdown drop={"end"}>
-                            <Dropdown.Toggle id="dropdown-basic" onClick={handleShow}>
-                                <BiDotsHorizontalRounded />
-                            </Dropdown.Toggle>
-                        </Dropdown>
-                    </Form>
-                </Card.Body>
-            </Card>
-            {show && (
-                <Taskoptions handleClose={handleClose} handleShow={handleShow} />
-            )}
+                <div className={styles["task__tags"]}>
+                    {task.taches_tags.map(tag => (
+                        <Tag key={tag.idTag} tagName={tag.nameTag} tagColor={tag.tagColor}/>
+                    ))}
+                </div>
+                <div className={styles["task__name"]}>
+                    <span>{task.nameTask}</span>
+                    <img src={taskEdit}
+                         alt="task edit Icon"
+                         className={styles["edit__icon"]}
+                    />
+                </div>
+                {(new Date(task.finishDate)<=new Date()) &&
+                    <div style={{
+                        marginTop: '15px',
+                        display: 'flex',
+                        justifyContent: 'flex-end',
+                        alignItems: 'flex-end'
+                    }}>
+                        <Chip  style={{paddingLeft:".35em"}} color="error" label={"Tache en retard"} icon={<WarningIcon fontSize={"small"}/>}/>
+                    </div>
+                }
+            </div>
+            <EditTaskModal show={showEditTaskModal} sessionId={props.sessionId} closeModal={setShowEditTaskModal} section={props.section} task={props.task} tags={props.tags}/>
+            <EditTaskColorModal show={showEditTaskColorModal} section={props.section} closeModal={setShowEditTaskColorModal} task={props.task} color={color} changeColor={changeColor}/>
         </>
     );
 };

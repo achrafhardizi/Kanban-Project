@@ -1,0 +1,64 @@
+.form{
+    padding: 1em;
+}
+
+
+.modal__title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    padding-block: .5em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--bg-black-dark);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.section__name{
+    color: var(--bg-black-dark);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+.section__name label{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: .5em;
+}
+
+.section__name input{
+    padding: .5em 1em;
+}
+
+.editSection,.deleteSection {
+    width: 100%;
+    border-radius: 5px;
+    padding: .25em .5em;
+    margin-top: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:inset 2px 2px 2px 0 rgba(255,255,255,.5), 7px 7px 20px 0 rgba(0,0,0,.1), 4px 4px 5px 0 rgba(0,0,0,.1);
+    color: var(--bg-white-light);
+    outline: none;
+}
+
+.btn-1 {
+    background: linear-gradient(0deg, var(--bg-black-dark) 0%, #3f3f3f 100%);
+    border: none;
+}
+.btn-1:hover {
+    background: linear-gradient(0deg, #3f3f3f 0%, #5e5e5e 100%);
+}
+.btn-2 {
+    background: linear-gradient(0deg, #f12222 0%, lightcoral 100%);
+    border: none;
+}
+.btn-2:hover {
+    background: linear-gradient(0deg, #3f3f3f 0%, #5e5e5e 100%);
+}
+
+.button__group{
+    display: flex;
+    gap: .5em;
+}
