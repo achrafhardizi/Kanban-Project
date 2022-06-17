@@ -43,7 +43,7 @@ const LoginPanel = (props) => {
     return (
         <div className={styles.page}>
             <div className={styles.login}>
-                <h1>SignIn</h1>
+                <h1>Sign In lol</h1>
                 <form onSubmit={handleSubmit}>
                     <input type="text" value={user.username}
                            className={classNames(styles.input, {[styles.invalid]: !validate})}
