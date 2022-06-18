@@ -43,7 +43,7 @@ const AddTaskModal = (props) => {
                 finishDate: finishDate,
                 section: props.section
             }
-            axios.post(`http://localhost:5000/tasks/add`, task)
+            axios.post(`https://kanbanboardbackend.herokuapp.com/tasks/add`, task)
                 .then(res => console.log(res))
                 .catch(err => console.log(err))
             window.location.reload()
@@ -57,7 +57,7 @@ const AddTaskModal = (props) => {
             finishDate: finishDate,
             section: props.section
         }
-        axios.post(`http://localhost:5000/tasks/add`, task)
+        axios.post(`https://kanbanboardbackend.herokuapp.com/tasks/add`, task)
             .then(res => console.log(res))
             .catch(err => console.log(err))
         window.location.reload()

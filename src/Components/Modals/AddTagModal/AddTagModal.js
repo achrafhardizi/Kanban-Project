@@ -18,7 +18,7 @@ const AddTagModal = (props) => {
     }
 
     const deleteTag = (idTag) => {
-        axios.delete(`http://localhost:5000/tags/delete/${idTag}`)
+        axios.delete(`https://kanbanboardbackend.herokuapp.com/tags/delete/${idTag}`)
             .then(res => console.log(res))
             .catch(err => console.log(err))
         window.location.reload();
@@ -30,7 +30,7 @@ const AddTagModal = (props) => {
             nameTag:tagName,
             tagColor:color
         }
-        axios.post("http://localhost:5000/tags/add/",tag)
+        axios.post("https://kanbanboardbackend.herokuapp.com/tags/add/",tag)
             .then(res=>console.log(res))
             .catch(err => console.log(err))
         window.location.reload();

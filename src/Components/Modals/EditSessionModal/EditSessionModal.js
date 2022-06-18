@@ -33,14 +33,14 @@ const EditSessionModal = (props) => {
     }
 
     useEffect(() => {
-        axios.get("http://localhost:5000/users/getall")
+        axios.get("https://kanbanboardbackend.herokuapp.com/users/getall")
             .then(res => {
                 setAllUsers(res.data);
                 console.log(res.data);
                 setLoading(false)
             })
             .catch(err => console.log(err))
-        axios.get(`http://localhost:5000/sessions/getsessionusers/${props.session.idSession}`)
+        axios.get(`https://kanbanboardbackend.herokuapp.com/sessions/getsessionusers/${props.session.idSession}`)
             .then(res => {
                 console.log(res.data)
                 setSessionUsers(res.data)
@@ -53,14 +53,14 @@ const EditSessionModal = (props) => {
 
     const addUsertoSession = (idUser) => {
         if(idUser === props.user.idUser) return;
-        axios.post(`http://localhost:5000/users/join/${props.session.idSession}/${idUser}`)
+        axios.post(`https://kanbanboardbackend.herokuapp.com/users/join/${props.session.idSession}/${idUser}`)
             .then(r => console.log(r))
             .catch(err => console.log(err))
         window.location.reload()
     }
 
     const deleteUserfromSession = (idUser) => {
-        axios.delete(`http://localhost:5000/users/leave/${props.session.idSession}/${idUser}`)
+        axios.delete(`https://kanbanboardbackend.herokuapp.com/users/leave/${props.session.idSession}/${idUser}`)
             .then(r => console.log(r))
             .catch(err => console.log(err))
         window.location.reload()
@@ -71,7 +71,7 @@ const EditSessionModal = (props) => {
         e.stopPropagation()
         if (button === 2) {
             console.log("button 1");
-            axios.delete(`http://localhost:5000/sessions/delete/${props.session.idSession}`)
+            axios.delete(`https://kanbanboardbackend.herokuapp.com/sessions/delete/${props.session.idSession}`)
                 .then(r => console.log(r))
                 .catch(err => console.log(err));
         }
@@ -84,7 +84,7 @@ const EditSessionModal = (props) => {
                 bgColor: color,
             }
             console.log(session);
-            axios.put(`http://localhost:5000/sessions/update/${props.session.idSession}`, session)
+            axios.put(`https://kanbanboardbackend.herokuapp.com/sessions/update/${props.session.idSession}`, session)
                 .then(response => {
                     console.log(response);
                 })

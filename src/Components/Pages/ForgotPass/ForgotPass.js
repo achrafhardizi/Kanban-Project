@@ -33,7 +33,7 @@ const ForgotPass = () => {
         event.preventDefault();
         event.stopPropagation();
         if(validateEmail(emailEntered) == null) return;
-        axios.post("http://localhost:5000/login/resetpassword",{
+        axios.post("https://kanbanboardbackend.herokuapp.com/login/resetpassword",{
             email: emailEntered.toLowerCase()
         })
             .then(res => {

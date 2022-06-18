@@ -62,7 +62,7 @@ const SignUp = () => {
             password: passEntered
 ,            joindate: new Date(),
         }
-        axios.post('http://localhost:5000/users/add', newUser)
+        axios.post('https://kanbanboardbackend.herokuapp.com/users/add', newUser)
             .then(res =>{
                 console.log(res);
             }).catch(e =>

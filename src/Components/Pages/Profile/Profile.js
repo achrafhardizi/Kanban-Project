@@ -19,7 +19,7 @@ const Profile = () => {
     useEffect(() => {
         setTimeout(()=>{
             const userId = localStorage.getItem("id")
-            axios.get(`http://localhost:5000/users/get/${userId}`)
+            axios.get(`https://kanbanboardbackend.herokuapp.com/users/get/${userId}`)
                 .then(res => {
                     console.log(res.data);
                     setUserData(res.data);

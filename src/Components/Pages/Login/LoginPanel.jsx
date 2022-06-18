@@ -14,7 +14,7 @@ const LoginPanel = (props) => {
 
     const getUser = () => {
 
-        axios.post(`http://localhost:5000/login/`, user)
+        axios.post(`https://kanbanboardbackend.herokuapp.com/login/`, user)
             .then(function (response) {
                 console.log("user", response.data)
                 localStorage.setItem("id", JSON.stringify(response.data.idUser));
