@@ -28,7 +28,7 @@ const AddSessionModal = (props) => {
                 descSession: sessionDesc,
                 bgColor:color
             }
-            axios.post(`http://localhost:5000/sessions/add`, session)
+            axios.post(`https://kanbanboardbackend.herokuapp.com/sessions/add`, session)
                 .then(response => {
                     console.log(response)
                 })
@@ -43,7 +43,7 @@ const AddSessionModal = (props) => {
             nameSession: sessionName,
             bgColor:color
         }
-        axios.post(`http://localhost:5000/sessions/add`, session)
+        axios.post(`https://kanbanboardbackend.herokuapp.com/sessions/add`, session)
             .then(response => {
                 console.log(response.data)
             })

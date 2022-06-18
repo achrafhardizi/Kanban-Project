@@ -17,7 +17,7 @@ const Workspace = () => {
     const [tags, setTags] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/sessions/get/${sessionId}`)
+        axios.get(`https://kanbanboardbackend.herokuapp.com/sessions/get/${sessionId}`)
             .then(res => {
                 console.log(res.data);
                 let session = JSON.parse(localStorage.getItem(`${sessionId}`))
@@ -27,7 +27,7 @@ const Workspace = () => {
             .catch(err => {
                 console.log(err);
             })
-        axios.get(`http://localhost:5000/sessions/getcount/${sessionId}`)
+        axios.get(`https://kanbanboardbackend.herokuapp.com/sessions/getcount/${sessionId}`)
             .then(res => {
                 console.log(res.data);
                 setMembersCount(res.data);
@@ -35,7 +35,7 @@ const Workspace = () => {
             .catch(err => {
                 console.log(err);
             })
-        axios.get("http://localhost:5000/tags/getall")
+        axios.get("https://kanbanboardbackend.herokuapp.com/tags/getall")
             .then(res => {
                 console.log(res)
                 setTags(res.data);
@@ -49,7 +49,7 @@ const Workspace = () => {
             sectionColor : "#1f1f1f",
             session:session
         }
-        axios.post(`http://localhost:5000/sections/add`,newSection)
+        axios.post(`https://kanbanboardbackend.herokuapp.com/sections/add`,newSection)
             .then(res => console.log(res))
             .catch(err => console.log(err))
         window.location.reload();

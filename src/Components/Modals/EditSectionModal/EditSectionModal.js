@@ -19,7 +19,7 @@ const EditSectionModal = (props) => {
         e.preventDefault()
         e.stopPropagation()
         if (button === 2) {
-            axios.delete(`http://localhost:5000/sections/delete/${props.section.idSection}`)
+            axios.delete(`https://kanbanboardbackend.herokuapp.com/sections/delete/${props.section.idSection}`)
                 .then(r => console.log(r))
                 .catch(err => console.log(err));
         }
@@ -30,7 +30,7 @@ const EditSectionModal = (props) => {
                 sectionColor: props.color,
                 session: props.session
             }
-            axios.put(`http://localhost:5000/sections/update/${props.section.idSection}`, section)
+            axios.put(`https://kanbanboardbackend.herokuapp.com/sections/update/${props.section.idSection}`, section)
                 .then(response => {
                     console.log(response);
                 })

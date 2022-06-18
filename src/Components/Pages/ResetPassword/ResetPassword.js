@@ -37,10 +37,10 @@ const ResetPassword = () => {
         event.stopPropagation();
         console.log(validatePass,validateConfirmPass);
         if(!validatePass && !validateConfirmPass) return;
-        axios.get(`http://localhost:5000/users/get/${userId}`)
+        axios.get(`https://kanbanboardbackend.herokuapp.com/users/get/${userId}`)
             .then(user => {
                 console.log(user);
-                axios.put(`http://localhost:5000/users/update/${userId}`,{...user.data,password:passEntered})
+                axios.put(`https://kanbanboardbackend.herokuapp.com/users/update/${userId}`,{...user.data,password:passEntered})
                     .then(res => console.log("update password",res))
                     .catch(e => console.log("error update password",e))
             })

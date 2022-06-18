@@ -36,20 +36,20 @@ const EditTaskModal = (props) => {
 
     useEffect(() => {
         console.log(props.sessionId);
-        axios.get(`http://localhost:5000/sessions/getsessionusers/${props.sessionId}`)
+        axios.get(`https://kanbanboardbackend.herokuapp.com/sessions/getsessionusers/${props.sessionId}`)
             .then(res => {
                 setUsers(res.data)
                 setLoading(false);
             })
             .catch(err => console.log(err))
-        axios.get(`http://localhost:5000/tasks/gettaskusers/${props.task.idTask}`)
+        axios.get(`https://kanbanboardbackend.herokuapp.com/tasks/gettaskusers/${props.task.idTask}`)
             .then(res => {
                 setTaskUsers(res.data)
                 setLoading(false)
             })
             .catch(err => console.log(err))
     }, []);
-    axios.get('http://localhost:5000/sessions/get/'+props.sessionId)
+    axios.get('https://kanbanboardbackend.herokuapp.com/sessions/get/'+props.sessionId)
         .then(res => {
             setSections(res.data.sections)
             setLoading(false)
@@ -64,28 +64,28 @@ const EditTaskModal = (props) => {
 
 
     const assignTask = (idUser) => {
-        axios.post(`http://localhost:5000/tasks/addusers/${idUser}/${props.task.idTask}`)
+        axios.post(`https://kanbanboardbackend.herokuapp.com/tasks/addusers/${idUser}/${props.task.idTask}`)
             .then(r => console.log(r))
             .catch(err => console.log(err))
         window.location.reload();
     }
 
     const removeTask = idUser => {
-        axios.delete(`http://localhost:5000/tasks/removeusers/${idUser}/${props.task.idTask}`)
+        axios.delete(`https://kanbanboardbackend.herokuapp.com/tasks/removeusers/${idUser}/${props.task.idTask}`)
             .then(r => console.log(r))
             .catch(err => console.log(err))
         window.location.reload();
     }
 
     const deleteTagFromTask = (idTag) => {
-        axios.delete(`http://localhost:5000/tasks/removetag/${props.task.idTask}/${idTag}`)
+        axios.delete(`https://kanbanboardbackend.herokuapp.com/tasks/removetag/${props.task.idTask}/${idTag}`)
             .then(res => console.log(res))
             .catch(err => console.log(err))
         window.location.reload();
     }
 
     const addTagToTask = (idTag) => {
-        axios.post(`http://localhost:5000/tasks/addtag/${props.task.idTask}/${idTag}`)
+        axios.post(`https://kanbanboardbackend.herokuapp.com/tasks/addtag/${props.task.idTask}/${idTag}`)
             .then(res => console.log(res))
             .catch(err => console.log(err))
         window.location.reload();
@@ -95,7 +95,7 @@ const EditTaskModal = (props) => {
         e.preventDefault()
         e.stopPropagation()
         if (button === 2) {
-            axios.delete(`http://localhost:5000/tasks/delete/${props.task.idTask}`)
+            axios.delete(`https://kanbanboardbackend.herokuapp.com/tasks/delete/${props.task.idTask}`)
                 .then(r => console.log(r))
                 .catch(err => console.log(err));
         }
@@ -111,7 +111,7 @@ const EditTaskModal = (props) => {
                 }
             }
             console.log(task);
-            axios.put(`http://localhost:5000/tasks/update/${props.task.idTask}`, task)
+            axios.put(`https://kanbanboardbackend.herokuapp.com/tasks/update/${props.task.idTask}`, task)
                 .then(response => {
                     console.log(response);
                 })

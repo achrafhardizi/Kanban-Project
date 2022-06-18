@@ -32,7 +32,7 @@ const EditModalProfile = (props) => {
         console.log(userInfo.birthdate);
         e.stopPropagation();
         e.preventDefault();
-        axios.put(`http://localhost:5000/users/update/${userId}`,userInfo)
+        axios.put(`https://kanbanboardbackend.herokuapp.com/users/update/${userId}`,userInfo)
             .then(res => console.log(res))
             .catch(err => console.log(err))
         window.location.reload()

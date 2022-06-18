@@ -19,7 +19,7 @@ const EditTaskColorModal = (props) => {
             finishDate: props.task.finishDate,
             section: props.section
         }
-        axios.put(`http://localhost:5000/tasks/update/${props.task.idTask}`, task)
+        axios.put(`https://kanbanboardbackend.herokuapp.com/tasks/update/${props.task.idTask}`, task)
             .then(response => {
                 console.log(response);
             })
