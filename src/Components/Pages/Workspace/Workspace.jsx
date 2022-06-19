@@ -52,7 +52,7 @@ const Workspace = () => {
         axios.post(`https://kanbanboardbackend.herokuapp.com/sections/add`,newSection)
             .then(res => console.log(res))
             .catch(err => console.log(err))
-        window.location.reload();
+        // window.location.reload();
     }
 
 
